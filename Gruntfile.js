@@ -36,7 +36,8 @@ module.exports = function(grunt){
 				src: [
 					'public/css/base/reset.css',
 					'public/css/ui/font.css',
-					'public/css/ui/button.css'
+					'public/css/ui/button.css',
+					'public/css/gmp.css'
 				],
 				dest: 'public/css/bundle.css'
 			}
@@ -52,7 +53,7 @@ module.exports = function(grunt){
 			},
 			sass: {
 				files: '**/*.{scss,sass}',
-				tasks: ['clean', 'compass', 'concat']
+				tasks: ['compass', 'concat']
 			}
 		}
 	});

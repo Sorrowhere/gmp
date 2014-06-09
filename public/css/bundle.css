@@ -529,3 +529,9 @@ input.btn-big {
 a.disabled {
   color: #999999;
 }
+
+body {
+  font: 14px/1.5 'Microsoft Yahei',arial, sans-serif;
+  color: #333333;
+  background-color: #fafafa;
+}

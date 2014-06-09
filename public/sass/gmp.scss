@@ -1,0 +1,16 @@
+// app style
+// ========================================
+// import
+@import "import/_global";
+@import "import/_css3";
+
+// variable reset
+$borderColor: #ced9e5;
+$bgColor: #ecf0f5;
+// base
+// ========================================
+body{
+	font: 14px/1.5 'Microsoft Yahei',arial, sans-serif;
+	color: $textColor;
+	background-color: #fafafa
+}
