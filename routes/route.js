@@ -5,6 +5,7 @@ function route(app){
 	// index
 	router.get('/', function(req, res){
 		res.render('post.hbs', {
+			layout: 'layout/default',
 			title: 'Create a Post'
 		});
 	});
