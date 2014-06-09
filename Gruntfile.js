@@ -10,8 +10,6 @@ module.exports = function(grunt){
 		// metadata
 		pkg: grunt.file.readJSON('package.json'),
 
-		// task: clean
-
 		// task: compass
 		compass: {
 			dist: {
@@ -23,6 +21,12 @@ module.exports = function(grunt){
 			}
 		},
 
+		// task: clean
+		clean: [
+			'public/css/*',
+			'.sass-cache'
+		],
+
 		// task: concat
 		concat: {
 			options: {
@@ -30,7 +34,9 @@ module.exports = function(grunt){
 			},
 			css: {
 				src: [
-					'public/css/base/reset.css'
+					'public/css/base/reset.css',
+					'public/css/ui/font.css',
+					'public/css/ui/button.css'
 				],
 				dest: 'public/css/bundle.css'
 			}
@@ -46,11 +52,11 @@ module.exports = function(grunt){
 			},
 			sass: {
 				files: '**/*.{scss,sass}',
-				tasks: ['compass', 'concat']
+				tasks: ['clean', 'compass', 'concat']
 			}
 		}
 	});
 
 	// register default tasks
-	grunt.registerTask('default', ['compass', 'concat']);
+	grunt.registerTask('default', ['clean', 'compass', 'concat']);
 }
