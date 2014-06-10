@@ -4,3 +4,54 @@ body {
   color: #333333;
   background-color: #fafafa;
 }
+
+/* line 19, ../sass/gmp.scss */
+.post {
+  overflow: hidden;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* line 30, ../sass/gmp.scss */
+.post-half,
+.form form,
+.ta-post,
+.preview {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 34, ../sass/gmp.scss */
+.post-half {
+  width: 48%;
+  float: left;
+  border: 1px solid #ced9e5;
+}
+/* line 38, ../sass/gmp.scss */
+.post-half:last-child {
+  float: right;
+}
+
+/* line 42, ../sass/gmp.scss */
+.ta-post {
+  border: none;
+  resize: none;
+  margin: 0;
+  width: 100%;
+}
+/* line 44, ../sass/gmp.scss */
+.ta-post:focus {
+  outline: none;
+}
+
+/* line 52, ../sass/gmp.scss */
+.ta-post,
+.preview {
+  padding: 20px;
+  background-color: #fff;
+}
