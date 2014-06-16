@@ -549,7 +549,7 @@ body {
 /* line 30, ../sass/gmp.scss */
 .post-half,
 .form form,
-.ta-post,
+.editor,
 .preview {
   height: 100%;
   -webkit-box-sizing: border-box;
