@@ -25,7 +25,6 @@ body{
 	bottom: 20px;
 }
 .post-half,
-.form form,
 .editor,
 .preview{
 	height: 100%;
@@ -39,17 +38,10 @@ body{
 		float: right;
 	}
 }
-.ta-post{
-	border: none;
-	&:focus{
-		outline: none;
-	}
-	resize: none;
-	margin: 0;
-	width: 100%;
-}
-.ta-post,
 .preview{
 	padding: 20px;
 	background-color: #fff;
+}
+.ta-editor-value{
+	display: none;
 }

@@ -8,7 +8,7 @@ var gmpApp = angular.module('gmpApp', [
 gmpApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
-			title: 'GMP - 百卓前端规范及框架',
+			title: '百卓前端规范及框架',
 			templateUrl: 'views/guide.html',
 			controller: 'guideCtrl'
 		})
@@ -25,4 +25,10 @@ gmpApp.config(['$routeProvider', function($routeProvider){
 		.otherwise({
 			redirectTo: '/'
 		});
+}]);
+
+gmpApp.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+    });
 }]);

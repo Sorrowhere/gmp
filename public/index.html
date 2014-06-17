@@ -8,7 +8,7 @@
 <body>
 
 
-	<div class="wrap" ng-view></div>
+<div class="wrap" ng-view></div>
 
 <script src="lib/angular/angular.min.js"></script>
 <script src="lib/angular/angular-route.min.js"></script>
@@ -17,17 +17,51 @@
 <script src="js/services.js"></script>
 <script src="js/controllers.js"></script>
 
+<script src="lib/jquery-1.11.1.min.js"></script>
 <!-- ace editor -->
 <script src="lib/ace/ace.js"></script>
 <script src="lib/ace/mode-markdown.js"></script>
 <script src="lib/ace/theme-chrome.js"></script>
+<script src="lib/ace/ext-language_tools.js"></script>
+<script src="lib/ace/snippets/markdown.js"></script>
 <script>
 	window.onload = function(){
 		var editor = ace.edit('editor');
 		editor.getSession().setMode('ace/mode/markdown');
 		editor.setTheme('ace/theme/chrome');
+
+		console.log(editor);
+
+		editor.setShowInvisibles(true);
+
+	    ace.config.loadModule("ace/ext/language_tools", function() {
+	        editor.setOptions({
+	            enableSnippets: true,
+	            enableBasicAutocompletion: true
+	        });
+	    });
+
+	    var postValue;
+	    var taMiddle = $('#taMiddle');
+	    var postPreview = $('#postPreview');
+	    editor.on('change', function(){
+	    	postValue = editor.getValue();
+	    	console.log(postValue);
+	    	// taMiddle.text(postValue).trigger('change');
+	    	$.ajax({
+	    		type: 'post',
+	    		url: '/preview',
+	    		data: { "content": postValue },
+	    		success: function(data){
+	    			postPreview.html(data.content);
+	    		}
+	    	})
+	    });
+
+	    taMiddle.on('change', function(){
+	    	console.log('change');
+	    })
 	}
-	
 </script>
 </body>
 </html>

@@ -24,12 +24,6 @@ function route(app){
 		});
 	});
 
-	// post page
-	router.get('/post', function(req, res){
-		// init editor
-		res.sendfile('../post.html');
- 
-	});
 
 	app.use('/', router);
 }

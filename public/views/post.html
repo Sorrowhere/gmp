@@ -1,11 +1,11 @@
 <div class="post">
 	<div class="post-half form">
-		<!-- <form novalidate name="postForm">
-			<textarea class="ta-post" name="" id="taPost" cols="30" rows="10" ng-model="mark.content" ng-keyup="keyUp($event)"></textarea>
-		</form> -->
+		<form novalidate name="postForm">
+			<textarea name="" id="taMiddle" cols="30" rows="10" ng-model="mark.content" ng-change="postChange($event)" class="ta-editor-value"></textarea>
+		</form>
 		<div id="editor" class="editor"></div>
 	</div>
 	<div class="post-half">
-		<div class="preview" ng-bind-html="html.content"></div>
+		<div class="preview" id="postPreview"></div>
 	</div>
 </div>

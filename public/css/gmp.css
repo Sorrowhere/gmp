@@ -15,9 +15,8 @@ body {
   bottom: 20px;
 }
 
-/* line 30, ../sass/gmp.scss */
+/* line 29, ../sass/gmp.scss */
 .post-half,
-.form form,
 .editor,
 .preview {
   height: 100%;
@@ -26,32 +25,24 @@ body {
   box-sizing: border-box;
 }
 
-/* line 34, ../sass/gmp.scss */
+/* line 33, ../sass/gmp.scss */
 .post-half {
   width: 48%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 38, ../sass/gmp.scss */
+/* line 37, ../sass/gmp.scss */
 .post-half:last-child {
   float: right;
 }
 
-/* line 42, ../sass/gmp.scss */
-.ta-post {
-  border: none;
-  resize: none;
-  margin: 0;
-  width: 100%;
-}
-/* line 44, ../sass/gmp.scss */
-.ta-post:focus {
-  outline: none;
-}
-
-/* line 52, ../sass/gmp.scss */
-.ta-post,
+/* line 41, ../sass/gmp.scss */
 .preview {
   padding: 20px;
   background-color: #fff;
+}
+
+/* line 45, ../sass/gmp.scss */
+.ta-editor-value {
+  display: none;
 }
