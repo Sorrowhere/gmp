@@ -10,7 +10,7 @@ $bgColor: #ecf0f5;
 // base
 // ========================================
 body{
-	font: 14px/1.5 'Microsoft Yahei',arial, sans-serif;
+	font: 12px/1.5 arial, sans-serif;
 	color: $textColor;
 	background-color: #fafafa
 }
@@ -22,7 +22,7 @@ body{
 	top: 20px;
 	left: 20px;
 	right: 20px;
-	bottom: 20px;
+	bottom: 60px;
 }
 .post-half,
 .editor,
@@ -44,4 +44,11 @@ body{
 }
 .ta-editor-value{
 	display: none;
+}
+.post-submit{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 10px 20px;
 }

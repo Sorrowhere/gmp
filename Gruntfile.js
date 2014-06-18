@@ -37,7 +37,8 @@ module.exports = function(grunt){
 					'public/css/base/reset.css',
 					'public/css/ui/font.css',
 					'public/css/ui/button.css',
-					'public/css/gmp.css'
+					'public/css/gmp.css',
+					'public/css/highlight/github.css'
 				],
 				dest: 'public/css/bundle.css'
 			}

@@ -1,6 +1,6 @@
 /* line 12, ../sass/gmp.scss */
 body {
-  font: 14px/1.5 'Microsoft Yahei',arial, sans-serif;
+  font: 12px/1.5 arial, sans-serif;
   color: #333333;
   background-color: #fafafa;
 }
@@ -12,7 +12,7 @@ body {
   top: 20px;
   left: 20px;
   right: 20px;
-  bottom: 20px;
+  bottom: 60px;
 }
 
 /* line 29, ../sass/gmp.scss */
@@ -45,4 +45,13 @@ body {
 /* line 45, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
+}
+
+/* line 48, ../sass/gmp.scss */
+.post-submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
 }

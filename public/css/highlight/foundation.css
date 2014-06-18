@@ -1,0 +1,159 @@
+/*
+Description: Foundation 4 docs style for highlight.js
+Author: Dan Allen <dan.j.allen@gmail.com>
+Website: http://foundation.zurb.com/docs/
+Version: 1.0
+Date: 2013-04-02
+*/
+/* line 9, ../../sass/highlight/foundation.scss */
+.hljs {
+  display: block;
+  padding: 0.5em;
+  background: #eee;
+  font-family: "PT Mono", Menlo, "Courier New", monospace;
+}
+
+/* line 18, ../../sass/highlight/foundation.scss */
+.hljs-header,
+.hljs-decorator,
+.hljs-annotation {
+  color: #000077;
+}
+
+/* line 25, ../../sass/highlight/foundation.scss */
+.hljs-horizontal_rule,
+.hljs-link_url,
+.hljs-emphasis,
+.hljs-attribute {
+  color: #070;
+}
+
+/* line 29, ../../sass/highlight/foundation.scss */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* line 37, ../../sass/highlight/foundation.scss */
+.hljs-link_label,
+.hljs-strong,
+.hljs-value,
+.hljs-string,
+.scss .hljs-value .hljs-string {
+  color: #d14;
+}
+
+/* line 41, ../../sass/highlight/foundation.scss */
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* line 46, ../../sass/highlight/foundation.scss */
+.hljs-blockquote,
+.hljs-comment {
+  color: #998;
+  font-style: italic;
+}
+
+/* line 52, ../../sass/highlight/foundation.scss */
+.asciidoc .hljs-title,
+.hljs-function .hljs-title {
+  color: #900;
+}
+
+/* line 56, ../../sass/highlight/foundation.scss */
+.hljs-class {
+  color: #458;
+}
+
+/* line 63, ../../sass/highlight/foundation.scss */
+.hljs-id,
+.hljs-pseudo,
+.hljs-constant,
+.hljs-hexcolor {
+  color: teal;
+}
+
+/* line 67, ../../sass/highlight/foundation.scss */
+.hljs-variable {
+  color: #336699;
+}
+
+/* line 72, ../../sass/highlight/foundation.scss */
+.hljs-bullet,
+.hljs-javadoc {
+  color: #997700;
+}
+
+/* line 77, ../../sass/highlight/foundation.scss */
+.hljs-pi,
+.hljs-doctype {
+  color: #3344bb;
+}
+
+/* line 82, ../../sass/highlight/foundation.scss */
+.hljs-code,
+.hljs-number {
+  color: #099;
+}
+
+/* line 86, ../../sass/highlight/foundation.scss */
+.hljs-important {
+  color: #f00;
+}
+
+/* line 91, ../../sass/highlight/foundation.scss */
+.smartquote,
+.hljs-label {
+  color: #970;
+}
+
+/* line 96, ../../sass/highlight/foundation.scss */
+.hljs-preprocessor,
+.hljs-pragma {
+  color: #579;
+}
+
+/* line 102, ../../sass/highlight/foundation.scss */
+.hljs-reserved,
+.hljs-keyword,
+.scss .hljs-value {
+  color: #000;
+}
+
+/* line 106, ../../sass/highlight/foundation.scss */
+.hljs-regexp {
+  background-color: #fff0ff;
+  color: #880088;
+}
+
+/* line 111, ../../sass/highlight/foundation.scss */
+.hljs-symbol {
+  color: #990073;
+}
+
+/* line 115, ../../sass/highlight/foundation.scss */
+.hljs-symbol .hljs-string {
+  color: #a60;
+}
+
+/* line 119, ../../sass/highlight/foundation.scss */
+.hljs-tag {
+  color: #007700;
+}
+
+/* line 124, ../../sass/highlight/foundation.scss */
+.hljs-at_rule,
+.hljs-at_rule .hljs-keyword {
+  color: #088;
+}
+
+/* line 128, ../../sass/highlight/foundation.scss */
+.hljs-at_rule .hljs-preprocessor {
+  color: #808;
+}
+
+/* line 133, ../../sass/highlight/foundation.scss */
+.scss .hljs-tag,
+.scss .hljs-attribute {
+  color: #339;
+}

@@ -101,7 +101,7 @@ a.btn:hover {
   font-size: 14px;
 }
 
-/* line 99, ../../sass/ui/button.scss */
+/* line 102, ../../sass/ui/button.scss */
 button.btn-small,
 input.btn-small {
   height: 32px;
@@ -112,16 +112,17 @@ input.btn-small {
   height: 40px;
   line-height: 40px;
   padding: 0 40px;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: arial, 'Microsoft Yahei', sans-serif;
 }
 
-/* line 99, ../../sass/ui/button.scss */
+/* line 102, ../../sass/ui/button.scss */
 button.btn-big,
 input.btn-big {
   height: 42px;
 }
 
-/* line 105, ../../sass/ui/button.scss */
+/* line 108, ../../sass/ui/button.scss */
 .disabled,
 .disabled:hover {
   background-color: #e0e0e0;
@@ -130,7 +131,7 @@ input.btn-big {
   opacity: .8;
 }
 
-/* line 111, ../../sass/ui/button.scss */
+/* line 114, ../../sass/ui/button.scss */
 a.disabled {
   color: #999999;
 }

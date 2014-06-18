@@ -1,10 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="gmpApp">
 <head>
 	<meta charset="UTF-8">
 	<title>创建文档</title>
+	<link rel="stylesheet" href="/css/bundle.css">
 </head>
 <body>
-	
+
+
+<div class="wrap">
+	<div class="post">
+		<div class="post-half form">
+			<div id="editor" class="editor"></div>
+		</div>
+		<div class="post-half">
+			<div class="preview" id="postPreview"></div>
+		</div>
+	</div>
+	<div class="post-submit">
+		<span class="btn btn-big btn-blue" id="postSave">保存</span>
+	</div>
+</div>
+
+<script src="lib/jquery-1.11.1.min.js"></script>
+<!-- ace editor -->
+<script src="lib/ace/ace.js"></script>
+<script src="lib/ace/mode-markdown.js"></script>
+<script src="lib/ace/theme-chrome.js"></script>
+<script src="lib/ace/ext-language_tools.js"></script>
+<script src="lib/ace/snippets/markdown.js"></script>
+<script src="js/post.js"></script>
 </body>
 </html>

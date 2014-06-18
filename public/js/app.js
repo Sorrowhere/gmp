@@ -12,11 +12,11 @@ gmpApp.config(['$routeProvider', function($routeProvider){
 			templateUrl: 'views/guide.html',
 			controller: 'guideCtrl'
 		})
-		.when('/post', {
-			title: '创建文档',
-			templateUrl: 'views/post.html',
-			controller: 'postCtrl'
-		})
+		// .when('/post', {
+		// 	title: '创建文档',
+		// 	templateUrl: 'views/post.html',
+		// 	controller: 'postCtrl'
+		// })
 		.when('/list', {
 			title: '文档列表',
 			templateUrl: 'views/list.html',
