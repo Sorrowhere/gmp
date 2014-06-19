@@ -14,9 +14,17 @@ body{
 	color: $textColor;
 	background-color: #fafafa
 }
-
-// post page
-.post{
+input, select, textarea, button{
+	outline: none;
+	font: inherit;
+}
+// common
+.required{
+	color: $red;
+	margin-right: 5px;
+}
+// new page 
+.page{
 	overflow: hidden;
 	position: fixed;
 	top: 20px;
@@ -24,13 +32,13 @@ body{
 	right: 20px;
 	bottom: 60px;
 }
-.post-half,
+.page-half,
 .editor,
 .preview{
 	height: 100%;
 	@include box-sizing(border-box);
 }
-.post-half{
+.page-half{
 	width: 48%;
 	float: left;
 	border: 1px solid $borderColor;
@@ -45,10 +53,28 @@ body{
 .ta-editor-value{
 	display: none;
 }
-.post-submit{
+.page-submit{
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	padding: 10px 20px;
+	background-color: #e8edf2;
+	border-top: 1px solid #ced9e5;
+	label{
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 15px;
+		input{
+			@include box-sizing(border-box);
+			@include border-radius(3px);
+			width: 190px;
+			height: 40px;
+			padding: 0 10px;
+			border: 1px solid #ccc;
+			&:focus{
+				border-color: #267dce;
+			}
+		}
+	}
 }

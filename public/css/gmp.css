@@ -5,8 +5,20 @@ body {
   background-color: #fafafa;
 }
 
-/* line 19, ../sass/gmp.scss */
-.post {
+/* line 17, ../sass/gmp.scss */
+input, select, textarea, button {
+  outline: none;
+  font: inherit;
+}
+
+/* line 22, ../sass/gmp.scss */
+.required {
+  color: #db2c3b;
+  margin-right: 5px;
+}
+
+/* line 27, ../sass/gmp.scss */
+.page {
   overflow: hidden;
   position: fixed;
   top: 20px;
@@ -15,8 +27,8 @@ body {
   bottom: 60px;
 }
 
-/* line 29, ../sass/gmp.scss */
-.post-half,
+/* line 37, ../sass/gmp.scss */
+.page-half,
 .editor,
 .preview {
   height: 100%;
@@ -25,33 +37,58 @@ body {
   box-sizing: border-box;
 }
 
-/* line 33, ../sass/gmp.scss */
-.post-half {
+/* line 41, ../sass/gmp.scss */
+.page-half {
   width: 48%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 37, ../sass/gmp.scss */
-.post-half:last-child {
+/* line 45, ../sass/gmp.scss */
+.page-half:last-child {
   float: right;
 }
 
-/* line 41, ../sass/gmp.scss */
+/* line 49, ../sass/gmp.scss */
 .preview {
   padding: 20px;
   background-color: #fff;
 }
 
-/* line 45, ../sass/gmp.scss */
+/* line 53, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 48, ../sass/gmp.scss */
-.post-submit {
+/* line 56, ../sass/gmp.scss */
+.page-submit {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 10px 20px;
+  background-color: #e8edf2;
+  border-top: 1px solid #ced9e5;
+}
+/* line 64, ../sass/gmp.scss */
+.page-submit label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+/* line 68, ../sass/gmp.scss */
+.page-submit label input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 190px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+}
+/* line 75, ../sass/gmp.scss */
+.page-submit label input:focus {
+  border-color: #267dce;
 }

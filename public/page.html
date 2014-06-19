@@ -2,23 +2,29 @@
 <html lang="en" ng-app="gmpApp">
 <head>
 	<meta charset="UTF-8">
-	<title>创建文档</title>
+	<title>创建页面</title>
 	<link rel="stylesheet" href="/css/bundle.css">
 </head>
 <body>
 
 
 <div class="wrap">
-	<div class="post">
-		<div class="post-half form">
+	<div class="page">
+		<div class="page-half form">
 			<div id="editor" class="editor"></div>
 		</div>
-		<div class="post-half">
-			<div class="preview" id="postPreview"></div>
+		<div class="page-half">
+			<div class="preview" id="pagePreview"></div>
 		</div>
 	</div>
-	<div class="post-submit">
-		<span class="btn btn-big btn-blue" id="postSave">保存</span>
+	<div class="page-submit">
+		<label>
+			<span class="required">*</span>页面名称：<input type="text" name="pageName" id="pageName">
+		</label>
+		<label>
+			<span class="required">*</span>页面标题：<input type="text" name="pageTitle" id="pageTitle">
+		</label>
+		<span class="btn btn-big btn-blue" id="pageSave">保存</span>
 	</div>
 </div>
 
@@ -29,6 +35,6 @@
 <script src="lib/ace/theme-chrome.js"></script>
 <script src="lib/ace/ext-language_tools.js"></script>
 <script src="lib/ace/snippets/markdown.js"></script>
-<script src="js/post.js"></script>
+<script src="js/page.js"></script>
 </body>
 </html>

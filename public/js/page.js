@@ -28,37 +28,41 @@
 	        });
 	    });
 
-	    var postValue;
+	    var pageValue;
 	    var taMiddle = $('#taMiddle');
-	    var postPreview = $('#postPreview');
+	    var pagePreview = $('#pagePreview');
 	    editor.on('change', function(){
-	    	postValue = editor.getValue();
+	    	pageValue = editor.getValue();
 	    	// taMiddle.text(postValue).trigger('change');
 	    	$.ajax({
 	    		type: 'post',
 	    		url: '/preview',
-	    		data: { "content": postValue },
+	    		data: { "content": pageValue },
 	    		success: function(data){
-	    			postPreview.html(data.content);
+	    			pagePreview.html(data.content);
 	    		}
 	    	});
 	    });
 
 	    // save handler
-		$('#postSave').on('click', function(){
+		$('#pageSave').on('click', function(){
 			//
-			var markContent = postValue;
-			var htmlContent = postPreview.html();
+			var markContent = pageValue;
+			var htmlContent = pagePreview.html();
+			var pageName = $('#pageName').val();
+			var pageTitle = $('#pageTitle').val();
 			if($.trim(markContent).length == 0){
 				return false;
 			}
 
 			$.ajax({
 				type: 'post',
-				url: '/post',
+				url: '/page',
 				data: {
 					"markContent": markContent,
-					"htmlContent": htmlContent
+					"htmlContent": htmlContent,
+					"pageName": pageName,
+					"pageTitle": pageTitle
 				},
 				success: function(data){
 					// 

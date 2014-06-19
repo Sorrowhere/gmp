@@ -3,6 +3,7 @@ var router = express.Router();
 var marked = require('marked');
 var renderer = new marked.Renderer();
 var hljs = require('highlight.js');
+var fs = require('fs');
 
 marked.setOptions({
 	langPrefix: 'hljs ',
@@ -17,9 +18,9 @@ function route(app){
 		res.sendfile('../index.html');
 	});
 
-	// post
-	router.get('/post', function(req, res){
-		res.redirect('../post.html');
+	// page
+	router.get('/page', function(req, res){
+		res.redirect('../page.html');
 	});
 
 	// preview
@@ -44,8 +45,8 @@ function route(app){
 		});
 	});
 
-	// save post
-	router.post('/post', function(req, res){
+	// save page
+	router.post('/page', function(req, res){
 		var markContent = req.body.htmlContent;
 		console.log(markContent);
 	});
