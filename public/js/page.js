@@ -64,8 +64,11 @@
 					"pageName": pageName,
 					"pageTitle": pageTitle
 				},
+				beforeSend: function(){
+					$('#loading').css('display', 'inline-block');
+				},
 				success: function(data){
-					// 
+					$('#loading').css('display', 'none');
 				}
 			});
 		});

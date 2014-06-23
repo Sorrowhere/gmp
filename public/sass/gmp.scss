@@ -18,6 +18,9 @@ input, select, textarea, button{
 	outline: none;
 	font: inherit;
 }
+img{
+	vertical-align: middle;
+}
 // common
 .required{
 	color: $red;
@@ -75,6 +78,24 @@ input, select, textarea, button{
 			&:focus{
 				border-color: #267dce;
 			}
+		}
+	}
+	.loading{
+		display: inline-block;
+		margin: 10px;
+		vertical-align: middle;
+		font-size: 14px;
+		font-family: $fontYahei;
+		font-style: italic;
+		color: $gray;
+		margin-left: 10px;
+		display: none;
+		&,img{
+			height: 16px;
+		}
+		img{
+			width: 16px;
+			margin-top: -2px;
 		}
 	}
 }

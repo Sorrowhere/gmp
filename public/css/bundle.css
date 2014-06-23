@@ -543,13 +543,18 @@ input, select, textarea, button {
   font: inherit;
 }
 
-/* line 22, ../sass/gmp.scss */
+/* line 21, ../sass/gmp.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 25, ../sass/gmp.scss */
 .required {
   color: #db2c3b;
   margin-right: 5px;
 }
 
-/* line 27, ../sass/gmp.scss */
+/* line 30, ../sass/gmp.scss */
 .page {
   overflow: hidden;
   position: fixed;
@@ -559,7 +564,7 @@ input, select, textarea, button {
   bottom: 60px;
 }
 
-/* line 37, ../sass/gmp.scss */
+/* line 40, ../sass/gmp.scss */
 .page-half,
 .editor,
 .preview {
@@ -569,29 +574,29 @@ input, select, textarea, button {
   box-sizing: border-box;
 }
 
-/* line 41, ../sass/gmp.scss */
+/* line 44, ../sass/gmp.scss */
 .page-half {
   width: 48%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 45, ../sass/gmp.scss */
+/* line 48, ../sass/gmp.scss */
 .page-half:last-child {
   float: right;
 }
 
-/* line 49, ../sass/gmp.scss */
+/* line 52, ../sass/gmp.scss */
 .preview {
   padding: 20px;
   background-color: #fff;
 }
 
-/* line 53, ../sass/gmp.scss */
+/* line 56, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 56, ../sass/gmp.scss */
+/* line 59, ../sass/gmp.scss */
 .page-submit {
   position: fixed;
   bottom: 0;
@@ -601,13 +606,13 @@ input, select, textarea, button {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 64, ../sass/gmp.scss */
+/* line 67, ../sass/gmp.scss */
 .page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 68, ../sass/gmp.scss */
+/* line 71, ../sass/gmp.scss */
 .page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -620,9 +625,30 @@ input, select, textarea, button {
   padding: 0 10px;
   border: 1px solid #ccc;
 }
-/* line 75, ../sass/gmp.scss */
+/* line 78, ../sass/gmp.scss */
 .page-submit label input:focus {
   border-color: #267dce;
+}
+/* line 83, ../sass/gmp.scss */
+.page-submit .loading {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  font-family: "Microsoft Yahei";
+  font-style: italic;
+  color: #666666;
+  margin-left: 10px;
+  display: none;
+}
+/* line 93, ../sass/gmp.scss */
+.page-submit .loading, .page-submit .loading img {
+  height: 16px;
+}
+/* line 96, ../sass/gmp.scss */
+.page-submit .loading img {
+  width: 16px;
+  margin-top: -2px;
 }
 
 /* line 7, ../../sass/highlight/github.scss */

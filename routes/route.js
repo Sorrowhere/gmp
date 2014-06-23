@@ -58,6 +58,9 @@ function route(app){
 		fs.writeFileSync(path.join(folderPath + pageName + '.html'), tempFile, 'utf8');
 
 		// console.log(marked);
+		res.json({
+			msg: 1
+		});
 	});
 
 
