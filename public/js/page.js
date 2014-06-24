@@ -33,7 +33,7 @@
 	    var pagePreview = $('#pagePreview');
 	    editor.on('change', function(){
 	    	pageValue = editor.getValue();
-	    	// taMiddle.text(postValue).trigger('change');
+	    	
 	    	$.ajax({
 	    		type: 'post',
 	    		url: '/preview',
@@ -46,7 +46,6 @@
 
 	    // save handler
 		$('#pageSave').on('click', function(){
-			//
 			var markContent = pageValue;
 			var htmlContent = pagePreview.html();
 			var pageName = $('#pageName').val();

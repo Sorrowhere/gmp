@@ -16,12 +16,15 @@ marked.setOptions({
 function route(app){
 	// index
 	router.get('/', function(req, res){
-		res.sendfile('../index.html');
+		// res.sendfile('../index.html');
+		fs.readFile('../index.html', 'utf8', function(err, text){
+			res.send(text);
+		});
 	});
 
 	// page
 	router.get('/page', function(req, res){
-		res.redirect('../page.html');
+		res.sendfile('../page.html');
 	});
 
 	// preview
@@ -94,15 +97,21 @@ function route(app){
 	docs.forEach(function(value, index, arr){
 		var docName = value.split('.')[0];
 		router.get('/doc/' + docName, function(req, res){
-			console.log(path.join(__dirname, '../doc/' + docName + '.html'));
-			res.redirect(path.join(__dirname, '../doc/' + docName + '.html'));
+			fs.readFile(path.join(__dirname, '../doc/' + docName + '.html'), 'utf8', function(err, text){
+				res.send(text);
+			});
 		});
 	});
 
 	// router.get('/doc/test', function(req, res){
 	// 	// console.log(path.join(__dirname, '../doc'));
 	// 	// res.redirect('../test.html');
-	// 	res.redirect(path.join(__dirname, '../doc/test.html'));
+	// 	// res.redirect(path.join(__dirname, '../doc/button.html'));
+	// 	// res.render('test.html');
+	// 	fs.readFile(path.join(__dirname, '../doc/test.html'), 'utf8', function(err, text){
+	// 		res.send(text);
+	// 	});
+
 	// });
 
 	app.use('/', router);

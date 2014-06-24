@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+// app.set('view engine', 'html');
+// app.set('views', __dirname + '/doc');
 
 // router
 routes.route(app);
