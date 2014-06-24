@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var marked = require('marked');
-var renderer = new marked.Renderer();
 var hljs = require('highlight.js');
 var fs = require('fs');
 var path = require('path');
+var cheerio = require('cheerio');
 
 marked.setOptions({
 	langPrefix: 'hljs ',
@@ -26,6 +26,7 @@ function route(app){
 
 	// preview
 	router.post('/preview', function(req, res){
+		var renderer = new marked.Renderer();
 		var markContent = req.body.content;
 		// console.log(req.body.content);
 
@@ -43,26 +44,66 @@ function route(app){
 
 	// save page
 	router.post('/page', function(req, res){
+		// params
 		var htmlContent = req.body.htmlContent;
+		var markContent = req.body.markContent;
 		var	pageName = req.body.pageName;
-		var	folderPath = path.join(__dirname, '../doc/');
-		var	tempHeader = fs.readFileSync(folderPath + 'layout/header.html', 'utf8');
-		var	tempFooter = fs.readFileSync(folderPath + 'layout/footer.html', 'utf8');
+		var pageTitle = req.body.pageTitle;
+
+		// read page layout
+		var	layoutPath = path.join(__dirname, '../public/layout/');
+		var docPath = path.join(__dirname, '../doc/');
+		var sourcePath = path.join(__dirname, '../source/');
+		var	tempHeader = fs.readFileSync(layoutPath + 'header.html', 'utf8');
+		var	tempFooter = fs.readFileSync(layoutPath + 'footer.html', 'utf8');
+
+		// page content
 		var tempFile = tempHeader + htmlContent + tempFooter;
 
-		var tempFilePath = folderPath + pageName + '.html';
 
-		// if a file is existed
-		// var fileExisted = fs.existsSync(path);
+		// set page title
+		var $ = cheerio.load(tempFile);
+		$('title').text(pageTitle);
 
-		fs.writeFileSync(path.join(folderPath + pageName + '.html'), tempFile, 'utf8');
+		// write page meta to pages.json
+		var pages = fs.readFileSync(sourcePath + 'pages.json', 'utf8');
+		var pagesJSON = JSON.parse(pages);
+		pagesJSON.push({
+			"pageName": pageName,
+			"pageTitle": pageTitle
+		});
+		// console.log(pagesJSON);
+		fs.writeFileSync(sourcePath + 'pages.json', JSON.stringify(pagesJSON), 'utf8');
 
-		// console.log(marked);
+
+		// save markdown file
+		fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
+
+		// save html file
+		fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
+
+
+		// return result
 		res.json({
 			msg: 1
 		});
 	});
 
+	// docs route
+	var docs = fs.readdirSync(path.join(__dirname, '../doc'));
+	docs.forEach(function(value, index, arr){
+		var docName = value.split('.')[0];
+		router.get('/doc/' + docName, function(req, res){
+			console.log(path.join(__dirname, '../doc/' + docName + '.html'));
+			res.redirect(path.join(__dirname, '../doc/' + docName + '.html'));
+		});
+	});
+
+	// router.get('/doc/test', function(req, res){
+	// 	// console.log(path.join(__dirname, '../doc'));
+	// 	// res.redirect('../test.html');
+	// 	res.redirect(path.join(__dirname, '../doc/test.html'));
+	// });
 
 	app.use('/', router);
 }
