@@ -5,6 +5,7 @@ var hljs = require('highlight.js');
 var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
+var htmlRenderer = require('./html-renderer.js');
 
 marked.setOptions({
 	langPrefix: 'hljs ',
@@ -14,18 +15,19 @@ marked.setOptions({
 });
 
 function route(app){
-	// index
-	router.get('/', function(req, res){
-		// res.sendfile('../index.html');
-		fs.readFile('../index.html', 'utf8', function(err, text){
-			res.send(text);
-		});
+
+	// page create
+	router.get('/page/:pageName?', function(req, res){
+		// res.sendfile('../page.html');
+		htmlRenderer.render(path.join(__dirname, '../public/page.html'), res);
 	});
 
-	// page
-	router.get('/page', function(req, res){
-		res.sendfile('../page.html');
+	// page detail
+	router.get('/page/detail/:pageName', function(req, res){
+		var pageName = req.params.pageName;
+		console.log(pageName);
 	});
+
 
 	// preview
 	router.post('/preview', function(req, res){
@@ -92,27 +94,19 @@ function route(app){
 		});
 	});
 
-	// docs route
-	var docs = fs.readdirSync(path.join(__dirname, '../doc'));
-	docs.forEach(function(value, index, arr){
-		var docName = value.split('.')[0];
-		router.get('/doc/' + docName, function(req, res){
-			fs.readFile(path.join(__dirname, '../doc/' + docName + '.html'), 'utf8', function(err, text){
-				res.send(text);
-			});
-		});
+	// page list
+	router.get('/list', function(req, res){
+		// read page map
+		var pages = fs.readFileSync(path.join(__dirname, '../source/pages.json'), 'utf8');
+		var pagesJSON = JSON.parse(pages);
+		console.log(pagesJSON);
+		res.json(pagesJSON);
 	});
 
-	// router.get('/doc/test', function(req, res){
-	// 	// console.log(path.join(__dirname, '../doc'));
-	// 	// res.redirect('../test.html');
-	// 	// res.redirect(path.join(__dirname, '../doc/button.html'));
-	// 	// res.render('test.html');
-	// 	fs.readFile(path.join(__dirname, '../doc/test.html'), 'utf8', function(err, text){
-	// 		res.send(text);
-	// 	});
-
-	// });
+	// index
+	router.get('/', function(req, res){
+		res.sendfile('../index.html');
+	});
 
 	app.use('/', router);
 }

@@ -4,11 +4,30 @@
 	<meta charset="UTF-8">
 	<title ng-bind="title"></title>
 	<link rel="stylesheet" href="/css/bundle.css">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> -->
 </head>
 <body>
+	<div class="gmp-header-wrap">
+		<div class="gmp-layout">
+			<div class="gmp-header">
+				<a href="" class="logo">GMP</a>
+				<div class="gmp-menu">
+					<ul class="gmp-menu-lst">
+						<li ng-class="{active: path=='guide'}"><a href="/">GUIDE</a></li>
+						<li ng-class="{active: path=='list'}"><a href="#/page/list">页面管理</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<div class="gmp-layout">
+		<div class="gmp-content" ng-view></div>
+	</div>
 
-<div class="wrap" ng-view></div>
+	<div class="gmp-footer">
+		<p>&copy;RDC Deved by liw.</p>
+	</div>
 
 <script src="lib/angular/angular.min.js"></script>
 <script src="lib/angular/angular-route.min.js"></script>

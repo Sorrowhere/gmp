@@ -1,6 +1,5 @@
 (function($){ 
 	window.onload = function(){
-
 		// editor init
 		var editor = ace.edit('editor');
 		var session = editor.session;
@@ -71,5 +70,18 @@
 				}
 			});
 		});
+
+		// edit
+		var url = window.location.pathname;
+		if(url.indexOf('/:')!==0){
+			// fetch init content
+			$.ajax({
+				type: 'get',
+				url: '/page/detail/' + url.substring(url.indexOf('/:') + 1),
+				success: function(data){
+					// 
+				}
+			});
+		}
 	}
 })(jQuery);

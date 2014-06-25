@@ -10,12 +10,17 @@ gmpApp.config(['$routeProvider', function($routeProvider){
 		.when('/', {
 			title: '百卓前端规范及框架',
 			templateUrl: 'views/guide.html',
-			controller: 'guideCtrl'
+			controller: 'guideCtrl',
+			path: 'guide'
 		})
 		.when('/list', {
-			title: '文档列表',
+			title: '页面管理',
 			templateUrl: 'views/list.html',
-			controller: 'postCtrl'
+			controller: 'pageCtrl',
+			path: 'list'
+		})
+		.when('/page', {
+			redirect: '/page'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -25,5 +30,6 @@ gmpApp.config(['$routeProvider', function($routeProvider){
 gmpApp.run(['$location', '$rootScope', function($location, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         $rootScope.title = current.$$route.title;
+        $rootScope.path = current.$$route.path;
     });
 }]);

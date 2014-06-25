@@ -1,0 +1,27 @@
+<table class="gmp-tb">
+	<colgroup>
+		<col>
+		<col>
+		<col width=200>
+	</colgroup>
+	<thead>
+		<tr>
+			<th>页面名称</th>
+			<th>页面标题</th>
+			<th class="td-act">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="page in pages">
+			<td ng-bind="page.pageName"></td>
+			<td ng-bind="page.pageTitle"></td>
+			<td class="td-act">
+				<a target="_blank" href="/page/{{page.pageName}}">编辑</a>
+				<a href="" ng-click="pageDelete(page.pageName)">删除</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="gmp-new-page">
+	<a href="/page" class="btn btn-big btn-blue">创建页面</a>
+</div>
