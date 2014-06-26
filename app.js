@@ -4,9 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var routes = require('./routes/route.js');
-var docRoutes = require('./routes/doc-route.js');
-var ejs = require('ejs');
+var routes = require('./app/route.js');
+var docRoutes = require('./app/doc-route.js');
 
 var app = express();
 var port = process.env.PORT || 3000;

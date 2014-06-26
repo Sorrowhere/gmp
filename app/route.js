@@ -5,6 +5,7 @@ var hljs = require('highlight.js');
 var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
+var Page = require('./model/Page.js').Page;
 
 marked.setOptions({
 	langPrefix: 'hljs ',
@@ -13,49 +14,21 @@ marked.setOptions({
 	}
 });
 
-// pages map object
-var Pages = function(){
-	this.pages = fs.readFileSync(path.join(__dirname, '../source/pages.json'), 'utf8');
-	this.pagesJSON = JSON.parse(this.pages);
-}
-Pages.prototype = {
-	add: function(item){
-		this.pagesJSON.push(item);
-	},
-	get: function(){
-		return this.pagesJSON;
-	},
-	getString: function(){
-		return this.pages;
-	},
-	exist: function(pageName){
-		var resultArray = this.pagesJSON.filter(function(elem, index, arr){
-			return elem.pageName == pageName;
-		});
-		return resultArray.length > 0;
-	},
-	remove: function(pageName){
-		var result = this.pagesJSON.findIndex(function(elem, index, arr){
-			return elem.pageName == pageName;
-		});
-		// return this.pagesJSON.indexOf(result);
-		return result;
-	}
-}
+
 
 function route(app){
 
 	// page create
-	router.get('/page/:pageName?', function(req, res){
+	router.get('/page/:key?', function(req, res){
 		// res.sendfile('../page.html');
 		var data = fs.readFileSync(path.join(__dirname, '../public/page.html'), 'utf8');
 		res.send(data);
 	});
 
 	// page detail
-	router.get('/page/detail/:pageName', function(req, res){
-		var pageName = req.params.pageName;
-		console.log(pageName);
+	router.get('/page/detail/:key', function(req, res){
+		var key = req.params.key;
+		console.log(key);
 	});
 
 
@@ -102,27 +75,16 @@ function route(app){
 		var $ = cheerio.load(tempFile);
 		$('title').text(pageTitle);
 
-		// // write page meta to pages.json
-		// var pages = fs.readFileSync(sourcePath + 'pages.json', 'utf8');
-		// var pagesJSON = JSON.parse(pages);
-		// pagesJSON.push({
-		// 	"pageName": pageName,
-		// 	"pageTitle": pageTitle
-		// });
 
-		var pages = new Pages();
+		var page = new Page();
 
-		// console.log(pages.exist(pageName));
-		// console.log(pages.remove('test'));
-
-		pages.add({
-			"pageName": pageName,
-			"pageTitle": pageTitle
-		});
-
+		if(!page.exist(pageName)){
+			page.add({
+				"pageName": pageName,
+				"pageTitle": pageTitle
+			});
+		}
 		
-		fs.writeFileSync(sourcePath + 'pages.json', JSON.stringify(pages.pagesJSON), 'utf8');
-
 
 		// save markdown file
 		fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
@@ -140,8 +102,8 @@ function route(app){
 	// page list
 	router.get('/list', function(req, res){
 		// read page map
-		var pages = fs.readFileSync(path.join(__dirname, '../source/pages.json'), 'utf8');
-		var pagesJSON = JSON.parse(pages);
+		var page = new Page();
+		var pagesJSON = page.get();
 		// console.log(pagesJSON);
 		res.json(pagesJSON);
 	});
