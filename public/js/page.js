@@ -72,16 +72,16 @@
 		});
 
 		// edit
-		var url = window.location.pathname;
-		if(url.indexOf('/:')!==0){
-			// fetch init content
-			$.ajax({
-				type: 'get',
-				url: '/page/detail/' + url.substring(url.indexOf('/:') + 1),
-				success: function(data){
-					// 
-				}
-			});
-		}
+		// var url = window.location.pathname;
+		// if(url.indexOf('/:')!==0){
+		// 	// fetch init content
+		// 	$.ajax({
+		// 		type: 'get',
+		// 		url: '/page/detail/' + url.substring(url.indexOf('/:') + 1),
+		// 		success: function(data){
+		// 			// 
+		// 		}
+		// 	});
+		// }
 	}
 })(jQuery);

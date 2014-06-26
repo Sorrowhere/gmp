@@ -4,16 +4,16 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var hbs = require('hbs');
 var routes = require('./routes/route.js');
 var docRoutes = require('./routes/doc-route.js');
-var debug = require('debug')('my-application');
+var ejs = require('ejs');
 
 var app = express();
 var port = process.env.PORT || 3000;
+
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 
 

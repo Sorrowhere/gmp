@@ -5,7 +5,6 @@ var hljs = require('highlight.js');
 var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
-var htmlRenderer = require('./html-renderer.js');
 
 marked.setOptions({
 	langPrefix: 'hljs ',
@@ -14,12 +13,43 @@ marked.setOptions({
 	}
 });
 
+// pages map object
+var Pages = function(){
+	this.pages = fs.readFileSync(path.join(__dirname, '../source/pages.json'), 'utf8');
+	this.pagesJSON = JSON.parse(this.pages);
+}
+Pages.prototype = {
+	add: function(item){
+		this.pagesJSON.push(item);
+	},
+	get: function(){
+		return this.pagesJSON;
+	},
+	getString: function(){
+		return this.pages;
+	},
+	exist: function(pageName){
+		var resultArray = this.pagesJSON.filter(function(elem, index, arr){
+			return elem.pageName == pageName;
+		});
+		return resultArray.length > 0;
+	},
+	remove: function(pageName){
+		var result = this.pagesJSON.findIndex(function(elem, index, arr){
+			return elem.pageName == pageName;
+		});
+		// return this.pagesJSON.indexOf(result);
+		return result;
+	}
+}
+
 function route(app){
 
 	// page create
 	router.get('/page/:pageName?', function(req, res){
 		// res.sendfile('../page.html');
-		htmlRenderer.render(path.join(__dirname, '../public/page.html'), res);
+		var data = fs.readFileSync(path.join(__dirname, '../public/page.html'), 'utf8');
+		res.send(data);
 	});
 
 	// page detail
@@ -48,7 +78,9 @@ function route(app){
 	});
 
 	// save page
-	router.post('/page', function(req, res){
+	router.post('/page/:pageName?', function(req, res){
+
+		// console.log(req.params.pageName);
 		// params
 		var htmlContent = req.body.htmlContent;
 		var markContent = req.body.markContent;
@@ -70,15 +102,26 @@ function route(app){
 		var $ = cheerio.load(tempFile);
 		$('title').text(pageTitle);
 
-		// write page meta to pages.json
-		var pages = fs.readFileSync(sourcePath + 'pages.json', 'utf8');
-		var pagesJSON = JSON.parse(pages);
-		pagesJSON.push({
+		// // write page meta to pages.json
+		// var pages = fs.readFileSync(sourcePath + 'pages.json', 'utf8');
+		// var pagesJSON = JSON.parse(pages);
+		// pagesJSON.push({
+		// 	"pageName": pageName,
+		// 	"pageTitle": pageTitle
+		// });
+
+		var pages = new Pages();
+
+		// console.log(pages.exist(pageName));
+		// console.log(pages.remove('test'));
+
+		pages.add({
 			"pageName": pageName,
 			"pageTitle": pageTitle
 		});
-		// console.log(pagesJSON);
-		fs.writeFileSync(sourcePath + 'pages.json', JSON.stringify(pagesJSON), 'utf8');
+
+		
+		fs.writeFileSync(sourcePath + 'pages.json', JSON.stringify(pages.pagesJSON), 'utf8');
 
 
 		// save markdown file
@@ -99,7 +142,7 @@ function route(app){
 		// read page map
 		var pages = fs.readFileSync(path.join(__dirname, '../source/pages.json'), 'utf8');
 		var pagesJSON = JSON.parse(pages);
-		console.log(pagesJSON);
+		// console.log(pagesJSON);
 		res.json(pagesJSON);
 	});
 
