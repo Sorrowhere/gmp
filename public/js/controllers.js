@@ -8,8 +8,11 @@ gmpControllers.controller('pageCtrl', ['$scope', 'Page', function($scope, Page){
 			$scope.pages = data;
 		});
 	
-	$scope.edit = {
-		pageName: 'ddddd'
+	$scope.pageDelete = function(key){
+		Page.delete(key)
+			.success(function(data){
+				$scope.pages = data;
+			});
 	}
 
 }]);

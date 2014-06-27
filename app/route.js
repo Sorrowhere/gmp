@@ -51,10 +51,11 @@ function route(app){
 	});
 
 	// save page
-	router.post('/page/:pageName?', function(req, res){
+	router.post('/page/:key?', function(req, res){
 
 		// console.log(req.params.pageName);
 		// params
+		var key = req.params.key;
 		var htmlContent = req.body.htmlContent;
 		var markContent = req.body.markContent;
 		var	pageName = req.body.pageName;
@@ -70,6 +71,7 @@ function route(app){
 		// page content
 		var tempFile = tempHeader + htmlContent + tempFooter;
 
+		var msg = 0;
 
 		// set page title
 		var $ = cheerio.load(tempFile);
@@ -78,11 +80,18 @@ function route(app){
 
 		var page = new Page();
 
-		if(!page.exist(pageName)){
-			page.add({
-				"pageName": pageName,
-				"pageTitle": pageTitle
-			});
+		// new page
+		if(!key){
+			if(!page.exist(key)){
+				page.add({
+					"pageName": pageName,
+					"pageTitle": pageTitle
+				});
+
+				msg = 1;
+			}else{
+
+			}
 		}
 		
 
@@ -106,6 +115,38 @@ function route(app){
 		var pagesJSON = page.get();
 		// console.log(pagesJSON);
 		res.json(pagesJSON);
+	});
+
+	// page delete
+	router.delete('/delete/:key', function(req, res){
+		var key = req.params.key;
+		var page = new Page();
+		// console.log(page);
+		var item = page.getItem(key);
+		var md = path.join(__dirname, '../source/' + item.pageName + '.md');
+		var html = path.join(__dirname, '../doc/' + item.pageName + '.html');
+
+		// delete markdown file
+		if(fs.existsSync(md)){
+			fs.unlink(md, function(err){
+				if(err){
+					console.log(err);
+				}else{
+					console.log('delete success');
+				}
+			});
+		}
+		// delete html file
+		if(fs.existsSync(html)){
+			fs.unlink(html, function(err){
+				if(err){
+					console.log(err);
+				}else{
+					console.log('delete success');
+				}
+			});
+		}
+		res.json(page.delete(key));
 	});
 
 	// index

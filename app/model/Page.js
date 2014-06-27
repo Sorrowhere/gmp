@@ -3,7 +3,8 @@ var fs = require('fs');
 
 // pages map object
 var Page = function(){
-	this.pages = fs.readFileSync(path.join(__dirname, '../../source/pages.json'), 'utf8');
+	this.mapPath = path.join(__dirname, '../../source/pages.json');
+	this.pages = fs.readFileSync(this.mapPath, 'utf8');
 	this.pagesJSON = JSON.parse(this.pages);
 }
 Page.prototype = {
@@ -14,7 +15,7 @@ Page.prototype = {
 		this.pagesJSON.push(item);
 
 		// write
-		fs.writeFileSync(path.join(__dirname, '../../source/pages.json'), JSON.stringify(this.pagesJSON), 'utf8');
+		fs.writeFileSync(this.mapPath, JSON.stringify(this.pagesJSON), 'utf8');
 	},
 	get: function(){
 		return this.pagesJSON;
@@ -22,18 +23,28 @@ Page.prototype = {
 	getString: function(){
 		return this.pages;
 	},
+	getItem: function(key){
+		return this.pagesJSON.filter(function(elem, index, arr){
+			return elem.key == key;
+		})[0];
+	},
 	exist: function(key){
 		var resultArray = this.pagesJSON.filter(function(elem, index, arr){
 			return elem.key == key;
 		});
 		return resultArray.length > 0;
 	},
-	remove: function(key){
-		var result = this.pagesJSON.filter(function(elem, index, arr){
-			return elem.key == key;
+	delete: function(key){
+		var copy = this.pagesJSON;
+		copy.forEach(function(elem, index, arr){
+			if(elem.key == key){
+				// console.log(index);
+				copy.splice(index, 1);
+			}
 		});
-		// return this.pagesJSON.indexOf(result);
-		return result;
+
+		fs.writeFileSync(this.mapPath, JSON.stringify(copy), 'utf8');
+		return copy;
 	}
 }
 
