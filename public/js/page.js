@@ -72,16 +72,19 @@
 		});
 
 		// edit
-		// var url = window.location.pathname;
-		// if(url.indexOf('/:')!==0){
-		// 	// fetch init content
-		// 	$.ajax({
-		// 		type: 'get',
-		// 		url: '/page/detail/' + url.substring(url.indexOf('/:') + 1),
-		// 		success: function(data){
-		// 			// 
-		// 		}
-		// 	});
-		// }
+		var url = window.location.pathname;
+		if(url.match(/page\/\d+/g)){
+            $('title').text('编辑页面');
+			// fetch init content
+			$.ajax({
+				type: 'get',
+				url: '/page/detail/' + url.substring(url.lastIndexOf('/') + 1),
+				success: function(data){
+					editor.setValue(data.markContent);
+                    $('#pageName').val(data.pageName);
+                    $('#pageTitle').val(data.pageTitle);
+				}
+			});
+		}
 	}
 })(jQuery);

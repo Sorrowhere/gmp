@@ -14,7 +14,17 @@ marked.setOptions({
 	}
 });
 
+function markToHtml(content){
+    var renderer = new marked.Renderer();
+    // heae renderer
+    renderer.heading = function (text, level) {
+        var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+        return '<h' + level + '><a name="' + escapedText + '" class="anchor" href="#' + escapedText + '">' + text + '</a></h' + level + '>';
+    }
 
+    return marked(content, { renderer: renderer });
+
+}
 
 function route(app){
 
@@ -28,25 +38,27 @@ function route(app){
 	// page detail
 	router.get('/page/detail/:key', function(req, res){
 		var key = req.params.key;
-		console.log(key);
+        var pageItem = new Page().getItem(key);
+        var pageName = pageItem.pageName;
+        var pageTitle = pageItem.pageTitle;
+        var markContent = fs.readFileSync(path.join(__dirname, '../source/' + pageName + '.md'), 'utf8');
+        var htmlContent = markToHtml(markContent);
+        res.json({
+            pageName: pageName,
+            pageTitle: pageTitle,
+            markContent: markContent,
+            htmlContent: htmlContent
+        });
 	});
 
 
 	// preview
 	router.post('/preview', function(req, res){
-		var renderer = new marked.Renderer();
 		var markContent = req.body.content;
 		// console.log(req.body.content);
 
-		// heae renderer
-		renderer.heading = function (text, level) {
-  			var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-			return '<h' + level + '><a name="' + escapedText + '" class="anchor" href="#' + escapedText + '">' + text + '</a></h' + level + '>';
-		}
-
-
 		res.json({
-			content: marked(markContent, { renderer: renderer })
+			content: markToHtml(markContent)
 		});
 	});
 
@@ -82,29 +94,66 @@ function route(app){
 
 		// new page
 		if(!key){
+            // page not exist
 			if(!page.exist(key)){
 				page.add({
 					"pageName": pageName,
 					"pageTitle": pageTitle
 				});
 
-				msg = 1;
-			}else{
 
-			}
-		}
-		
+                // save markdown file
+                fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
 
-		// save markdown file
-		fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
+                // save html file
+                fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
 
-		// save html file
-		fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
+                msg = 1;
+
+            }else{  // page exist
+                msg = 2;
+            }
+        }else{
+            var oldPageName = page.getItem(key).pageName;
+            page.modify({
+                "key": key,
+                "pageName": pageName,
+                "pageTitle": pageTitle
+            });
+
+            if(oldPageName == pageName){
+                // save markdown file
+                fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
+
+                // save html file
+                fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
+            }else{
+
+                // rename markdown file and write
+                fs.rename(sourcePath + oldPageName + '.md', sourcePath + pageName + '.md', function(err){
+                    if(err){
+                        console.log('Rename file error: ' + err);
+                    }else{
+                        fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
+                    }
+                });
+
+                // rename html file and write
+                fs.rename(sourcePath + oldPageName + '.html', sourcePath + pageName + '.html', function(err){
+                    if(err){
+                        console.log('Rename file error: ' + err);
+                    }else{
+                        fs.writeFileSync(sourcePath + pageName + '.html', markContent, 'utf8');
+                    }
+                });
+            }
+        }
+
 
 
 		// return result
 		res.json({
-			msg: 1
+			msg: msg
 		});
 	});
 

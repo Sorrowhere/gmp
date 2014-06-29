@@ -45,7 +45,21 @@ Page.prototype = {
 
 		fs.writeFileSync(this.mapPath, JSON.stringify(copy), 'utf8');
 		return copy;
-	}
+	},
+    modify: function(item){
+        var key = item.key;
+        this.pagesJSON.forEach(function(elem, index, arr){
+            if(elem.key == key){
+                elem.pageName = item.pageName;
+                elem.pageTitle = item.pageTitle;
+            }
+        });
+
+        fs.writeFileSync(this.mapPath, JSON.stringify(this.pagesJSON), 'utf8');
+
+        return this.pagesJSON;
+
+    }
 }
 
 exports.Page = Page;
