@@ -13,6 +13,7 @@
 }
 .#{$baseClass} {
     @extend %iconFontBase;
+    vertical-align: middle;
 }
 .icon-2x {
     font-size: 2rem;
@@ -32,7 +33,7 @@
     @include rotate(180deg);
 }
 
-// font
+// normal font icon
 .#{$baseClass}-search:before{
     content: get(search);
 }
@@ -99,8 +100,14 @@
 .#{$baseClass}-chevron-down:before{
     content: get(chevron-down);
 }
+.#{$baseClass}-times:before{
+    content: get(times);
+}
+.#{$baseClass}-check:before{
+    content: get(check);
+}
 
-// cn icon
+// cn category font icon
 .#{$baseClass}-food:before{
     content: get(food);
 }

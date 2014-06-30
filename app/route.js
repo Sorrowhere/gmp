@@ -83,7 +83,6 @@ function route(app){
 		// page content
 		var tempFile = tempHeader + htmlContent + tempFooter;
 
-		var msg = 0;
 
 		// set page title
 		var $ = cheerio.load(tempFile);
@@ -95,66 +94,88 @@ function route(app){
 		// new page
 		if(!key){
             // page not exist
-			if(!page.exist(key)){
+			if(!page.exist(pageName)){
 				page.add({
 					"pageName": pageName,
 					"pageTitle": pageTitle
 				});
 
-
                 // save markdown file
                 fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
 
                 // save html file
                 fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
 
-                msg = 1;
+                res.json({
+                    status: 1
+                });
 
             }else{  // page exist
-                msg = 2;
+                res.json({
+                    status: 2
+                });
             }
-        }else{
+        }else{  // edit page
             var oldPageName = page.getItem(key).pageName;
-            page.modify({
-                "key": key,
-                "pageName": pageName,
-                "pageTitle": pageTitle
-            });
 
+            // page name unchanged
             if(oldPageName == pageName){
+
+                page.modify({
+                    "key": key,
+                    "pageName": pageName,
+                    "pageTitle": pageTitle
+                });
                 // save markdown file
                 fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
 
                 // save html file
                 fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
-            }else{
 
-                // rename markdown file and write
-                fs.rename(sourcePath + oldPageName + '.md', sourcePath + pageName + '.md', function(err){
-                    if(err){
-                        console.log('Rename file error: ' + err);
-                    }else{
-                        fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
-                    }
+                res.json({
+                    status: 1
                 });
+            }else{  // page name changed
 
-                // rename html file and write
-                fs.rename(sourcePath + oldPageName + '.html', sourcePath + pageName + '.html', function(err){
-                    if(err){
-                        console.log('Rename file error: ' + err);
-                    }else{
-                        fs.writeFileSync(sourcePath + pageName + '.html', markContent, 'utf8');
-                    }
-                });
+                // new page name is not used
+                if(!page.exist(pageName)){
+
+                    page.modify({
+                        "key": key,
+                        "pageName": pageName,
+                        "pageTitle": pageTitle
+                    });
+
+                    // rename markdown file and write
+                    fs.rename(sourcePath + oldPageName + '.md', sourcePath + pageName + '.md', function(err){
+                        if(err){
+                            console.log('Rename file error: ' + err);
+                        }else{
+                            fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
+                            // delete old file
+                        }
+                    });
+
+                    // rename html file and write
+                    fs.rename(docPath + oldPageName + '.html', docPath + pageName + '.html', function(err){
+                        if(err){
+                            console.log('Rename file error: ' + err);
+                        }else{
+                            fs.writeFileSync(docPath + pageName + '.html', markContent, 'utf8');
+                        }
+                    });
+
+                    res.json({
+                        status: 1
+                    });
+                }else{ // new page name used
+                    res.json({
+                        status: 2
+                    });
+                }
             }
         }
 
-
-
-		// return result
-		res.json({
-			msg: msg
-		});
 	});
 
 	// page list

@@ -28,9 +28,9 @@ Page.prototype = {
 			return elem.key == key;
 		})[0];
 	},
-	exist: function(key){
+	exist: function(pageName){
 		var resultArray = this.pagesJSON.filter(function(elem, index, arr){
-			return elem.key == key;
+			return elem.pageName == pageName;
 		});
 		return resultArray.length > 0;
 	},

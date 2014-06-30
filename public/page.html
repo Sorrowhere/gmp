@@ -19,16 +19,18 @@
 	</div>
 	<div class="page-submit">
 		<label>
-			<span class="required">*</span>页面名称：<input type="text" name="pageName" id="pageName">
+			<span class="required">*</span>页面名称：<input type="text" name="txtPageName" id="txtPageName">
 		</label>
 		<label>
-			<span class="required">*</span>页面标题：<input type="text" name="pageTitle" id="pageTitle">
+			<span class="required">*</span>页面标题：<input type="text" name="txtPageTitle" id="txtPageTitle">
 		</label>
-		<span class="btn btn-big btn-blue" id="pageSave">保存</span>
+		<span class="btn btn-big btn-blue" id="btnPageSave">保存</span>
 		<span class="loading" id="loading">
 			<img src="/img/loading.gif" alt="Loading">
 			正在保存页面...
 		</span>
+        <span class="error"><i class="icon icon-times"></i>同名文件已经存在！</span>
+        <span class="success"><i class="icon icon-check"></i>保存成功！</span>
 	</div>
 </div>
 

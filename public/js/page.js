@@ -30,6 +30,9 @@
 	    var pageValue;
 	    var taMiddle = $('#taMiddle');
 	    var pagePreview = $('#pagePreview');
+        var txtPageName = $('#txtPageName');
+        var txtPageTitle = $('#txtPageTitle');
+
 	    editor.on('change', function(){
 	    	pageValue = editor.getValue();
 	    	
@@ -43,48 +46,58 @@
 	    	});
 	    });
 
+        // edit
+        var url = window.location.pathname;
+        if(isEdit(url)){
+            $('title').text('编辑页面');
+            // fetch init content
+            $.ajax({
+                type: 'get',
+                url: '/page/detail/' + url.substring(url.lastIndexOf('/') + 1),
+                success: function(data){
+                    editor.setValue(data.markContent);
+                    txtPageName.val(data.pageName);
+                    txtPageTitle.val(data.pageTitle);
+                }
+            });
+        }
+
 	    // save handler
-		$('#pageSave').on('click', function(){
-			var markContent = pageValue;
-			var htmlContent = pagePreview.html();
-			var pageName = $('#pageName').val();
-			var pageTitle = $('#pageTitle').val();
-			if($.trim(markContent).length == 0){
+		$('#btnPageSave').on('click', function(){
+            var reqUrl = '/page';
+            var data = {
+                "markContent": pageValue,
+                "htmlContent": pagePreview.html(),
+                "pageName": txtPageName.val(),
+                "pageTitle": txtPageTitle.val()
+            };
+			if($.trim(pageValue).length == 0){
 				return false;
 			}
-
-			$.ajax({
-				type: 'post',
-				url: '/page',
-				data: {
-					"markContent": markContent,
-					"htmlContent": htmlContent,
-					"pageName": pageName,
-					"pageTitle": pageTitle
-				},
-				beforeSend: function(){
-					$('#loading').css('display', 'inline-block');
-				},
-				success: function(data){
-					$('#loading').css('display', 'none');
-				}
-			});
+            if(isEdit(url)){
+                data.key = url.substring(url.lastIndexOf('/') + 1);
+                reqUrl = '/page/' + data.key;
+            }
+            $.ajax({
+                type: 'post',
+                url: reqUrl,
+                data: data,
+                beforeSend: function(){
+                    $('#loading').css('display', 'inline-block');
+                },
+                success: function(msg){
+                    $('#loading').css('display', 'none');
+                    if(msg.status == 2){
+                        txtPageName.addClass('error');
+                        $('')
+                    }
+                }
+            });
 		});
 
-		// edit
-		var url = window.location.pathname;
-		if(url.match(/page\/\d+/g)){
-            $('title').text('编辑页面');
-			// fetch init content
-			$.ajax({
-				type: 'get',
-				url: '/page/detail/' + url.substring(url.lastIndexOf('/') + 1),
-				success: function(data){
-					editor.setValue(data.markContent);
-                    $('#pageName').val(data.pageName);
-                    $('#pageTitle').val(data.pageTitle);
-				}
-			});
-		}
+        function isEdit(url){
+            return url.match(/page\/\d+/g);
+        }
+
 	}
 })(jQuery);

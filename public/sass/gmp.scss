@@ -30,6 +30,19 @@ a{
 img{
 	vertical-align: middle;
 }
+input{
+  &[type='text']{
+    border:1px solid #ccc;
+    &:focus{
+      border-color: #267dce;
+    }
+  }
+}
+.error{
+  &[type='text']{
+    border-color: #a22721;
+  }
+}
 // layout
 .gmp-layout{
 	width: 1190px;
@@ -160,10 +173,6 @@ $headerHeight: 50px;
 			width: 190px;
 			height: 40px;
 			padding: 0 10px;
-			border: 1px solid #ccc;
-			&:focus{
-				border-color: #267dce;
-			}
 		}
 	}
 	.loading{
