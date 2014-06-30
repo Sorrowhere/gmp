@@ -142,8 +142,24 @@ input[type='text']:focus {
   margin-right: 5px;
 }
 
-/* line 129, ../sass/gmp.scss */
-.page {
+/* line 128, ../sass/gmp.scss */
+.gmp-error {
+  color: #db2c3b;
+}
+
+/* line 131, ../sass/gmp.scss */
+.gmp-success {
+  color: #27ae60;
+}
+
+/* line 136, ../sass/gmp.scss */
+.gmp-error .icon,
+.gmp-success .icon {
+  margin: -2px 3px 0 0;
+}
+
+/* line 141, ../sass/gmp.scss */
+.gmp-page {
   overflow: hidden;
   position: fixed;
   top: 10px;
@@ -152,40 +168,40 @@ input[type='text']:focus {
   bottom: 60px;
 }
 
-/* line 139, ../sass/gmp.scss */
-.page-half,
-.editor,
-.preview {
+/* line 151, ../sass/gmp.scss */
+.gmp-page-half,
+.gmp-editor,
+.gmp-preview {
   height: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 143, ../sass/gmp.scss */
-.page-half {
+/* line 155, ../sass/gmp.scss */
+.gmp-page-half {
   width: 49%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 147, ../sass/gmp.scss */
-.page-half:last-child {
+/* line 159, ../sass/gmp.scss */
+.gmp-page-half:last-child {
   float: right;
 }
 
-/* line 151, ../sass/gmp.scss */
-.preview {
+/* line 163, ../sass/gmp.scss */
+.gmp-preview {
   padding: 20px;
   background-color: #fff;
 }
 
-/* line 155, ../sass/gmp.scss */
+/* line 167, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 158, ../sass/gmp.scss */
-.page-submit {
+/* line 170, ../sass/gmp.scss */
+.gmp-page-submit {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -194,14 +210,14 @@ input[type='text']:focus {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 166, ../sass/gmp.scss */
-.page-submit label {
+/* line 178, ../sass/gmp.scss */
+.gmp-page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 170, ../sass/gmp.scss */
-.page-submit label input {
+/* line 182, ../sass/gmp.scss */
+.gmp-page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -212,8 +228,8 @@ input[type='text']:focus {
   height: 40px;
   padding: 0 10px;
 }
-/* line 178, ../sass/gmp.scss */
-.page-submit .loading {
+/* line 190, ../sass/gmp.scss */
+.gmp-page-submit .loading {
   display: inline-block;
   margin: 10px;
   vertical-align: middle;
@@ -224,12 +240,16 @@ input[type='text']:focus {
   margin-left: 10px;
   display: none;
 }
-/* line 188, ../sass/gmp.scss */
-.page-submit .loading, .page-submit .loading img {
+/* line 200, ../sass/gmp.scss */
+.gmp-page-submit .loading, .gmp-page-submit .loading img {
   height: 16px;
 }
-/* line 191, ../sass/gmp.scss */
-.page-submit .loading img {
+/* line 203, ../sass/gmp.scss */
+.gmp-page-submit .loading img {
   width: 16px;
   margin-top: -2px;
+}
+/* line 208, ../sass/gmp.scss */
+.gmp-page-submit .gmp-tip {
+  margin-left: 20px;
 }

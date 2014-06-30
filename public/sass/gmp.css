@@ -1,0 +1,41 @@
+/*
+Syntax error: Invalid CSS after ".dd": expected "{", was ""
+        on line 214 of gmp.scss
+
+209: 	}
+210:     .gmp-tip{
+211:         margin-left: 20px;
+212:     }
+213: }
+214: .dd
+
+Backtrace:
+gmp.scss:214
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:1314:in `expected'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:1248:in `expected'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:1243:in `tok!'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:640:in `block'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:635:in `ruleset'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:659:in `block_child'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:652:in `block_contents'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:116:in `stylesheet'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:41:in `parse'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/engine.rb:409:in `_to_tree'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/engine.rb:274:in `render'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `each'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin.rb:82:in `update_stylesheets'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:489:in `watch_or_update'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:346:in `process_result'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:43:in `parse'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:22:in `parse!'
+d:/ruby/lib/ruby/gems/1.9.1/gems/sass-3.3.7/bin/scss:13:in `<top (required)>'
+d:/ruby/bin/scss:23:in `load'
+d:/ruby/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \".dd\": expected \"{\", was \"\"\A         on line 214 of gmp.scss\A \A 209: 	}\A 210:     .gmp-tip{\A 211:         margin-left: 20px;\A 212:     }\A 213: }\A 214: .dd"; }

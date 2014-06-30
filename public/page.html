@@ -7,17 +7,15 @@
 </head>
 <body>
 
-
-<div class="wrap">
-	<div class="page">
-		<div class="page-half form">
-			<div id="editor" class="editor"></div>
+	<div class="gmp-page">
+		<div class="gmp-page-half gmp-form">
+			<div id="editor" class="gmp-editor"></div>
 		</div>
-		<div class="page-half">
-			<div class="preview" id="pagePreview"></div>
+		<div class="gmp-page-half">
+			<div class="gmp-preview" id="pagePreview"></div>
 		</div>
 	</div>
-	<div class="page-submit">
+	<div class="gmp-page-submit">
 		<label>
 			<span class="required">*</span>页面名称：<input type="text" name="txtPageName" id="txtPageName">
 		</label>
@@ -29,10 +27,9 @@
 			<img src="/img/loading.gif" alt="Loading">
 			正在保存页面...
 		</span>
-        <span class="error"><i class="icon icon-times"></i>同名文件已经存在！</span>
-        <span class="success"><i class="icon icon-check"></i>保存成功！</span>
+        <span class="gmp-error"><i class="icon icon-times"></i>同名文件已经存在！</span>
+        <span class="gmp-success"><i class="icon icon-check"></i>保存成功！</span>
 	</div>
-</div>
 
 <script src="/lib/jquery-1.11.1.min.js"></script>
 <!-- ace editor -->
