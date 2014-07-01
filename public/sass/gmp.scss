@@ -108,11 +108,20 @@ $headerHeight: 50px;
 	th{
 		background-color: $bgColor;
 	}
-	tr:hover{
+	tr:not([class='empty']):hover{
 		td{
 			background-color: aliceblue;
 		}
 	}
+    .empty{
+        td{
+            text-align: center;
+            font-size: 20px;
+            color: $grayLight;
+            padding: 50px 0;
+            font-family: $fontYahei;
+        }
+    }
 	.td-act{
 		text-align: center;
 		a{

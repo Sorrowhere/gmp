@@ -14,6 +14,7 @@ Page.prototype = {
 		item.key = key;
 		this.pagesJSON.push(item);
 
+
 		// write
 		fs.writeFileSync(this.mapPath, JSON.stringify(this.pagesJSON), 'utf8');
 	},

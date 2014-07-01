@@ -20,6 +20,9 @@
 				<a href="" ng-click="pageDelete(page.key)">删除</a>
 			</td>
 		</tr>
+        <tr class="empty" ng-show="pages.length == 0">
+            <td colspan="3">暂无页面</td>
+        </tr>
 	</tbody>
 </table>
 <div class="gmp-new-page">
