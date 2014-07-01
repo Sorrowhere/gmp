@@ -4,8 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var routes = require('./app/route.js');
-var docRoutes = require('./app/doc-route.js');
+var router = require('./app/route.js');
+var docRouter = require('./app/doc-route.js');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -27,10 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.set('views', __dirname + '/doc');
 
 // router
-routes.route(app);
-// doc router
-docRoutes.route(app);
-
+app.use('/', router);
+app.use('/doc/', docRouter);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

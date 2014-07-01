@@ -140,8 +140,7 @@ $headerHeight: 50px;
 .gmp-success{
     color: $green;
 }
-.gmp-error,
-.gmp-success{
+.gmp-tip{
     .icon{
         margin: -2px 3px 0 0;
     }
@@ -216,5 +215,6 @@ $headerHeight: 50px;
 	}
     .gmp-tip{
         margin-left: 20px;
+        display: none;
     }
 }

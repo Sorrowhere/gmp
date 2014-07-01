@@ -707,13 +707,12 @@ input[type='text']:focus {
   color: #27ae60;
 }
 
-/* line 145, ../sass/gmp.scss */
-.gmp-error .icon,
-.gmp-success .icon {
+/* line 144, ../sass/gmp.scss */
+.gmp-tip .icon {
   margin: -2px 3px 0 0;
 }
 
-/* line 150, ../sass/gmp.scss */
+/* line 149, ../sass/gmp.scss */
 .gmp-page {
   overflow: hidden;
   position: fixed;
@@ -723,7 +722,7 @@ input[type='text']:focus {
   bottom: 60px;
 }
 
-/* line 160, ../sass/gmp.scss */
+/* line 159, ../sass/gmp.scss */
 .gmp-page-half,
 .gmp-editor,
 .gmp-preview {
@@ -733,29 +732,29 @@ input[type='text']:focus {
   box-sizing: border-box;
 }
 
-/* line 164, ../sass/gmp.scss */
+/* line 163, ../sass/gmp.scss */
 .gmp-page-half {
   width: 49%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 168, ../sass/gmp.scss */
+/* line 167, ../sass/gmp.scss */
 .gmp-page-half:last-child {
   float: right;
 }
 
-/* line 172, ../sass/gmp.scss */
+/* line 171, ../sass/gmp.scss */
 .gmp-preview {
   padding: 20px;
   background-color: #fff;
 }
 
-/* line 176, ../sass/gmp.scss */
+/* line 175, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 179, ../sass/gmp.scss */
+/* line 178, ../sass/gmp.scss */
 .gmp-page-submit {
   position: fixed;
   bottom: 0;
@@ -765,13 +764,13 @@ input[type='text']:focus {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 187, ../sass/gmp.scss */
+/* line 186, ../sass/gmp.scss */
 .gmp-page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 191, ../sass/gmp.scss */
+/* line 190, ../sass/gmp.scss */
 .gmp-page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -783,7 +782,7 @@ input[type='text']:focus {
   height: 40px;
   padding: 0 10px;
 }
-/* line 199, ../sass/gmp.scss */
+/* line 198, ../sass/gmp.scss */
 .gmp-page-submit .loading {
   display: inline-block;
   margin: 10px;
@@ -795,18 +794,19 @@ input[type='text']:focus {
   margin-left: 10px;
   display: none;
 }
-/* line 209, ../sass/gmp.scss */
+/* line 208, ../sass/gmp.scss */
 .gmp-page-submit .loading, .gmp-page-submit .loading img {
   height: 16px;
 }
-/* line 212, ../sass/gmp.scss */
+/* line 211, ../sass/gmp.scss */
 .gmp-page-submit .loading img {
   width: 16px;
   margin-top: -2px;
 }
-/* line 217, ../sass/gmp.scss */
+/* line 216, ../sass/gmp.scss */
 .gmp-page-submit .gmp-tip {
   margin-left: 20px;
+  display: none;
 }
 
 /* line 7, ../../sass/highlight/github.scss */

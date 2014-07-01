@@ -89,7 +89,15 @@
                     $('#loading').css('display', 'none');
                     if(msg.status == 2){
                         txtPageName.addClass('error');
-                        $('')
+                        $('#errorExist').css('display', 'inline-block');
+                        $('#saveSuccess').css('display', 'none');
+                    }
+                    if(msg.status == 1){
+                        editor.setValue('');
+                        txtPageName.removeClass('error').val('');
+                        txtPageTitle.val('');
+                        $('#errorExist').css('display', 'none');
+                        $('#saveSuccess').css('display', 'inline-block');
                     }
                 }
             });
