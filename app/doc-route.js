@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var path = require('path');
+var Page = require('./model/Page.js').Page;
 
 
 // docs route
@@ -13,5 +14,11 @@ docs.forEach(function(value, index, arr){
         res.send(fileData);
     });
 });
+
+router.get('/menus', function(req, res){
+    var page = new Page();
+    res.json(page.get());
+});
+
 
 module.exports = router;

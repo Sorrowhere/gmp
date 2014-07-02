@@ -56,6 +56,7 @@ $headerHeight: 50px;
 }
 .gmp-header{
 	@include text-shadow(0 1px 1px #08274e);
+    font-family: arial, 'Microsoft Yahei', sans-serif;
 	overflow: hidden;
 	.logo{
 		font-size: 24px;
@@ -70,6 +71,8 @@ $headerHeight: 50px;
 }
 .gmp-menu{
 	float: left;
+    font-size: 14px;
+    margin-left: 20px;
 	li{
 		float: left;
 	}
@@ -94,8 +97,8 @@ $headerHeight: 50px;
 // footer
 .gmp-footer{
 	text-align: center;
-	color: darken($white, 10%);;
-	margin-top: 15px;
+	color: darken($white, 20%);
+	margin-top: 50px;
 }
 // table
 .gmp-tb{

@@ -14,9 +14,10 @@ marked.setOptions({
 	}
 });
 
+// markdown to html
 function markToHtml(content){
     var renderer = new marked.Renderer();
-    // heae renderer
+    // head renderer
     renderer.heading = function (text, level) {
         var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         return '<h' + level + '><a name="' + escapedText + '" class="anchor" href="#' + escapedText + '">' + text + '</a></h' + level + '>';
@@ -25,11 +26,20 @@ function markToHtml(content){
     return marked(content, { renderer: renderer });
 
 }
+// save html page
+function savePage(pageName, pageTitle, htmlContent){
+    var	tempHeader = fs.readFileSync(path.join(__dirname, '../public/layout/header.html'), 'utf8');
+    var	tempFooter = fs.readFileSync(path.join(__dirname, '../public/layout/footer.html'), 'utf8');
+    var tempPage = tempHeader + htmlContent + tempFooter;
+    var $ = cheerio.load(tempPage);
+    var title = $('title');
+    $('title').text(pageTitle);
 
+    fs.writeFileSync(path.join(__dirname, '../doc/' + pageName + '.html'), $.html({ decodeEntities: false}), 'utf8');
+}
 
 // page create
 router.get('/page/:key?', function(req, res){
-    // res.sendfile('../page.html');
     var data = fs.readFileSync(path.join(__dirname, '../public/page.html'), 'utf8');
     res.send(data);
 });
@@ -72,20 +82,7 @@ router.post('/page/:key?', function(req, res){
     var	pageName = req.body.pageName;
     var pageTitle = req.body.pageTitle;
 
-    // read page layout
-    var	layoutPath = path.join(__dirname, '../public/layout/');
-    var docPath = path.join(__dirname, '../doc/');
     var sourcePath = path.join(__dirname, '../source/');
-    var	tempHeader = fs.readFileSync(layoutPath + 'header.html', 'utf8');
-    var	tempFooter = fs.readFileSync(layoutPath + 'footer.html', 'utf8');
-
-    // page content
-    var tempFile = tempHeader + htmlContent + tempFooter;
-
-
-    // set page title
-    var $ = cheerio.load(tempFile);
-    $('title').text(pageTitle);
 
 
     var page = new Page();
@@ -103,7 +100,7 @@ router.post('/page/:key?', function(req, res){
             fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
 
             // save html file
-            fs.writeFileSync(docPath + pageName + '.html', $.html({ decodeEntities: false}), 'utf8');
+            savePage(pageName, pageTitle, htmlContent);
 
             res.json({
                 status: 1
@@ -129,7 +126,7 @@ router.post('/page/:key?', function(req, res){
             fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
 
             // save html file
-            fs.writeFileSync(docPath + pageName + '.html', $.html(), 'utf8');
+            savePage(pageName, pageTitle, htmlContent);
 
             res.json({
                 status: 1
@@ -151,16 +148,15 @@ router.post('/page/:key?', function(req, res){
                         console.log('Rename file error: ' + err);
                     }else{
                         fs.writeFileSync(sourcePath + pageName + '.md', markContent, 'utf8');
-                        // delete old file
                     }
                 });
 
                 // rename html file and write
-                fs.rename(docPath + oldPageName + '.html', docPath + pageName + '.html', function(err){
+                fs.rename(path.join(__dirname, '../doc/' + oldPageName + '.html'), path.join(__dirname, '../doc/'  + pageName + '.html'), function(err){
                     if(err){
                         console.log('Rename file error: ' + err);
                     }else{
-                        fs.writeFileSync(docPath + pageName + '.html', markContent, 'utf8');
+                        savePage(pageName, pageTitle, htmlContent);
                     }
                 });
 
@@ -216,6 +212,22 @@ router.delete('/delete/:key', function(req, res){
         });
     }
     res.json(page.delete(key));
+});
+
+// pages rebuild
+router.get('/build', function(req, res){
+    var markContent, htmlContent, docName, docs = fs.readdirSync(path.join(__dirname, '../doc'));
+    var	tempHeader = fs.readFileSync(path.join(__dirname, '../public/layout/') + 'header.html', 'utf8');
+    var	tempFooter = fs.readFileSync(path.join(__dirname, '../public/layout/') + 'footer.html', 'utf8');
+    docs.forEach(function(item, index, arr){
+        docName = item.split('.')[0];
+        markContent = fs.readFileSync(path.join(__dirname, '../source/' + docName + '.md'), 'utf8');
+        htmlContent = markToHtml(markContent);
+        fs.writeFileSync(path.join(__dirname, '../doc/' + docName + '.html'), tempHeader + htmlContent + tempFooter, 'utf8');
+    });
+    res.json({
+        status: 1
+    });
 });
 
 // index

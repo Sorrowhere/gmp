@@ -93,11 +93,14 @@
                         $('#saveSuccess').css('display', 'none');
                     }
                     if(msg.status == 1){
-                        editor.setValue('');
-                        txtPageName.removeClass('error').val('');
-                        txtPageTitle.val('');
                         $('#errorExist').css('display', 'none');
                         $('#saveSuccess').css('display', 'inline-block');
+                        txtPageName.removeClass('error');
+                        if(!isEdit(url)){
+                            editor.setValue('');
+                            txtPageTitle.val('');
+                            txtPageName.val('');
+                        }
                     }
                 }
             });
