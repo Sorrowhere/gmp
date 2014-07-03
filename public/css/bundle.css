@@ -812,6 +812,21 @@ input[type='text']:focus {
   display: none;
 }
 
+/* line 226, ../sass/gmp.scss */
+.gmp-new-page .btn {
+  margin-right: 15px;
+}
+
+/* line 232, ../sass/gmp.scss */
+.gmp-doc-section {
+  margin-bottom: 50px;
+}
+
+/* line 235, ../sass/gmp.scss */
+.gmp-h {
+  font-family: 'Microsoft Yahei';
+}
+
 /* line 7, ../../sass/highlight/github.scss */
 .hljs {
   display: block;

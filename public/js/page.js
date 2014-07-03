@@ -8,7 +8,7 @@
 		editor.setShowInvisibles(true);
 
 		// editor session set
-		session.setMode('ace/mode/markdown');
+		session.setMode('ace/mode/html');
 		session.setFoldStyle('markbegin');
 
 		// change line
@@ -23,9 +23,11 @@
 	    ace.config.loadModule("ace/ext/language_tools", function() {
 	        editor.setOptions({
 	            enableSnippets: true,
-	            enableBasicAutocompletion: true
+	            enableBasicAutocompletion: true,
+                enableEmmet:true
 	        });
 	    });
+
 
 	    var pageValue;
 	    var taMiddle = $('#taMiddle');

@@ -20,9 +20,12 @@ function markToHtml(content){
     // head renderer
     renderer.heading = function (text, level) {
         var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        return '<h' + level + '><a name="' + escapedText + '" class="anchor" href="#' + escapedText + '">' + text + '</a></h' + level + '>';
+        return '<h' + level + ' class="gmp-h">' + escapedText + '</h' + level + '>';
     }
-
+    // paragraph
+    renderer.paragraph = function(text) {
+        return '<p class="gmp-p">' + text + '</p>';
+    }
     return marked(content, { renderer: renderer });
 
 }
@@ -83,7 +86,6 @@ router.post('/page/:key?', function(req, res){
     var pageTitle = req.body.pageTitle;
 
     var sourcePath = path.join(__dirname, '../source/');
-
 
     var page = new Page();
 
@@ -216,18 +218,15 @@ router.delete('/delete/:key', function(req, res){
 
 // pages rebuild
 router.get('/build', function(req, res){
-    var markContent, htmlContent, docName, docs = fs.readdirSync(path.join(__dirname, '../doc'));
-    var	tempHeader = fs.readFileSync(path.join(__dirname, '../public/layout/') + 'header.html', 'utf8');
-    var	tempFooter = fs.readFileSync(path.join(__dirname, '../public/layout/') + 'footer.html', 'utf8');
-    docs.forEach(function(item, index, arr){
-        docName = item.split('.')[0];
-        markContent = fs.readFileSync(path.join(__dirname, '../source/' + docName + '.md'), 'utf8');
+    var markContent, htmlContent, pageName, pageTitle, pages = new Page().get();
+    pages.forEach(function(item, index, arr){
+        pageName = item.pageName;
+        pageTitle = item.pageTitle;
+        markContent = fs.readFileSync(path.join(__dirname, '../source/' + pageName + '.md'), 'utf8');
         htmlContent = markToHtml(markContent);
-        fs.writeFileSync(path.join(__dirname, '../doc/' + docName + '.html'), tempHeader + htmlContent + tempFooter, 'utf8');
+        savePage(pageName, pageTitle, htmlContent);
     });
-    res.json({
-        status: 1
-    });
+    res.send('生成成功！');
 });
 
 // index
