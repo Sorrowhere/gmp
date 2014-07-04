@@ -10,6 +10,9 @@
 	<div class="gmp-page">
 		<div class="gmp-page-half gmp-form">
 			<div id="editor" class="gmp-editor"></div>
+            <div class="gmp-page-toolbar">
+                <span id="btnInsertCodeTrigger" class="btn btn-small btn-gray">&lt;插入代码/&gt;</span>
+            </div>
 		</div>
 		<div class="gmp-page-half">
 			<div class="gmp-preview" id="pagePreview"></div>
@@ -31,14 +34,26 @@
         <span id="saveSuccess" class="gmp-tip gmp-success"><i class="icon icon-check"></i>保存成功！</span>
 	</div>
 
+
+
+    <div class="code-editor-wrap" id="codeEditorWrap">
+        <div class="code-editor">
+            <div id="codeEditor" class="code-editor-main"></div>
+            <div class="code-editor-submit">
+                <span class="btn btn-small btn-blue" id="btnInsertCode">插入</span>
+                <span class="btn btn-small btn-gray" id="btnInsertCodeCancel">取消</span>
+            </div>
+        </div>
+    </div>
+
 <script src="/lib/jquery-1.11.1.min.js"></script>
 <!-- ace editor -->
 <script src="/lib/ace/ace.js"></script>
 <script src="/lib/ace/ext-emmet.js"></script>
+<script src="/lib/ace/emmet.js"></script>
 <script src="/lib/ace/mode-html.js"></script>
+<script src="/lib/ace/mode-markdown.js"></script>
 <script src="/lib/ace/theme-chrome.js"></script>
-<script src="/lib/ace/ext-language_tools.js"></script>
-<script src="/lib/ace/snippets/html.js"></script>
 <script src="/js/page.js"></script>
 </body>
 </html>

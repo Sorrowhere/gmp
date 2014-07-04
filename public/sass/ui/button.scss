@@ -11,8 +11,8 @@ $darkerPercent: 4%;
 
 // button size class
 //             className, height, padding, fontSize
-$btnSizeSmall: small      32px    30px       14px  !default;
-$btnSizeBig:   big        42px    40px       18px  !default;
+$btnSizeSmall: small      32px    20px       14px  !default;
+$btnSizeBig:   big        42px    30px       18px  !default;
 $btnSizeGroup: $btnSizeSmall, $btnSizeBig !default;
 // button color class 
 //               className,   borderColor, fontColor, backgroundColor, gradient,  startColor,           endColor
@@ -94,7 +94,7 @@ a.#{$btnBaseClass}:hover{
         line-height: $height - 2;
         padding: 0 $padding;
         font-size: $fontSize;
-        @if($sizeClass=='big'){
+        @if($fontSize >= 14){
             font-family: arial, 'Microsoft Yahei', sans-serif;
         }
     }

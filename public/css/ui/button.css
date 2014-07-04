@@ -97,8 +97,9 @@ a.btn:hover {
 .btn-small {
   height: 30px;
   line-height: 30px;
-  padding: 0 30px;
+  padding: 0 20px;
   font-size: 14px;
+  font-family: arial, 'Microsoft Yahei', sans-serif;
 }
 
 /* line 102, ../../sass/ui/button.scss */
@@ -111,7 +112,7 @@ input.btn-small {
 .btn-big {
   height: 40px;
   line-height: 40px;
-  padding: 0 40px;
+  padding: 0 30px;
   font-size: 18px;
   font-family: arial, 'Microsoft Yahei', sans-serif;
 }

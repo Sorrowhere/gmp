@@ -200,17 +200,30 @@ input[type='text']:focus {
 }
 
 /* line 174, ../sass/gmp.scss */
+.gmp-form {
+  position: relative;
+}
+
+/* line 177, ../sass/gmp.scss */
+.gmp-page-toolbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+
+/* line 183, ../sass/gmp.scss */
 .gmp-preview {
   padding: 20px;
   background-color: #fff;
 }
 
-/* line 178, ../sass/gmp.scss */
+/* line 187, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 181, ../sass/gmp.scss */
+/* line 190, ../sass/gmp.scss */
 .gmp-page-submit {
   position: fixed;
   bottom: 0;
@@ -220,13 +233,13 @@ input[type='text']:focus {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 189, ../sass/gmp.scss */
+/* line 198, ../sass/gmp.scss */
 .gmp-page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 193, ../sass/gmp.scss */
+/* line 202, ../sass/gmp.scss */
 .gmp-page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -238,7 +251,7 @@ input[type='text']:focus {
   height: 40px;
   padding: 0 10px;
 }
-/* line 201, ../sass/gmp.scss */
+/* line 210, ../sass/gmp.scss */
 .gmp-page-submit .loading {
   display: inline-block;
   margin: 10px;
@@ -250,32 +263,66 @@ input[type='text']:focus {
   margin-left: 10px;
   display: none;
 }
-/* line 211, ../sass/gmp.scss */
+/* line 220, ../sass/gmp.scss */
 .gmp-page-submit .loading, .gmp-page-submit .loading img {
   height: 16px;
 }
-/* line 214, ../sass/gmp.scss */
+/* line 223, ../sass/gmp.scss */
 .gmp-page-submit .loading img {
   width: 16px;
   margin-top: -2px;
 }
-/* line 219, ../sass/gmp.scss */
+/* line 228, ../sass/gmp.scss */
 .gmp-page-submit .gmp-tip {
   margin-left: 20px;
   display: none;
 }
 
-/* line 226, ../sass/gmp.scss */
+/* line 233, ../sass/gmp.scss */
+.code-editor-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* line 240, ../sass/gmp.scss */
+.code-editor {
+  background-color: #fff;
+  border: 5px solid #666;
+  margin: 50px auto 0;
+  width: 700px;
+}
+
+/* line 246, ../sass/gmp.scss */
+.code-editor-main {
+  height: 500px;
+  background-color: #fff;
+}
+
+/* line 250, ../sass/gmp.scss */
+.code-editor-submit {
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #d9d9d9;
+}
+/* line 254, ../sass/gmp.scss */
+.code-editor-submit .btn {
+  margin: 0 5px;
+}
+
+/* line 262, ../sass/gmp.scss */
 .gmp-new-page .btn {
   margin-right: 15px;
 }
 
-/* line 232, ../sass/gmp.scss */
+/* line 268, ../sass/gmp.scss */
 .gmp-doc-section {
   margin-bottom: 50px;
 }
 
-/* line 235, ../sass/gmp.scss */
+/* line 271, ../sass/gmp.scss */
 .gmp-h {
   font-family: 'Microsoft Yahei';
 }

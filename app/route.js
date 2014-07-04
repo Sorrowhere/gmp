@@ -217,7 +217,7 @@ router.delete('/delete/:key', function(req, res){
 });
 
 // pages rebuild
-router.get('/build', function(req, res){
+router.get('/api/build', function(req, res){
     var markContent, htmlContent, pageName, pageTitle, pages = new Page().get();
     pages.forEach(function(item, index, arr){
         pageName = item.pageName;
@@ -227,6 +227,15 @@ router.get('/build', function(req, res){
         savePage(pageName, pageTitle, htmlContent);
     });
     res.send('生成成功！');
+});
+
+// code to html
+router.post('/api/codetohtml', function(req, res){
+    var codeData = req.body.codeData;
+
+    res.json({
+        htmlData: markToHtml(codeData)
+    });
 });
 
 // index
