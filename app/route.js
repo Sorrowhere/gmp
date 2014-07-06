@@ -26,6 +26,10 @@ function markToHtml(content){
     renderer.paragraph = function(text) {
         return '<p class="gmp-p">' + text + '</p>';
     }
+    // code
+//    renderer.code = function(code, lang){
+//        return '<div class="gmp-code-section"' + code + '</div>';
+//    }
     return marked(content, { renderer: renderer });
 
 }

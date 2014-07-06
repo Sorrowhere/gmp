@@ -32,17 +32,17 @@
 	    	pageValue = editor.getValue();
 
             // markdown version
-//            $.ajax({
-//	    		type: 'post',
-//	    		url: '/preview',
-//	    		data: { "content": pageValue },
-//	    		success: function(data){
-//	    			pagePreview.html(data.content);
-//	    		}
-//	    	});
+            $.ajax({
+	    		type: 'post',
+	    		url: '/preview',
+	    		data: { "content": pageValue },
+	    		success: function(data){
+	    			pagePreview.html(data.content);
+	    		}
+	    	});
 
             // html version
-            pagePreview.html(pageValue);
+//            pagePreview.html(pageValue);
 
 	    });
 

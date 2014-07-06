@@ -878,13 +878,14 @@ input[type='text']:focus {
 /* line 7, ../../sass/highlight/github.scss */
 .hljs {
   display: block;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   color: #333;
   background: #f8f8f8;
   font-family: "PT Mono", Menlo, "Courier New", monospace;
+  border: 1px solid #e0e0e0;
 }
 
-/* line 18, ../../sass/highlight/github.scss */
+/* line 19, ../../sass/highlight/github.scss */
 .hljs-comment,
 .hljs-template_comment,
 .diff .hljs-header,
@@ -893,7 +894,7 @@ input[type='text']:focus {
   font-style: italic;
 }
 
-/* line 30, ../../sass/highlight/github.scss */
+/* line 31, ../../sass/highlight/github.scss */
 .hljs-keyword,
 .css .rule .hljs-keyword,
 .hljs-winutils,
@@ -906,14 +907,14 @@ input[type='text']:focus {
   font-weight: bold;
 }
 
-/* line 37, ../../sass/highlight/github.scss */
+/* line 38, ../../sass/highlight/github.scss */
 .hljs-number,
 .hljs-hexcolor,
 .ruby .hljs-constant {
   color: #099;
 }
 
-/* line 44, ../../sass/highlight/github.scss */
+/* line 45, ../../sass/highlight/github.scss */
 .hljs-string,
 .hljs-tag .hljs-value,
 .hljs-phpdoc,
@@ -921,7 +922,7 @@ input[type='text']:focus {
   color: #d14;
 }
 
-/* line 51, ../../sass/highlight/github.scss */
+/* line 52, ../../sass/highlight/github.scss */
 .hljs-title,
 .hljs-id,
 .coffeescript .hljs-params,
@@ -930,7 +931,7 @@ input[type='text']:focus {
   font-weight: bold;
 }
 
-/* line 59, ../../sass/highlight/github.scss */
+/* line 60, ../../sass/highlight/github.scss */
 .javascript .hljs-title,
 .lisp .hljs-title,
 .clojure .hljs-title,
@@ -938,7 +939,7 @@ input[type='text']:focus {
   font-weight: normal;
 }
 
-/* line 66, ../../sass/highlight/github.scss */
+/* line 67, ../../sass/highlight/github.scss */
 .hljs-class .hljs-title,
 .haskell .hljs-type,
 .vhdl .hljs-literal,
@@ -947,7 +948,7 @@ input[type='text']:focus {
   font-weight: bold;
 }
 
-/* line 74, ../../sass/highlight/github.scss */
+/* line 75, ../../sass/highlight/github.scss */
 .hljs-tag,
 .hljs-tag .hljs-title,
 .hljs-rules .hljs-property,
@@ -956,19 +957,19 @@ input[type='text']:focus {
   font-weight: normal;
 }
 
-/* line 81, ../../sass/highlight/github.scss */
+/* line 82, ../../sass/highlight/github.scss */
 .hljs-attribute,
 .hljs-variable,
 .lisp .hljs-body {
   color: #008080;
 }
 
-/* line 85, ../../sass/highlight/github.scss */
+/* line 86, ../../sass/highlight/github.scss */
 .hljs-regexp {
   color: #009926;
 }
 
-/* line 93, ../../sass/highlight/github.scss */
+/* line 94, ../../sass/highlight/github.scss */
 .hljs-symbol,
 .ruby .hljs-symbol .hljs-string,
 .lisp .hljs-keyword,
@@ -977,14 +978,14 @@ input[type='text']:focus {
   color: #990073;
 }
 
-/* line 99, ../../sass/highlight/github.scss */
+/* line 100, ../../sass/highlight/github.scss */
 .hljs-built_in,
 .lisp .hljs-title,
 .clojure .hljs-built_in {
   color: #0086b3;
 }
 
-/* line 108, ../../sass/highlight/github.scss */
+/* line 109, ../../sass/highlight/github.scss */
 .hljs-preprocessor,
 .hljs-pragma,
 .hljs-pi,
@@ -995,22 +996,22 @@ input[type='text']:focus {
   font-weight: bold;
 }
 
-/* line 113, ../../sass/highlight/github.scss */
+/* line 114, ../../sass/highlight/github.scss */
 .hljs-deletion {
   background: #fdd;
 }
 
-/* line 117, ../../sass/highlight/github.scss */
+/* line 118, ../../sass/highlight/github.scss */
 .hljs-addition {
   background: #dfd;
 }
 
-/* line 121, ../../sass/highlight/github.scss */
+/* line 122, ../../sass/highlight/github.scss */
 .diff .hljs-change {
   background: #0086b3;
 }
 
-/* line 125, ../../sass/highlight/github.scss */
+/* line 126, ../../sass/highlight/github.scss */
 .hljs-chunk {
   color: #aaa;
 }
