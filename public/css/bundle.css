@@ -758,20 +758,21 @@ input[type='text']:focus {
   right: 0;
   top: 0;
   z-index: 99;
+  display: none;
 }
 
-/* line 183, ../sass/gmp.scss */
+/* line 184, ../sass/gmp.scss */
 .gmp-preview {
   padding: 20px;
   background-color: #fff;
 }
 
-/* line 187, ../sass/gmp.scss */
+/* line 188, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 190, ../sass/gmp.scss */
+/* line 191, ../sass/gmp.scss */
 .gmp-page-submit {
   position: fixed;
   bottom: 0;
@@ -781,13 +782,13 @@ input[type='text']:focus {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 198, ../sass/gmp.scss */
+/* line 199, ../sass/gmp.scss */
 .gmp-page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 202, ../sass/gmp.scss */
+/* line 203, ../sass/gmp.scss */
 .gmp-page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -799,7 +800,7 @@ input[type='text']:focus {
   height: 40px;
   padding: 0 10px;
 }
-/* line 210, ../sass/gmp.scss */
+/* line 211, ../sass/gmp.scss */
 .gmp-page-submit .loading {
   display: inline-block;
   margin: 10px;
@@ -811,22 +812,22 @@ input[type='text']:focus {
   margin-left: 10px;
   display: none;
 }
-/* line 220, ../sass/gmp.scss */
+/* line 221, ../sass/gmp.scss */
 .gmp-page-submit .loading, .gmp-page-submit .loading img {
   height: 16px;
 }
-/* line 223, ../sass/gmp.scss */
+/* line 224, ../sass/gmp.scss */
 .gmp-page-submit .loading img {
   width: 16px;
   margin-top: -2px;
 }
-/* line 228, ../sass/gmp.scss */
+/* line 229, ../sass/gmp.scss */
 .gmp-page-submit .gmp-tip {
   margin-left: 20px;
   display: none;
 }
 
-/* line 233, ../sass/gmp.scss */
+/* line 234, ../sass/gmp.scss */
 .code-editor-wrap {
   position: fixed;
   width: 100%;
@@ -835,7 +836,7 @@ input[type='text']:focus {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* line 240, ../sass/gmp.scss */
+/* line 241, ../sass/gmp.scss */
 .code-editor {
   background-color: #fff;
   border: 5px solid #666;
@@ -843,34 +844,34 @@ input[type='text']:focus {
   width: 700px;
 }
 
-/* line 246, ../sass/gmp.scss */
+/* line 247, ../sass/gmp.scss */
 .code-editor-main {
   height: 500px;
   background-color: #fff;
 }
 
-/* line 250, ../sass/gmp.scss */
+/* line 251, ../sass/gmp.scss */
 .code-editor-submit {
   padding: 10px;
   text-align: center;
   border-top: 1px solid #d9d9d9;
 }
-/* line 254, ../sass/gmp.scss */
+/* line 255, ../sass/gmp.scss */
 .code-editor-submit .btn {
   margin: 0 5px;
 }
 
-/* line 262, ../sass/gmp.scss */
+/* line 263, ../sass/gmp.scss */
 .gmp-new-page .btn {
   margin-right: 15px;
 }
 
-/* line 268, ../sass/gmp.scss */
+/* line 269, ../sass/gmp.scss */
 .gmp-doc-section {
   margin-bottom: 50px;
 }
 
-/* line 271, ../sass/gmp.scss */
+/* line 272, ../sass/gmp.scss */
 .gmp-h {
   font-family: 'Microsoft Yahei';
 }
@@ -880,9 +881,9 @@ input[type='text']:focus {
   display: block;
   padding: 0.5em 1em;
   color: #333;
-  background: #f8f8f8;
+  background: #f7f7f9;
   font-family: "PT Mono", Menlo, "Courier New", monospace;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e1e1e8;
 }
 
 /* line 19, ../../sass/highlight/github.scss */

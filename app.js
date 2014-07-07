@@ -11,8 +11,8 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 // view engine setup
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 
 
@@ -23,8 +23,6 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.set('view engine', 'html');
-// app.set('views', __dirname + '/doc');
 
 // router
 app.use('/', router);

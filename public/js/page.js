@@ -9,13 +9,13 @@
 		editor.setShowInvisibles(true);
 
 		// editor session set
-		session.setMode('ace/mode/html');
+		session.setMode('ace/mode/markdown');
 		session.setFoldStyle('markbegin');
 
 		// change line
 		session.setUseWrapMode(true);
-		session.setWrapLimitRange(80, 80);
-		editor.renderer.setPrintMarginColumn(80);
+		session.setWrapLimitRange(100, 100);
+		editor.renderer.setPrintMarginColumn(100);
 
         editor.setOptions({
             enableEmmet:true
@@ -42,47 +42,10 @@
 	    	});
 
             // html version
-//            pagePreview.html(pageValue);
+            //pagePreview.html(pageValue);
 
 	    });
 
-        // insert a code snippet
-        $('#btnInsertCodeTrigger').on('click', function(){
-            var elemAlpha = $('#codeEditorWrap').fadeIn(300);
-            var codeEditor = ace.edit('codeEditor');
-            var codeSession = codeEditor.session;
-
-            // editor set
-            codeEditor.setTheme('ace/theme/chrome');
-            codeEditor.setShowInvisibles(true);
-
-            // editor session set
-            codeSession.setMode('ace/mode/markdown');
-            codeSession.setFoldStyle('markbegin');
-
-            // change line
-            codeSession.setUseWrapMode(true);
-            codeSession.setWrapLimitRange(80, 80);
-            codeEditor.renderer.setPrintMarginColumn(80);
-
-            $('#btnInsertCodeCancel').on('click', function(){
-                elemAlpha.fadeOut(300);
-            });
-
-            $('#btnInsertCode').on('click', function(){
-                var codeData = codeEditor.getValue();
-                var pos = codeEditor.getCursorPosition().row;
-                // compile markdown to html
-                $.ajax({
-                    type: 'post',
-                    url: '/api/codetohtml',
-                    data: { "codeData": codeData },
-                    success: function(data){
-                        // TODO
-                    }
-                });
-            });
-        });
 
         // edit
         var url = window.location.pathname;

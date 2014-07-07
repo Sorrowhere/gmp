@@ -22,10 +22,6 @@ function markToHtml(content){
         var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         return '<h' + level + ' class="gmp-h">' + escapedText + '</h' + level + '>';
     }
-    // paragraph
-    renderer.paragraph = function(text) {
-        return '<p class="gmp-p">' + text + '</p>';
-    }
     // code
 //    renderer.code = function(code, lang){
 //        return '<div class="gmp-code-section"' + code + '</div>';
@@ -233,14 +229,12 @@ router.get('/api/build', function(req, res){
     res.send('生成成功！');
 });
 
-// code to html
-router.post('/api/codetohtml', function(req, res){
-    var codeData = req.body.codeData;
-
-    res.json({
-        htmlData: markToHtml(codeData)
+router.get('/start', function(req, res){
+    res.render('docs/start', {
+        'title': 'start'
     });
-});
+})
+
 
 // index
 router.get('/', function(req, res){
