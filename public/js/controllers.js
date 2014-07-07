@@ -3,25 +3,23 @@ var gmpControllers = angular.module('gmpControllers', []);
 // page controller
 gmpControllers.controller('pageCtrl', ['$scope', 'Page', function($scope, Page){
 
-	Page.get()
-		.success(function(data){
-			$scope.pages = data;
-		});
-	
+//	Page.get()
+//		.success(function(data){
+//			$scope.pages = data;
+//		});
+
+
 	$scope.pageDelete = function(key){
 		Page.delete(key)
-			.success(function(data){
-				$scope.pages = data;
+			.success(function(){
+//				$scope.pages = data;
+                console.log('Delete Success!');
 			});
-	}
-
-}]);
-
-// guide controller
-gmpControllers.controller('guideCtrl', ['$scope', function($scope){
-
-	$scope.page = {
-		title: 'Guide'
+//        console.log('ddd');
+//        $http.delete('/delete/' + key)
+//            .success(function(){
+//                console.log('Delete Success!');
+//            });
 	}
 
 }]);

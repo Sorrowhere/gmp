@@ -4,10 +4,6 @@ var gmpServices = angular.module('gmpServices', []);
 gmpServices.factory('Page', ['$http', function($http){
 	// 
 	return {
-		preview: function(mark){
-			// return 'Parsed: ' + content;
-			return $http.post('/preview', mark);
-		},
 		get: function(){
 			return $http.get('/list');
 		},

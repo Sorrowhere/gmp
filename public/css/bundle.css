@@ -877,7 +877,7 @@ input[type='text']:focus {
 }
 
 /* line 7, ../../sass/highlight/github.scss */
-.hljs {
+pre {
   display: block;
   padding: 0.5em 1em;
   color: #333;

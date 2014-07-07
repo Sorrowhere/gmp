@@ -41,10 +41,16 @@ function savePage(pageName, pageTitle, htmlContent){
     fs.writeFileSync(path.join(__dirname, '../doc/' + pageName + '.html'), $.html({ decodeEntities: false}), 'utf8');
 }
 
+// generate menu
+function getMenus(){
+    // TODO
+}
+
 // page create
 router.get('/page/:key?', function(req, res){
     var data = fs.readFileSync(path.join(__dirname, '../public/page.html'), 'utf8');
-    res.send(data);
+//    res.send(data);
+    res.render('page');
 });
 
 // page detail
@@ -181,7 +187,10 @@ router.get('/list', function(req, res){
     var page = new Page();
     var pagesJSON = page.get();
     // console.log(pagesJSON);
-    res.json(pagesJSON);
+//    res.json(pagesJSON);
+    res.render('list', {
+        pages: pagesJSON
+    });
 });
 
 // page delete

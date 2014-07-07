@@ -9,7 +9,7 @@
 		editor.setShowInvisibles(true);
 
 		// editor session set
-		session.setMode('ace/mode/markdown');
+		session.setMode('ace/mode/html');
 		session.setFoldStyle('markbegin');
 
 		// change line
