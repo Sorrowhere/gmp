@@ -12,7 +12,8 @@ var port = process.env.PORT || 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+app.engine('.html', require('ejs').renderFile);
 
 
 
@@ -42,7 +43,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.send('error',  err.message);
+        res.render('error', { error: err.message});
     });
 }
 
@@ -50,7 +51,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.send('error', err.message);
+    res.render('error', { error: err.message});
 });
 
 

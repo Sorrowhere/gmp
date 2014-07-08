@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>规范说明</title>
+    <link rel="stylesheet" href="/css/bundle.css"/>
+</head>
+<body>
+<div class="gmp-header-wrap">
+    <div class="gmp-layout">
+        <div class="gmp-header">
+            <a href="" class="logo">百卓规范库</a>
+            <div class="gmp-nav">
+                <ul id="navList" class="gmp-nav-lst">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gmp-layout">
+    <div class="gmp-side">
+        <ul class="gmp-menu-main">
+            <li><a href="">开始</a></li>
+        </ul>
+    </div>
+    <!-- start -->
+
+<h2 class="gmp-h" id="start">开始</h2>
+
+<h3 class="gmp-h" id="introduction">维护说明</h3>
+
+<p>百卓规范库包括视觉规范、前端规范。所有规范文档（page）均在浏览器中维护，包括<a href="/page">新建文档</a>、<a href="/#/list">文档管理</a>、文档编辑。</p>
+<p>支持markdown语法，同时可以直接使用html标签，html标签支持Emmet语法。注意：如使用div、table、p、pre等区块标签，必须在开始和结束标签前后添加空行以避免生成多余p标签。同时开始和结束标签不能使用缩进。
+更多语法参考：<a href="http://www.ituring.com.cn/article/504" target="_blank">markdown语法</a>。</p>
+<p>标题使用h2~h6，需严格按照内容层级使用。左侧菜单根据h2和h3两级标题生成。一级内容区块必须以h2标签开始。h标签须添加<code>.gmp-h</code>和相应内容ID。</p>
+<p>代码块外层不能嵌套任何结构。</p>
+<p>示例结构：</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 空行 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gmp-h"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"start"</span>&gt;</span>开始<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 空行 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gmp-h"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"introduction"</span>&gt;</span>维护说明<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 空行 --&gt;</span>
+此处为普通文本段落，可以直接书写，也可以手动添加p标签。
+</code></pre>
+
+</div>
+<script src="/lib/jquery-1.11.1.min.js"></script>
+<script src="/js/doc.js"></script>
+</body>
+</html>

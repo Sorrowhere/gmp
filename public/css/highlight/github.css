@@ -11,18 +11,20 @@ pre {
   background: #f7f7f9;
   font-family: "PT Mono", Menlo, "Courier New", monospace;
   border: 1px solid #e1e1e8;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-/* line 19, ../../sass/highlight/github.scss */
+/* line 21, ../../sass/highlight/github.scss */
 .hljs-comment,
 .hljs-template_comment,
 .diff .hljs-header,
 .hljs-javadoc {
-  color: #998;
+  color: #999;
   font-style: italic;
 }
 
-/* line 31, ../../sass/highlight/github.scss */
+/* line 33, ../../sass/highlight/github.scss */
 .hljs-keyword,
 .css .rule .hljs-keyword,
 .hljs-winutils,
@@ -35,14 +37,14 @@ pre {
   font-weight: bold;
 }
 
-/* line 38, ../../sass/highlight/github.scss */
+/* line 40, ../../sass/highlight/github.scss */
 .hljs-number,
 .hljs-hexcolor,
 .ruby .hljs-constant {
   color: #099;
 }
 
-/* line 45, ../../sass/highlight/github.scss */
+/* line 47, ../../sass/highlight/github.scss */
 .hljs-string,
 .hljs-tag .hljs-value,
 .hljs-phpdoc,
@@ -50,7 +52,7 @@ pre {
   color: #d14;
 }
 
-/* line 52, ../../sass/highlight/github.scss */
+/* line 54, ../../sass/highlight/github.scss */
 .hljs-title,
 .hljs-id,
 .coffeescript .hljs-params,
@@ -59,7 +61,7 @@ pre {
   font-weight: bold;
 }
 
-/* line 60, ../../sass/highlight/github.scss */
+/* line 62, ../../sass/highlight/github.scss */
 .javascript .hljs-title,
 .lisp .hljs-title,
 .clojure .hljs-title,
@@ -67,7 +69,7 @@ pre {
   font-weight: normal;
 }
 
-/* line 67, ../../sass/highlight/github.scss */
+/* line 69, ../../sass/highlight/github.scss */
 .hljs-class .hljs-title,
 .haskell .hljs-type,
 .vhdl .hljs-literal,
@@ -76,7 +78,7 @@ pre {
   font-weight: bold;
 }
 
-/* line 75, ../../sass/highlight/github.scss */
+/* line 77, ../../sass/highlight/github.scss */
 .hljs-tag,
 .hljs-tag .hljs-title,
 .hljs-rules .hljs-property,
@@ -85,19 +87,19 @@ pre {
   font-weight: normal;
 }
 
-/* line 82, ../../sass/highlight/github.scss */
+/* line 84, ../../sass/highlight/github.scss */
 .hljs-attribute,
 .hljs-variable,
 .lisp .hljs-body {
   color: #008080;
 }
 
-/* line 86, ../../sass/highlight/github.scss */
+/* line 88, ../../sass/highlight/github.scss */
 .hljs-regexp {
   color: #009926;
 }
 
-/* line 94, ../../sass/highlight/github.scss */
+/* line 96, ../../sass/highlight/github.scss */
 .hljs-symbol,
 .ruby .hljs-symbol .hljs-string,
 .lisp .hljs-keyword,
@@ -106,14 +108,14 @@ pre {
   color: #990073;
 }
 
-/* line 100, ../../sass/highlight/github.scss */
+/* line 102, ../../sass/highlight/github.scss */
 .hljs-built_in,
 .lisp .hljs-title,
 .clojure .hljs-built_in {
   color: #0086b3;
 }
 
-/* line 109, ../../sass/highlight/github.scss */
+/* line 111, ../../sass/highlight/github.scss */
 .hljs-preprocessor,
 .hljs-pragma,
 .hljs-pi,
@@ -124,22 +126,22 @@ pre {
   font-weight: bold;
 }
 
-/* line 114, ../../sass/highlight/github.scss */
+/* line 116, ../../sass/highlight/github.scss */
 .hljs-deletion {
   background: #fdd;
 }
 
-/* line 118, ../../sass/highlight/github.scss */
+/* line 120, ../../sass/highlight/github.scss */
 .hljs-addition {
   background: #dfd;
 }
 
-/* line 122, ../../sass/highlight/github.scss */
+/* line 124, ../../sass/highlight/github.scss */
 .diff .hljs-change {
   background: #0086b3;
 }
 
-/* line 126, ../../sass/highlight/github.scss */
+/* line 128, ../../sass/highlight/github.scss */
 .hljs-chunk {
   color: #aaa;
 }

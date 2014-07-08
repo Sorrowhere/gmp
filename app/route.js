@@ -6,6 +6,7 @@ var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
 var Page = require('./model/Page.js').Page;
+var ejs = require('ejs');
 
 marked.setOptions({
 	langPrefix: 'hljs ',
@@ -22,33 +23,26 @@ function markToHtml(content){
         var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         return '<h' + level + ' class="gmp-h">' + escapedText + '</h' + level + '>';
     }
-    // code
-//    renderer.code = function(code, lang){
-//        return '<div class="gmp-code-section"' + code + '</div>';
-//    }
+
     return marked(content, { renderer: renderer });
 
 }
 // save html page
 function savePage(pageName, pageTitle, htmlContent){
-    var	tempHeader = fs.readFileSync(path.join(__dirname, '../public/layout/header.html'), 'utf8');
-    var	tempFooter = fs.readFileSync(path.join(__dirname, '../public/layout/footer.html'), 'utf8');
-    var tempPage = tempHeader + htmlContent + tempFooter;
-    var $ = cheerio.load(tempPage);
-    var title = $('title');
-    $('title').text(pageTitle);
-
-    fs.writeFileSync(path.join(__dirname, '../doc/' + pageName + '.html'), $.html({ decodeEntities: false}), 'utf8');
+    var page = new Page();
+    var pages = page.get();
+    var doc = fs.readFileSync(path.join(__dirname, '../views/doc.html'), 'utf8');
+    var obj = {
+        title: pageTitle,
+        content: htmlContent
+    }
+    fs.writeFileSync(path.join(__dirname, '../views/doc/' + pageName + '.html'), ejs.render(doc, obj), 'utf8');
 }
 
-// generate menu
-function getMenus(){
-    // TODO
-}
 
 // page create
 router.get('/page/:key?', function(req, res){
-    var data = fs.readFileSync(path.join(__dirname, '../public/page.html'), 'utf8');
+//    var data = fs.readFileSync(path.join(__dirname, '../public/page.html'), 'utf8');
 //    res.send(data);
     res.render('page');
 });
@@ -194,13 +188,13 @@ router.get('/list', function(req, res){
 });
 
 // page delete
-router.delete('/delete/:key', function(req, res){
+router.get('/delete/:key', function(req, res){
     var key = req.params.key;
     var page = new Page();
     // console.log(page);
     var item = page.getItem(key);
     var md = path.join(__dirname, '../source/' + item.pageName + '.md');
-    var html = path.join(__dirname, '../doc/' + item.pageName + '.html');
+    var html = path.join(__dirname, '../views/doc/' + item.pageName + '.html');
 
     // delete markdown file
     if(fs.existsSync(md)){
@@ -238,16 +232,9 @@ router.get('/api/build', function(req, res){
     res.send('生成成功！');
 });
 
-router.get('/start', function(req, res){
-    res.render('docs/start', {
-        'title': 'start'
-    });
-})
-
-
 // index
 router.get('/', function(req, res){
-    res.sendfile('../index.html');
+    res.render('list');
 });
 
 module.exports = router;

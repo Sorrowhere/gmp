@@ -10,7 +10,7 @@ $bgColor: #ecf0f5;
 // base
 // ========================================
 body{
-	font: 12px/1.5 arial, sans-serif;
+	font: 14px/1.3 arial, 'Microsoft Yahei', sans-serif;
 	color: $textColor;
 }
 input, select, textarea, button{
@@ -69,7 +69,7 @@ $headerHeight: 50px;
 		}
 	}
 }
-.gmp-menu{
+.gmp-nav{
 	float: left;
     font-size: 14px;
     margin-left: 20px;
@@ -231,31 +231,6 @@ $headerHeight: 50px;
         display: none;
     }
 }
-.code-editor-wrap{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: none;
-    background-color: rgba(0, 0, 0, .3);
-}
-.code-editor{
-    background-color: #fff;
-    border: 5px solid #666;
-    margin: 50px auto 0;
-    width: 700px;
-}
-.code-editor-main{
-    height: 500px;
-    background-color: #fff;
-}
-.code-editor-submit{
-    padding: 10px;
-    text-align: center;
-    border-top: 1px solid #d9d9d9;
-    .btn{
-        margin: 0 5px;
-    }
-}
 
 
 // list page
@@ -266,9 +241,27 @@ $headerHeight: 50px;
 }
 
 // doc
-.gmp-doc-section{
-    margin-bottom: 50px;
-}
 .gmp-h{
     font-family: 'Microsoft Yahei';
+}
+h2,h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h2{
+    font-size: 36px;
+    :nth-child(n+1){
+        margin-top: 50px;
+    }
+}
+h3{
+    font-size: 28px;
+}
+h4{
+    font-size: 22px;
+}
+p{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }

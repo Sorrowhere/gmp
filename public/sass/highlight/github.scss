@@ -11,13 +11,15 @@ pre {
     background: #f7f7f9;
     font-family: "PT Mono", Menlo, "Courier New", monospace;
     border: 1px solid #e1e1e8;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .hljs-comment,
 .hljs-template_comment,
 .diff .hljs-header,
 .hljs-javadoc {
-    color: #998;
+    color: #999;
     font-style: italic;
 }
 
