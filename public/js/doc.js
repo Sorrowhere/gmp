@@ -18,6 +18,20 @@
                     nav.append(navItem);
                 });
             }
+        });
+
+        $(window).scroll(function(){
+            $('.gmp-side').find('a').removeClass('active').filter(function(){
+                var href = $(this).attr('href');
+                var scrollTop = $(window).scrollTop();
+                return scrollTop < $(href).offset().top + 1;
+            }).filter(':first').addClass('active');
+        });
+        $('.gmp-side').find('a').on('click', function(){
+            var href = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: $(href).offset().top
+            }, 300);
         })
     });
 })(jQuery);

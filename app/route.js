@@ -20,8 +20,7 @@ function markToHtml(content){
     var renderer = new marked.Renderer();
     // head renderer
     renderer.heading = function (text, level) {
-        var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        return '<h' + level + ' class="gmp-h">' + escapedText + '</h' + level + '>';
+        return '<h' + level + ' class="gmp-h">' + text + '</h' + level + '>';
     }
 
     return marked(content, { renderer: renderer });
@@ -29,16 +28,39 @@ function markToHtml(content){
 }
 // save html page
 function savePage(pageName, pageTitle, htmlContent){
-    var page = new Page();
-    var pages = page.get();
     var doc = fs.readFileSync(path.join(__dirname, '../views/doc.html'), 'utf8');
+    var menus = getMenu(htmlContent);
     var obj = {
         title: pageTitle,
-        content: htmlContent
-    }
+        content: htmlContent,
+        menus: menus
+    };
     fs.writeFileSync(path.join(__dirname, '../views/doc/' + pageName + '.html'), ejs.render(doc, obj), 'utf8');
 }
 
+function getMenu(content){
+    var $ = cheerio.load(content);
+    var heads = $('h2.gmp-h, h3.gmp-h');
+    var menus = [];
+    heads.each(function(index, item){
+        if(item.name == 'h2'){
+            menus.push({
+                id: item.attribs['id'],
+                name: item.name,
+                text: item.children[0].data,
+                subs: []
+            });
+        }else{
+            var parent = menus[menus.length - 1];
+            parent.subs.push({
+                id: item.attribs['id'],
+                name: item.name,
+                text: item.children[0].data
+            });
+        }
+    });
+    return menus;
+}
 
 // page create
 router.get('/page/:key?', function(req, res){

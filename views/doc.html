@@ -20,7 +20,18 @@
 <div class="gmp-layout">
     <div class="gmp-side">
         <ul class="gmp-menu-main">
-            <li><a href="">开始</a></li>
+            <% menus.forEach(function(item, key){ %>
+            <li>
+                <a href="#<%= item.id %>"><%= item.text %></a>
+                <% if(item.subs.length > 0){ %>
+                <ul class="gmp-menu-sub">
+                    <% item.subs.forEach(function(subItem, key){ %>
+                    <li><a href="#<%= subItem.id %>"><%= subItem.text %></a></li>
+                    <% }) %>
+                </ul>
+                <% } %>
+            </li>
+            <% }) %>
         </ul>
     </div>
     <div class="gmp-content">
