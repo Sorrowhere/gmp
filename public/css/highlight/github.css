@@ -4,7 +4,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 /* line 7, ../../sass/highlight/github.scss */
-pre {
+.hljs {
   display: block;
   padding: 1em;
   color: #333;

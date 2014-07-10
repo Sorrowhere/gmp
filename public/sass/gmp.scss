@@ -46,7 +46,7 @@ input{
 // layout
 .gmp-layout{
 	width: 1190px;
-	margin: 0 auto;
+	margin-left: 20px;
 	overflow: hidden;
 }
 $headerHeight: 50px;
@@ -55,7 +55,7 @@ $headerHeight: 50px;
 	margin-bottom: 20px;
 }
 .gmp-header{
-	@include text-shadow(0 1px 1px #08274e);
+	padding-left: 10px;
     font-family: arial, 'Microsoft Yahei', sans-serif;
 	overflow: hidden;
 	.logo{
@@ -241,40 +241,66 @@ $headerHeight: 50px;
 }
 
 // doc
+$gmpSideWidth: 270px;
+$gmpSideGutter: 40px;
+.gmp-content{
+    padding-left: $gmpSideWidth;
+}
 .gmp-side{
-    width: 230px;
-    margin-right: 10px;
-    margin-top: 20px;
+    width: $gmpSideWidth - $gmpSideGutter;
     float: left;
     padding: 10px 0;
+    margin-left: -$gmpSideWidth;
+}
+.gmp-fixed{
+    position: fixed;
+    top: 0;
 }
 .gmp-menu-main{
-    a{
-        display: block;
-        height: 24px;
-        line-height: 24px;
-        padding: 0 10px;
-        &:link,&:visited{
-            color: #999;
+    > li{
+        a{
+            display: block;
+            line-height: 28px;
+            padding: 0 10px;
+            &:link,&:visited{
+                color: #999;
+            }
+            &:hover{
+                text-decoration: none;
+                color: $blue;
+            }
         }
-        &:hover{
-            text-decoration: none;
-            color: $blue;
+        margin-bottom: 5px;
+    }
+    > .active{
+        > a{
+            background-color: #eee;
+            &:link,&:visited,&:hover{
+                color: #08274e;
+            }
         }
     }
-    .gmp-menu-sub{
-        display: none;
+
+}
+.gmp-menu-sub{
+    margin-top: 3px;
+    display: none;
+    li{
         a{
             padding-left: 20px;
             font-size: 12px;
         }
-        .active &{
-            display: block;
+    }
+    .active{
+        a{
+            &:link,&:visited,&:hover{
+                color: #08274e;
+            }
         }
     }
-}
-.gmp-content{
-    overflow: hidden;
+    .active &{
+        display: block;
+    }
 }
 .gmp-h{
     font-family: 'Microsoft Yahei';
@@ -284,19 +310,27 @@ h2,h3{
     margin-bottom: 10px;
 }
 h2{
-    font-size: 36px;
+    font-size: 33px;
     :nth-child(n+1){
         margin-top: 50px;
     }
 }
 h3{
-    font-size: 28px;
+    font-size: 25px;
 }
 h4{
-    font-size: 22px;
+    font-size: 19px;
 }
 p{
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 10px;
+    code{
+        font-family: $fontCode;
+        padding: 2px 4px;
+        margin: 0 5px;
+        background-color: #eee;
+        color: $red;
+        @include border-radius(3px);
+    }
 }

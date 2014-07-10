@@ -197,17 +197,6 @@ router.post('/page/:key?', function(req, res){
 
 });
 
-// page list
-router.get('/list', function(req, res){
-    // read page map
-    var page = new Page();
-    var pagesJSON = page.get();
-    // console.log(pagesJSON);
-//    res.json(pagesJSON);
-    res.render('list', {
-        pages: pagesJSON
-    });
-});
 
 // page delete
 router.get('/delete/:key', function(req, res){
@@ -256,7 +245,14 @@ router.get('/api/build', function(req, res){
 
 // index
 router.get('/', function(req, res){
-    res.render('list');
+    // read page map
+    var page = new Page();
+    var pagesJSON = page.get();
+    // console.log(pagesJSON);
+//    res.json(pagesJSON);
+    res.render('list', {
+        pages: pagesJSON
+    });
 });
 
 module.exports = router;

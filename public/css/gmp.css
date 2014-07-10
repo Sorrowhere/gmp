@@ -46,7 +46,7 @@ input[type='text']:focus {
 /* line 47, ../sass/gmp.scss */
 .gmp-layout {
   width: 1190px;
-  margin: 0 auto;
+  margin-left: 20px;
   overflow: hidden;
 }
 
@@ -58,7 +58,7 @@ input[type='text']:focus {
 
 /* line 57, ../sass/gmp.scss */
 .gmp-header {
-  text-shadow: 0 1px 1px #08274e;
+  padding-left: 10px;
   font-family: arial, 'Microsoft Yahei', sans-serif;
   overflow: hidden;
 }
@@ -284,83 +284,116 @@ input[type='text']:focus {
   margin-right: 15px;
 }
 
-/* line 244, ../sass/gmp.scss */
-.gmp-side {
-  width: 230px;
-  margin-right: 10px;
-  margin-top: 20px;
-  float: left;
-  padding: 10px 0;
+/* line 246, ../sass/gmp.scss */
+.gmp-content {
+  padding-left: 270px;
 }
 
-/* line 252, ../sass/gmp.scss */
-.gmp-menu-main a {
+/* line 249, ../sass/gmp.scss */
+.gmp-side {
+  width: 230px;
+  float: left;
+  padding: 10px 0;
+  margin-left: -270px;
+}
+
+/* line 255, ../sass/gmp.scss */
+.gmp-fixed {
+  position: fixed;
+  top: 0;
+}
+
+/* line 260, ../sass/gmp.scss */
+.gmp-menu-main > li {
+  margin-bottom: 5px;
+}
+/* line 261, ../sass/gmp.scss */
+.gmp-menu-main > li a {
   display: block;
-  height: 24px;
-  line-height: 24px;
+  line-height: 28px;
   padding: 0 10px;
 }
-/* line 257, ../sass/gmp.scss */
-.gmp-menu-main a:link, .gmp-menu-main a:visited {
+/* line 265, ../sass/gmp.scss */
+.gmp-menu-main > li a:link, .gmp-menu-main > li a:visited {
   color: #999;
 }
-/* line 260, ../sass/gmp.scss */
-.gmp-menu-main a:hover {
+/* line 268, ../sass/gmp.scss */
+.gmp-menu-main > li a:hover {
   text-decoration: none;
   color: #0066dd;
 }
-/* line 265, ../sass/gmp.scss */
-.gmp-menu-main .gmp-menu-sub {
+/* line 276, ../sass/gmp.scss */
+.gmp-menu-main > .active > a {
+  background-color: #eee;
+}
+/* line 278, ../sass/gmp.scss */
+.gmp-menu-main > .active > a:link, .gmp-menu-main > .active > a:visited, .gmp-menu-main > .active > a:hover {
+  color: #08274e;
+}
+
+/* line 285, ../sass/gmp.scss */
+.gmp-menu-sub {
+  margin-top: 3px;
   display: none;
 }
-/* line 267, ../sass/gmp.scss */
-.gmp-menu-main .gmp-menu-sub a {
+/* line 289, ../sass/gmp.scss */
+.gmp-menu-sub li a {
   padding-left: 20px;
   font-size: 12px;
 }
-/* line 271, ../sass/gmp.scss */
-.active .gmp-menu-main .gmp-menu-sub {
+/* line 296, ../sass/gmp.scss */
+.gmp-menu-sub .active a:link, .gmp-menu-sub .active a:visited, .gmp-menu-sub .active a:hover {
+  color: #08274e;
+}
+/* line 301, ../sass/gmp.scss */
+.active .gmp-menu-sub {
   display: block;
 }
 
-/* line 276, ../sass/gmp.scss */
-.gmp-content {
-  overflow: hidden;
-}
-
-/* line 279, ../sass/gmp.scss */
+/* line 305, ../sass/gmp.scss */
 .gmp-h {
   font-family: 'Microsoft Yahei';
 }
 
-/* line 282, ../sass/gmp.scss */
+/* line 308, ../sass/gmp.scss */
 h2, h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-/* line 286, ../sass/gmp.scss */
+/* line 312, ../sass/gmp.scss */
 h2 {
-  font-size: 36px;
+  font-size: 33px;
 }
-/* line 288, ../sass/gmp.scss */
+/* line 314, ../sass/gmp.scss */
 h2 :nth-child(n+1) {
   margin-top: 50px;
 }
 
-/* line 292, ../sass/gmp.scss */
+/* line 318, ../sass/gmp.scss */
 h3 {
-  font-size: 28px;
+  font-size: 25px;
 }
 
-/* line 295, ../sass/gmp.scss */
+/* line 321, ../sass/gmp.scss */
 h4 {
-  font-size: 22px;
+  font-size: 19px;
 }
 
-/* line 298, ../sass/gmp.scss */
+/* line 324, ../sass/gmp.scss */
 p {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 10px;
+}
+/* line 328, ../sass/gmp.scss */
+p code {
+  font-family: "PT Mono", Menlo, "Courier New", monospace;
+  padding: 2px 4px;
+  margin: 0 5px;
+  background-color: #eee;
+  color: #db2c3b;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }

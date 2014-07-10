@@ -18,24 +18,26 @@
     </div>
 </div>
 <div class="gmp-layout">
-    <div class="gmp-side">
-        <ul class="gmp-menu-main">
-            <% menus.forEach(function(item, key){ %>
-            <li>
-                <a href="#<%= item.id %>"><%= item.text %></a>
-                <% if(item.subs.length > 0){ %>
-                <ul class="gmp-menu-sub">
-                    <% item.subs.forEach(function(subItem, key){ %>
-                    <li><a href="#<%= subItem.id %>"><%= subItem.text %></a></li>
-                    <% }) %>
-                </ul>
-                <% } %>
-            </li>
-            <% }) %>
-        </ul>
-    </div>
     <div class="gmp-content">
-        <%- content %>
+        <div class="gmp-side" id="gmpSide">
+            <ul class="gmp-menu-main" id="gmpMenuMain">
+                <% menus.forEach(function(item, key){ %>
+                <li class="<%= key==0?'active':'' %> JS-menu-main-item">
+                    <a href="#<%= item.id %>"><%= item.text %></a>
+                    <% if(item.subs.length > 0){ %>
+                    <ul class="JS-menu-sub gmp-menu-sub">
+                        <% item.subs.forEach(function(subItem, key){ %>
+                        <li><a href="#<%= subItem.id %>"><%= subItem.text %></a></li>
+                        <% }) %>
+                    </ul>
+                    <% } %>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="gmp-main">
+            <%- content %>
+        </div>
     </div>
 </div>
 <script src="/lib/jquery-1.11.1.min.js"></script>
