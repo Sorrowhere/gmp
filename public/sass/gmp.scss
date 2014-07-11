@@ -31,23 +31,27 @@ img{
 	vertical-align: middle;
 }
 input{
-  &[type='text']{
-    border:1px solid #ccc;
-    &:focus{
-      border-color: #267dce;
+    &[type='text']{
+        border:1px solid #ccc;
+        &:focus{
+            border-color: #267dce;
+        }
     }
-  }
 }
 .error{
-  &[type='text']{
-    border-color: #a22721;
-  }
+    &[type='text']{
+        border-color: #a22721;
+    }
 }
 // layout
-.gmp-layout{
+.gmp-layout,
+.gmp-layout-doc{
 	width: 1190px;
-	margin-left: 20px;
 	overflow: hidden;
+    margin: 0 auto;
+}
+.gmp-layout-doc{
+    margin: 0 0 0 20px;
 }
 $headerHeight: 50px;
 .gmp-header-wrap{
@@ -184,6 +188,7 @@ $headerHeight: 50px;
 .gmp-preview{
 	padding: 20px;
 	background-color: #fff;
+    overflow-y: scroll;
 }
 .ta-editor-value{
 	display: none;
@@ -243,7 +248,7 @@ $headerHeight: 50px;
 // doc
 $gmpSideWidth: 270px;
 $gmpSideGutter: 40px;
-.gmp-content{
+.gmp-entry{
     padding-left: $gmpSideWidth;
 }
 .gmp-side{
@@ -308,6 +313,7 @@ $gmpSideGutter: 40px;
 h2,h3{
     margin-top: 20px;
     margin-bottom: 10px;
+    margin: 20px 0 10px;
 }
 h2{
     font-size: 33px;
@@ -320,6 +326,10 @@ h3{
 }
 h4{
     font-size: 19px;
+    margin: 15px 0 5px;
+}
+pre{
+    margin-bottom: 10px;
 }
 p{
     font-size: 14px;

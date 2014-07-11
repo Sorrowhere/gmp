@@ -14,8 +14,8 @@
 
 		// change line
 		session.setUseWrapMode(true);
-		session.setWrapLimitRange(100, 100);
-		editor.renderer.setPrintMarginColumn(100);
+		session.setWrapLimitRange(90, 90);
+		editor.renderer.setPrintMarginColumn(90);
 
         editor.setOptions({
             enableEmmet:true
@@ -110,6 +110,13 @@
         function isEdit(url){
             return url.match(/page\/\d+/g);
         }
+
+        $(window).on('keydown', function(e){
+            if(e.keyCode == 83 && e.ctrlKey == true){
+                $('#btnPageSave').trigger('click');
+                return false;
+            }
+        })
 
     });
 })(jQuery);

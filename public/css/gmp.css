@@ -43,94 +43,100 @@ input[type='text']:focus {
   border-color: #a22721;
 }
 
-/* line 47, ../sass/gmp.scss */
-.gmp-layout {
+/* line 48, ../sass/gmp.scss */
+.gmp-layout,
+.gmp-layout-doc {
   width: 1190px;
-  margin-left: 20px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 /* line 53, ../sass/gmp.scss */
+.gmp-layout-doc {
+  margin: 0 0 0 20px;
+}
+
+/* line 57, ../sass/gmp.scss */
 .gmp-header-wrap {
   background-color: #2c3e50;
   margin-bottom: 20px;
 }
 
-/* line 57, ../sass/gmp.scss */
+/* line 61, ../sass/gmp.scss */
 .gmp-header {
   padding-left: 10px;
   font-family: arial, 'Microsoft Yahei', sans-serif;
   overflow: hidden;
 }
-/* line 61, ../sass/gmp.scss */
+/* line 65, ../sass/gmp.scss */
 .gmp-header .logo {
   font-size: 24px;
   float: left;
   margin-right: 30px;
   line-height: 50px;
 }
-/* line 66, ../sass/gmp.scss */
+/* line 70, ../sass/gmp.scss */
 .gmp-header .logo:link, .gmp-header .logo:visited, .gmp-header .logo:hover {
   color: white;
   text-decoration: none;
 }
 
-/* line 72, ../sass/gmp.scss */
+/* line 76, ../sass/gmp.scss */
 .gmp-nav {
   float: left;
   font-size: 14px;
   margin-left: 20px;
 }
-/* line 76, ../sass/gmp.scss */
+/* line 80, ../sass/gmp.scss */
 .gmp-nav li {
   float: left;
 }
-/* line 79, ../sass/gmp.scss */
+/* line 83, ../sass/gmp.scss */
 .gmp-nav a {
   display: block;
   padding: 0 20px;
   line-height: 50px;
 }
-/* line 83, ../sass/gmp.scss */
+/* line 87, ../sass/gmp.scss */
 .gmp-nav a:link, .gmp-nav a:visited {
   color: #8aa4be;
 }
-/* line 86, ../sass/gmp.scss */
+/* line 90, ../sass/gmp.scss */
 .gmp-nav a:hover {
   color: #cbd7e3;
   text-decoration: none;
 }
-/* line 92, ../sass/gmp.scss */
+/* line 96, ../sass/gmp.scss */
 .gmp-nav .active a {
   background-color: #233140;
 }
 
-/* line 98, ../sass/gmp.scss */
+/* line 102, ../sass/gmp.scss */
 .gmp-footer {
   text-align: center;
   color: #cccccc;
   margin-top: 50px;
 }
 
-/* line 104, ../sass/gmp.scss */
+/* line 108, ../sass/gmp.scss */
 .gmp-tb {
   width: 100%;
   margin-bottom: 20px;
 }
-/* line 107, ../sass/gmp.scss */
+/* line 111, ../sass/gmp.scss */
 .gmp-tb th, .gmp-tb td {
   border: 1px solid #dfe6ee;
   padding: 8px 10px;
 }
-/* line 111, ../sass/gmp.scss */
+/* line 115, ../sass/gmp.scss */
 .gmp-tb th {
   background-color: #ecf0f5;
 }
-/* line 115, ../sass/gmp.scss */
+/* line 119, ../sass/gmp.scss */
 .gmp-tb tr:not([class='empty']):hover td {
   background-color: aliceblue;
 }
-/* line 120, ../sass/gmp.scss */
+/* line 124, ../sass/gmp.scss */
 .gmp-tb .empty td {
   text-align: center;
   font-size: 20px;
@@ -138,37 +144,37 @@ input[type='text']:focus {
   padding: 50px 0;
   font-family: "Microsoft Yahei";
 }
-/* line 128, ../sass/gmp.scss */
+/* line 132, ../sass/gmp.scss */
 .gmp-tb .td-act {
   text-align: center;
 }
-/* line 130, ../sass/gmp.scss */
+/* line 134, ../sass/gmp.scss */
 .gmp-tb .td-act a {
   margin: 0 10px;
 }
 
-/* line 136, ../sass/gmp.scss */
+/* line 140, ../sass/gmp.scss */
 .required {
   color: #db2c3b;
   margin-right: 5px;
 }
 
-/* line 140, ../sass/gmp.scss */
+/* line 144, ../sass/gmp.scss */
 .gmp-error {
   color: #db2c3b;
 }
 
-/* line 143, ../sass/gmp.scss */
+/* line 147, ../sass/gmp.scss */
 .gmp-success {
   color: #27ae60;
 }
 
-/* line 147, ../sass/gmp.scss */
+/* line 151, ../sass/gmp.scss */
 .gmp-tip .icon {
   margin: -2px 3px 0 0;
 }
 
-/* line 152, ../sass/gmp.scss */
+/* line 156, ../sass/gmp.scss */
 .gmp-page {
   overflow: hidden;
   position: fixed;
@@ -178,7 +184,7 @@ input[type='text']:focus {
   bottom: 60px;
 }
 
-/* line 162, ../sass/gmp.scss */
+/* line 166, ../sass/gmp.scss */
 .gmp-page-half,
 .gmp-editor,
 .gmp-preview {
@@ -188,23 +194,23 @@ input[type='text']:focus {
   box-sizing: border-box;
 }
 
-/* line 166, ../sass/gmp.scss */
+/* line 170, ../sass/gmp.scss */
 .gmp-page-half {
   width: 49%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 170, ../sass/gmp.scss */
+/* line 174, ../sass/gmp.scss */
 .gmp-page-half:last-child {
   float: right;
 }
 
-/* line 174, ../sass/gmp.scss */
+/* line 178, ../sass/gmp.scss */
 .gmp-form {
   position: relative;
 }
 
-/* line 177, ../sass/gmp.scss */
+/* line 181, ../sass/gmp.scss */
 .gmp-page-toolbar {
   position: absolute;
   right: 0;
@@ -213,18 +219,19 @@ input[type='text']:focus {
   display: none;
 }
 
-/* line 184, ../sass/gmp.scss */
+/* line 188, ../sass/gmp.scss */
 .gmp-preview {
   padding: 20px;
   background-color: #fff;
+  overflow-y: scroll;
 }
 
-/* line 188, ../sass/gmp.scss */
+/* line 193, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 191, ../sass/gmp.scss */
+/* line 196, ../sass/gmp.scss */
 .gmp-page-submit {
   position: fixed;
   bottom: 0;
@@ -234,13 +241,13 @@ input[type='text']:focus {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 199, ../sass/gmp.scss */
+/* line 204, ../sass/gmp.scss */
 .gmp-page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 203, ../sass/gmp.scss */
+/* line 208, ../sass/gmp.scss */
 .gmp-page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -252,7 +259,7 @@ input[type='text']:focus {
   height: 40px;
   padding: 0 10px;
 }
-/* line 211, ../sass/gmp.scss */
+/* line 216, ../sass/gmp.scss */
 .gmp-page-submit .loading {
   display: inline-block;
   margin: 10px;
@@ -264,32 +271,32 @@ input[type='text']:focus {
   margin-left: 10px;
   display: none;
 }
-/* line 221, ../sass/gmp.scss */
+/* line 226, ../sass/gmp.scss */
 .gmp-page-submit .loading, .gmp-page-submit .loading img {
   height: 16px;
 }
-/* line 224, ../sass/gmp.scss */
+/* line 229, ../sass/gmp.scss */
 .gmp-page-submit .loading img {
   width: 16px;
   margin-top: -2px;
 }
-/* line 229, ../sass/gmp.scss */
+/* line 234, ../sass/gmp.scss */
 .gmp-page-submit .gmp-tip {
   margin-left: 20px;
   display: none;
 }
 
-/* line 238, ../sass/gmp.scss */
+/* line 243, ../sass/gmp.scss */
 .gmp-new-page .btn {
   margin-right: 15px;
 }
 
-/* line 246, ../sass/gmp.scss */
-.gmp-content {
+/* line 251, ../sass/gmp.scss */
+.gmp-entry {
   padding-left: 270px;
 }
 
-/* line 249, ../sass/gmp.scss */
+/* line 254, ../sass/gmp.scss */
 .gmp-side {
   width: 230px;
   float: left;
@@ -297,96 +304,103 @@ input[type='text']:focus {
   margin-left: -270px;
 }
 
-/* line 255, ../sass/gmp.scss */
+/* line 260, ../sass/gmp.scss */
 .gmp-fixed {
   position: fixed;
   top: 0;
 }
 
-/* line 260, ../sass/gmp.scss */
+/* line 265, ../sass/gmp.scss */
 .gmp-menu-main > li {
   margin-bottom: 5px;
 }
-/* line 261, ../sass/gmp.scss */
+/* line 266, ../sass/gmp.scss */
 .gmp-menu-main > li a {
   display: block;
   line-height: 28px;
   padding: 0 10px;
 }
-/* line 265, ../sass/gmp.scss */
+/* line 270, ../sass/gmp.scss */
 .gmp-menu-main > li a:link, .gmp-menu-main > li a:visited {
   color: #999;
 }
-/* line 268, ../sass/gmp.scss */
+/* line 273, ../sass/gmp.scss */
 .gmp-menu-main > li a:hover {
   text-decoration: none;
   color: #0066dd;
 }
-/* line 276, ../sass/gmp.scss */
+/* line 281, ../sass/gmp.scss */
 .gmp-menu-main > .active > a {
   background-color: #eee;
 }
-/* line 278, ../sass/gmp.scss */
+/* line 283, ../sass/gmp.scss */
 .gmp-menu-main > .active > a:link, .gmp-menu-main > .active > a:visited, .gmp-menu-main > .active > a:hover {
   color: #08274e;
 }
 
-/* line 285, ../sass/gmp.scss */
+/* line 290, ../sass/gmp.scss */
 .gmp-menu-sub {
   margin-top: 3px;
   display: none;
 }
-/* line 289, ../sass/gmp.scss */
+/* line 294, ../sass/gmp.scss */
 .gmp-menu-sub li a {
   padding-left: 20px;
   font-size: 12px;
 }
-/* line 296, ../sass/gmp.scss */
+/* line 301, ../sass/gmp.scss */
 .gmp-menu-sub .active a:link, .gmp-menu-sub .active a:visited, .gmp-menu-sub .active a:hover {
   color: #08274e;
 }
-/* line 301, ../sass/gmp.scss */
+/* line 306, ../sass/gmp.scss */
 .active .gmp-menu-sub {
   display: block;
 }
 
-/* line 305, ../sass/gmp.scss */
+/* line 310, ../sass/gmp.scss */
 .gmp-h {
   font-family: 'Microsoft Yahei';
 }
 
-/* line 308, ../sass/gmp.scss */
+/* line 313, ../sass/gmp.scss */
 h2, h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+  margin: 20px 0 10px;
 }
 
-/* line 312, ../sass/gmp.scss */
+/* line 318, ../sass/gmp.scss */
 h2 {
   font-size: 33px;
 }
-/* line 314, ../sass/gmp.scss */
+/* line 320, ../sass/gmp.scss */
 h2 :nth-child(n+1) {
   margin-top: 50px;
 }
 
-/* line 318, ../sass/gmp.scss */
+/* line 324, ../sass/gmp.scss */
 h3 {
   font-size: 25px;
 }
 
-/* line 321, ../sass/gmp.scss */
+/* line 327, ../sass/gmp.scss */
 h4 {
   font-size: 19px;
+  margin: 15px 0 5px;
 }
 
-/* line 324, ../sass/gmp.scss */
+/* line 331, ../sass/gmp.scss */
+pre {
+  margin-bottom: 10px;
+}
+
+/* line 334, ../sass/gmp.scss */
 p {
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
-/* line 328, ../sass/gmp.scss */
+/* line 338, ../sass/gmp.scss */
 p code {
   font-family: "PT Mono", Menlo, "Courier New", monospace;
   padding: 2px 4px;
