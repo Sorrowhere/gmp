@@ -8,7 +8,7 @@ var router = require('./app/route.js');
 var docRouter = require('./app/doc-route.js');
 
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
