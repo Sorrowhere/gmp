@@ -36,21 +36,24 @@
 
             if($side.position().top < sideScrollTop){
                 $side.addClass('gmp-fixed');
-                console.log('side top: ' + $side.offset().top);
-                console.log('scroll top: ' + sideScrollTop);
             }else{
                 $side.removeClass('gmp-fixed');
-                console.log('side top: ' + $side.offset().top);
-                console.log('scroll top: ' + sideScrollTop);
             }
 
 
         });
         $('#gmpSide').find('a').on('click', function(){
             var href = $(this).attr('href');
+            $(this).parent('li').addClass('active').siblings('li').removeClass('active');
             $('html, body').animate({
                 scrollTop: $(href).offset().top
             }, 300);
         });
+
+        if(window.location.hash.length !== 0){
+            $('html, body').animate({
+                scrollTop: $(window.location.hash).offset().top
+            }, 300);
+        }
     });
 })(jQuery);

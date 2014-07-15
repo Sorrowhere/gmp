@@ -92,7 +92,7 @@ style/
 
 <code>include/</code>为Sass引用文件，不会编译成样式文件。禁止在页面中直接引用。
 
-
+<code>_setting.scss</code>为项目Sass参数配置文件，定义根据项目重置的全局变量和UI变量，以实现UI定制。
 
 
 

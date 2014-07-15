@@ -9,7 +9,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   padding: 1em;
   color: #333;
   background: #f7f7f9;
-  font-family: "PT Mono", Menlo, "Courier New", monospace;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   border-left: 5px solid #8aa4be;
   font-size: 12px;
   line-height: 1.5;

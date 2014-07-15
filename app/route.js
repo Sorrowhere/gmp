@@ -209,23 +209,11 @@ router.get('/delete/:key', function(req, res){
 
     // delete markdown file
     if(fs.existsSync(md)){
-        fs.unlink(md, function(err){
-            if(err){
-                console.log(err);
-            }else{
-                console.log('delete success');
-            }
-        });
+        fs.unlinkSync(md);
     }
     // delete html file
     if(fs.existsSync(html)){
-        fs.unlink(html, function(err){
-            if(err){
-                console.log(err);
-            }else{
-                console.log('delete success');
-            }
-        });
+        fs.unlinkSync(html);
     }
     res.json(page.delete(key));
 });

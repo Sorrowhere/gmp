@@ -7,6 +7,15 @@
 // variable reset
 $borderColor: #ced9e5;
 $bgColor: #ecf0f5;
+
+%codeInline{
+    font-family: $fontCode;
+    padding: 2px 4px;
+    margin: 0 5px;
+    background-color: #eee;
+    color: #0a8;
+    @include border-radius(3px);
+}
 // base
 // ========================================
 body{
@@ -42,6 +51,18 @@ input{
     &[type='text']{
         border-color: #a22721;
     }
+}
+.red{
+    color: $red;
+}
+.bg-green{
+    background-color: #e8fdec;
+}
+.bg-blue{
+    background-color: #e8e9fd;
+}
+.bg-red{
+    background-color: #fde8ec;
 }
 // layout
 .gmp-layout,
@@ -117,7 +138,7 @@ $headerHeight: 50px;
 	}
 	tr:not([class='empty']):hover{
 		td{
-			background-color: aliceblue;
+			background-color: #f9f9f9;
 		}
 	}
     .empty{
@@ -135,6 +156,9 @@ $headerHeight: 50px;
 			margin: 0 10px;
 		}
 	}
+    code{
+        @extend %codeInline;
+    }
 }
 // common
 .required{
@@ -326,7 +350,7 @@ h3{
 }
 h4{
     font-size: 19px;
-    margin: 15px 0 5px;
+    margin: 15px 0 10px;
 }
 pre{
     margin-bottom: 10px;
@@ -334,13 +358,14 @@ pre{
 p{
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     code{
-        font-family: $fontCode;
-        padding: 2px 4px;
-        margin: 0 5px;
-        background-color: #eee;
-        color: $red;
-        @include border-radius(3px);
+        @extend %codeInline;
     }
+    img{
+        margin-bottom: 10px;
+    }
+}
+.gmp-para-lead{
+    font-size: 18px;
 }
