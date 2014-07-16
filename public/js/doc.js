@@ -3,12 +3,12 @@
     $(function(){
         var nav = $('#navList');
         var path = window.location.pathname;
-        var current = path.substring(path.lastIndexOf('/') + 1);
+        var current = path.substring(path.lastIndexOf('/') + 1).length;
+        current = current.length>0?current: 'index';
         $.ajax({
             type: 'get',
             url: '/nav',
             success: function(data){
-                console.log(data);
                 var navItem;
                 data.forEach(function(item, index, arr){
                     navItem = $('<li><a href="/' + item.pageName + '">' + item.pageTitle + '</a></li>');
