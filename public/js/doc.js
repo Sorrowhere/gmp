@@ -6,12 +6,12 @@
         var current = path.substring(path.lastIndexOf('/') + 1);
         $.ajax({
             type: 'get',
-            url: '/doc/nav',
+            url: '/nav',
             success: function(data){
                 console.log(data);
                 var navItem;
                 data.forEach(function(item, index, arr){
-                    navItem = $('<li><a href="/doc/' + item.pageName + '">' + item.pageTitle + '</a></li>');
+                    navItem = $('<li><a href="/' + item.pageName + '">' + item.pageTitle + '</a></li>');
                     if(current == item.pageName){
                         navItem.addClass('active');
                     }

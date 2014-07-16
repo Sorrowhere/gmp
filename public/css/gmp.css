@@ -325,15 +325,15 @@ input[type='text']:focus {
 
 /* line 275, ../sass/gmp.scss */
 .gmp-entry {
-  padding-left: 270px;
+  padding-left: 230px;
 }
 
 /* line 278, ../sass/gmp.scss */
 .gmp-side {
-  width: 230px;
+  width: 190px;
   float: left;
   padding: 10px 0;
-  margin-left: -270px;
+  margin-left: -230px;
 }
 
 /* line 284, ../sass/gmp.scss */

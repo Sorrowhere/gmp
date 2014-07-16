@@ -219,7 +219,7 @@ router.get('/delete/:key', function(req, res){
 });
 
 // pages rebuild
-router.get('/api/build', function(req, res){
+router.get('/build', function(req, res){
     var markContent, htmlContent, pageName, pageTitle, pages = new Page().get();
     pages.forEach(function(item, index, arr){
         pageName = item.pageName;

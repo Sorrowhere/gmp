@@ -34,7 +34,7 @@
             // markdown version
             $.ajax({
 	    		type: 'post',
-	    		url: '/preview',
+	    		url: '/manage/preview',
 	    		data: { "content": pageValue },
 	    		success: function(data){
 	    			pagePreview.html(data.content);
@@ -54,7 +54,7 @@
             // fetch init content
             $.ajax({
                 type: 'get',
-                url: '/page/detail/' + url.substring(url.lastIndexOf('/') + 1),
+                url: '/manage/page/detail/' + url.substring(url.lastIndexOf('/') + 1),
                 success: function(data){
                     editor.setValue(data.markContent);
                     txtPageName.val(data.pageName);
@@ -65,7 +65,7 @@
 
 	    // save handler
 		$('#btnPageSave').on('click', function(){
-            var reqUrl = '/page';
+            var reqUrl = '/manage/page';
             var data = {
                 "markContent": pageValue,
                 "htmlContent": pagePreview.html(),
@@ -77,7 +77,7 @@
 			}
             if(isEdit(url)){
                 data.key = url.substring(url.lastIndexOf('/') + 1);
-                reqUrl = '/page/' + data.key;
+                reqUrl = '/manage/page/' + data.key;
             }
             $.ajax({
                 type: 'post',

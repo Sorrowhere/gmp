@@ -21,5 +21,11 @@ router.get('/nav', function(req, res){
     res.json(page.get());
 });
 
+// index
+router.get('/', function(req, res){
+    // read page map
+    res.render('doc/index');
+});
+
 
 module.exports = router;

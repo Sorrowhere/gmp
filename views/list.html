@@ -13,7 +13,7 @@
             <a href="" class="logo">GMP</a>
             <div class="gmp-nav">
                 <ul class="gmp-nav-lst">
-                    <li class="active"><a href="/list">页面管理</a></li>
+                    <li class="active"><a href="/manage/list">页面管理</a></li>
                 </ul>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <td ><%= item.pageName %></td>
                 <td ><%= item.pageTitle %></td>
                 <td class="td-act">
-                    <a target="_blank" href="/page/<%= item.key %>">编辑</a>
+                    <a target="_blank" href="/manage/page/<%= item.key %>">编辑</a>
                     <a href="#" class="pageDelete" data-key="<%= item.key %>">删除</a>
                 </td>
             </tr>
@@ -57,8 +57,8 @@
             </tbody>
         </table>
         <div class="gmp-new-page">
-            <a href="/page" class="btn btn-big btn-blue" target="_blank">创建页面</a>
-            <a href="/api/build" target="_blank">重新生成页面</a>
+            <a href="/manage/page" class="btn btn-big btn-blue" target="_blank">创建页面</a>
+            <a href="/manage/build" target="_blank">重新生成页面</a>
         </div>
     </div>
 </div>
