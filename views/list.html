@@ -16,6 +16,7 @@
                     <li class="active"><a href="/manage/list">页面管理</a></li>
                 </ul>
             </div>
+            <a class="gmp-module-switch btn btn-blue btn-small" href="/">规范库</a>
         </div>
     </div>
 </div>
@@ -41,7 +42,7 @@
             <% pages.forEach(function(item, key){ %>
             <tr >
                 <td ><%= item.key %></td>
-                <td ><%= item.pageName %></td>
+                <td ><a href="/<%= item.pageName %>"><%= item.pageName %></a></td>
                 <td ><%= item.pageTitle %></td>
                 <td class="td-act">
                     <a target="_blank" href="/manage/page/<%= item.key %>">编辑</a>
@@ -73,7 +74,7 @@
             var key = $(this).attr('data-key');
             $.ajax({
                 type: 'get',
-                url: '/delete/' + key,
+                url: '/manage/delete/' + key,
                 success: function(data){
 //                    console.log(data);
                     window.location.reload();

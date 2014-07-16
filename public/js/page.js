@@ -4,6 +4,7 @@
 		var editor = ace.edit('editor');
 		var session = editor.session;
         var emmet = require("ace/ext/emmet");
+        var editorState = 1;
 		// editor set
 		editor.setTheme('ace/theme/chrome');
 		editor.setShowInvisibles(true);
@@ -31,6 +32,8 @@
 
 	    	pageValue = editor.getValue();
 
+            // set editor state not saved
+            editorState = 0;
             // markdown version
             $.ajax({
 	    		type: 'post',
@@ -94,6 +97,7 @@
                         $('#saveSuccess').css('display', 'none');
                     }
                     if(msg.status == 1){
+                        editorState = 1;
                         $('#errorExist').css('display', 'none');
                         $('#saveSuccess').css('display', 'inline-block');
                         txtPageName.removeClass('error');
@@ -116,7 +120,14 @@
                 $('#btnPageSave').trigger('click');
                 return false;
             }
-        })
+        });
+
+//        window.onbeforeunload = function(){
+//            var msg = '文档尚未保存，确定关闭窗口吗？';
+//            if(editorState == 0){
+//                return msg;
+//            }
+//        }
 
     });
 })(jQuery);

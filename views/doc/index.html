@@ -14,6 +14,7 @@
                 <ul id="navList" class="gmp-nav-lst">
                 </ul>
             </div>
+            <a class="gmp-module-switch btn btn-blue btn-small" href="/manage/">页面管理</a>
         </div>
     </div>
 </div>
@@ -64,7 +65,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gmp-h"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"gmp-html-rule"</span>&gt;</span>HTML标签使用<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gmp-section"</span>&gt;</span>
-    此处为其它结构
+    此处为其它复杂结构
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
 <p>文档中所需图片拷贝到<code>/public/img/doc</code>文件夹下，命名格式为：<code>docname_imgname.jpg|png|gif</code></p>
@@ -74,7 +75,8 @@
 <p>所有样式均通过Sass来编写，不能直接编辑<code>css</code>文件。由于目前各项目都没有增加Sass编译功能，所以直接拷贝样式文件到项目中（以后会添加下载功能）。规范库中的样式更新必须及时更新到项目中。</p>
 <h3 class="gmp-h" id="gmp-spec-file">样式组织结构</h3>
 
-<pre class="hljs">style/
+<pre class="hljs">
+style/
 |-- sass/
 |   |-- base/
 |   |   |-- reset.scss

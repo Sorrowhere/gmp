@@ -176,7 +176,7 @@ router.post('/page/:key?', function(req, res){
                 });
 
                 // rename html file and write
-                fs.rename(path.join(__dirname, '../doc/' + oldPageName + '.html'), path.join(__dirname, '../doc/'  + pageName + '.html'), function(err){
+                fs.rename(path.join(__dirname, '../views/doc/' + oldPageName + '.html'), path.join(__dirname, '../views/doc/'  + pageName + '.html'), function(err){
                     if(err){
                         console.log('Rename file error: ' + err);
                     }else{

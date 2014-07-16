@@ -143,32 +143,38 @@ input[type='text']:focus {
   background-color: #233140;
 }
 
-/* line 123, ../sass/gmp.scss */
+/* line 122, ../sass/gmp.scss */
+.gmp-module-switch {
+  float: right;
+  margin-top: 9px;
+}
+
+/* line 127, ../sass/gmp.scss */
 .gmp-footer {
   text-align: center;
   color: #cccccc;
   margin-top: 50px;
 }
 
-/* line 129, ../sass/gmp.scss */
+/* line 133, ../sass/gmp.scss */
 .gmp-tb {
   width: 100%;
   margin-bottom: 20px;
 }
-/* line 132, ../sass/gmp.scss */
+/* line 136, ../sass/gmp.scss */
 .gmp-tb th, .gmp-tb td {
   border: 1px solid #dfe6ee;
   padding: 8px 10px;
 }
-/* line 136, ../sass/gmp.scss */
+/* line 140, ../sass/gmp.scss */
 .gmp-tb th {
   background-color: #ecf0f5;
 }
-/* line 140, ../sass/gmp.scss */
+/* line 144, ../sass/gmp.scss */
 .gmp-tb tr:not([class='empty']):hover td {
   background-color: #f9f9f9;
 }
-/* line 145, ../sass/gmp.scss */
+/* line 149, ../sass/gmp.scss */
 .gmp-tb .empty td {
   text-align: center;
   font-size: 20px;
@@ -176,37 +182,37 @@ input[type='text']:focus {
   padding: 50px 0;
   font-family: "Microsoft Yahei";
 }
-/* line 153, ../sass/gmp.scss */
+/* line 157, ../sass/gmp.scss */
 .gmp-tb .td-act {
   text-align: center;
 }
-/* line 155, ../sass/gmp.scss */
+/* line 159, ../sass/gmp.scss */
 .gmp-tb .td-act a {
   margin: 0 10px;
 }
 
-/* line 164, ../sass/gmp.scss */
+/* line 168, ../sass/gmp.scss */
 .required {
   color: #db2c3b;
   margin-right: 5px;
 }
 
-/* line 168, ../sass/gmp.scss */
+/* line 172, ../sass/gmp.scss */
 .gmp-error {
   color: #db2c3b;
 }
 
-/* line 171, ../sass/gmp.scss */
+/* line 175, ../sass/gmp.scss */
 .gmp-success {
   color: #27ae60;
 }
 
-/* line 175, ../sass/gmp.scss */
+/* line 179, ../sass/gmp.scss */
 .gmp-tip .icon {
   margin: -2px 3px 0 0;
 }
 
-/* line 180, ../sass/gmp.scss */
+/* line 184, ../sass/gmp.scss */
 .gmp-page {
   overflow: hidden;
   position: fixed;
@@ -216,7 +222,7 @@ input[type='text']:focus {
   bottom: 60px;
 }
 
-/* line 190, ../sass/gmp.scss */
+/* line 194, ../sass/gmp.scss */
 .gmp-page-half,
 .gmp-editor,
 .gmp-preview {
@@ -226,23 +232,23 @@ input[type='text']:focus {
   box-sizing: border-box;
 }
 
-/* line 194, ../sass/gmp.scss */
+/* line 198, ../sass/gmp.scss */
 .gmp-page-half {
   width: 49%;
   float: left;
   border: 1px solid #ced9e5;
 }
-/* line 198, ../sass/gmp.scss */
+/* line 202, ../sass/gmp.scss */
 .gmp-page-half:last-child {
   float: right;
 }
 
-/* line 202, ../sass/gmp.scss */
+/* line 206, ../sass/gmp.scss */
 .gmp-form {
   position: relative;
 }
 
-/* line 205, ../sass/gmp.scss */
+/* line 209, ../sass/gmp.scss */
 .gmp-page-toolbar {
   position: absolute;
   right: 0;
@@ -251,19 +257,19 @@ input[type='text']:focus {
   display: none;
 }
 
-/* line 212, ../sass/gmp.scss */
+/* line 216, ../sass/gmp.scss */
 .gmp-preview {
   padding: 20px;
   background-color: #fff;
   overflow-y: scroll;
 }
 
-/* line 217, ../sass/gmp.scss */
+/* line 221, ../sass/gmp.scss */
 .ta-editor-value {
   display: none;
 }
 
-/* line 220, ../sass/gmp.scss */
+/* line 224, ../sass/gmp.scss */
 .gmp-page-submit {
   position: fixed;
   bottom: 0;
@@ -273,13 +279,13 @@ input[type='text']:focus {
   background-color: #e8edf2;
   border-top: 1px solid #ced9e5;
 }
-/* line 228, ../sass/gmp.scss */
+/* line 232, ../sass/gmp.scss */
 .gmp-page-submit label {
   display: inline-block;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 232, ../sass/gmp.scss */
+/* line 236, ../sass/gmp.scss */
 .gmp-page-submit label input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -291,7 +297,7 @@ input[type='text']:focus {
   height: 40px;
   padding: 0 10px;
 }
-/* line 240, ../sass/gmp.scss */
+/* line 244, ../sass/gmp.scss */
 .gmp-page-submit .loading {
   display: inline-block;
   margin: 10px;
@@ -303,32 +309,32 @@ input[type='text']:focus {
   margin-left: 10px;
   display: none;
 }
-/* line 250, ../sass/gmp.scss */
+/* line 254, ../sass/gmp.scss */
 .gmp-page-submit .loading, .gmp-page-submit .loading img {
   height: 16px;
 }
-/* line 253, ../sass/gmp.scss */
+/* line 257, ../sass/gmp.scss */
 .gmp-page-submit .loading img {
   width: 16px;
   margin-top: -2px;
 }
-/* line 258, ../sass/gmp.scss */
+/* line 262, ../sass/gmp.scss */
 .gmp-page-submit .gmp-tip {
   margin-left: 20px;
   display: none;
 }
 
-/* line 267, ../sass/gmp.scss */
+/* line 271, ../sass/gmp.scss */
 .gmp-new-page .btn {
   margin-right: 15px;
 }
 
-/* line 275, ../sass/gmp.scss */
+/* line 279, ../sass/gmp.scss */
 .gmp-entry {
   padding-left: 230px;
 }
 
-/* line 278, ../sass/gmp.scss */
+/* line 282, ../sass/gmp.scss */
 .gmp-side {
   width: 190px;
   float: left;
@@ -336,108 +342,108 @@ input[type='text']:focus {
   margin-left: -230px;
 }
 
-/* line 284, ../sass/gmp.scss */
+/* line 288, ../sass/gmp.scss */
 .gmp-fixed {
   position: fixed;
   top: 0;
 }
 
-/* line 289, ../sass/gmp.scss */
+/* line 293, ../sass/gmp.scss */
 .gmp-menu-main > li {
   margin-bottom: 5px;
 }
-/* line 290, ../sass/gmp.scss */
+/* line 294, ../sass/gmp.scss */
 .gmp-menu-main > li a {
   display: block;
   line-height: 28px;
   padding: 0 10px;
 }
-/* line 294, ../sass/gmp.scss */
+/* line 298, ../sass/gmp.scss */
 .gmp-menu-main > li a:link, .gmp-menu-main > li a:visited {
   color: #999;
 }
-/* line 297, ../sass/gmp.scss */
+/* line 301, ../sass/gmp.scss */
 .gmp-menu-main > li a:hover {
   text-decoration: none;
   color: #0066dd;
 }
-/* line 305, ../sass/gmp.scss */
+/* line 309, ../sass/gmp.scss */
 .gmp-menu-main > .active > a {
   background-color: #eee;
 }
-/* line 307, ../sass/gmp.scss */
+/* line 311, ../sass/gmp.scss */
 .gmp-menu-main > .active > a:link, .gmp-menu-main > .active > a:visited, .gmp-menu-main > .active > a:hover {
   color: #08274e;
 }
 
-/* line 314, ../sass/gmp.scss */
+/* line 318, ../sass/gmp.scss */
 .gmp-menu-sub {
   margin-top: 3px;
   display: none;
 }
-/* line 318, ../sass/gmp.scss */
+/* line 322, ../sass/gmp.scss */
 .gmp-menu-sub li a {
   padding-left: 20px;
   font-size: 12px;
 }
-/* line 325, ../sass/gmp.scss */
+/* line 329, ../sass/gmp.scss */
 .gmp-menu-sub .active a:link, .gmp-menu-sub .active a:visited, .gmp-menu-sub .active a:hover {
   color: #08274e;
 }
-/* line 330, ../sass/gmp.scss */
+/* line 334, ../sass/gmp.scss */
 .active .gmp-menu-sub {
   display: block;
 }
 
-/* line 334, ../sass/gmp.scss */
+/* line 338, ../sass/gmp.scss */
 .gmp-h {
   font-family: 'Microsoft Yahei';
 }
 
-/* line 337, ../sass/gmp.scss */
+/* line 341, ../sass/gmp.scss */
 h2, h3 {
   margin-top: 20px;
   margin-bottom: 10px;
   margin: 20px 0 10px;
 }
 
-/* line 342, ../sass/gmp.scss */
+/* line 346, ../sass/gmp.scss */
 h2 {
   font-size: 33px;
 }
-/* line 344, ../sass/gmp.scss */
+/* line 348, ../sass/gmp.scss */
 h2 :nth-child(n+1) {
   margin-top: 50px;
 }
 
-/* line 348, ../sass/gmp.scss */
+/* line 352, ../sass/gmp.scss */
 h3 {
   font-size: 25px;
 }
 
-/* line 351, ../sass/gmp.scss */
+/* line 355, ../sass/gmp.scss */
 h4 {
   font-size: 19px;
   margin: 15px 0 10px;
 }
 
-/* line 355, ../sass/gmp.scss */
+/* line 359, ../sass/gmp.scss */
 pre {
   margin-bottom: 10px;
 }
 
-/* line 358, ../sass/gmp.scss */
+/* line 362, ../sass/gmp.scss */
 p {
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 8px;
 }
-/* line 365, ../sass/gmp.scss */
+/* line 369, ../sass/gmp.scss */
 p img {
   margin-bottom: 10px;
 }
 
-/* line 369, ../sass/gmp.scss */
+/* line 373, ../sass/gmp.scss */
 .gmp-para-lead {
   font-size: 18px;
 }
