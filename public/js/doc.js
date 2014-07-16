@@ -3,7 +3,7 @@
     $(function(){
         var nav = $('#navList');
         var path = window.location.pathname;
-        var current = path.substring(path.lastIndexOf('/') + 1).length;
+        var current = path.substring(path.lastIndexOf('/') + 1);
         current = current.length>0?current: 'index';
         $.ajax({
             type: 'get',
