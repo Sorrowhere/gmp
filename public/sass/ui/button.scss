@@ -1,30 +1,39 @@
-// button scss
-// required: css3.scss
+// button
+// author liw
+// =======================================
+// required: _css3.scss, _global.scss
 
-@import "../import/_css3.scss";
+// import
+@import "../include/_global.scss";
+@import "../include/_css3.scss";
 
 // variables
 $btnBaseClass: btn !default;
 $btnDisabledClass: disabled !default;
-$grayLight: #999;
-$darkerPercent: 4%;
+$btnBorderRadius: 2px !default;
 
 // button size class
-//             className, height, padding, fontSize
-$btnSizeSmall: small      32px    20px       14px  !default;
-$btnSizeBig:   big        42px    30px       18px  !default;
-$btnSizeGroup: $btnSizeSmall, $btnSizeBig !default;
-// button color class 
-//               className,   borderColor, fontColor, backgroundColor, gradient,  startColor,           endColor
-$btnColorRed:    red          #b32b24      #fff       #e0463e          false      rgba(230,77,69,1)     rgba(217,63,54,1);
-$btnColorYellow: yellow       #e6c317      #674800    #ffdb1a          false      rgba(255,226,38,1)    rgba(255,210,11,1);
-$btnColorBlue:   blue         #2876c0      #fff       #2f87d9          false      rgba(24,148,242,1)    rgba(32,137,217,1);
-$btnColorGray:   gray         #cccccc      #666       #e6e6e6          false      rgba(244,244,244,1)   rgba(224,224,224,1);
-$btnColorGroup:  $btnColorRed $btnColorYellow $btnColorBlue $btnColorGray !default;
+//       className,  height,  padding,  fontSize
+$btnS:   s,          22px,    10px,     12px !default;
+$btnM:   m,          26px,    15px,     12px !default;
+$btnL:   l,          32px,    20px,     14px !default;
+$btnXL:  xl,         36px,    25px,     14px !default;
+$btnXXL: xxl,        40px,    30px,     16px !default;
+$btnSizeGroup: $btnS, $btnM, $btnL, $btnXL, $btnXXL !default;
+
+// button type class
+//                className,     bdColor, fontColor, bgColor, gradient, startColor, endColor
+$btnDefault:      default,       $bdGray, $fcText,   $bgGray, true,     #fafafa,    #ebebeb;
+$btnPrimary:      primary,       #d94146, #fff,      #e6454a, true,     #f2494e,    #d94146;
+$btnPrimaryLight: primary-light, #ffb2b5, #e5454a,   #ffe0e1, true,     #ffe5e6,    #ffd9da;
+$btnSub:          sub,           #f2b10c, #785206,   #f9bc13, true,     #ffc619,    #f2b10c;
+$btnSubLight:     sub-light,     #f2d785, #997300,   #fff6da, true,     #fff9e5,    #fff2cc;
+$btnInfo:         info,          #4197d9, #fff,      #3e9ee7, true,     #3da4f2,    #4197d9;
+$btnInfoLight:    info-light,    #a6d8ff, #3692d9,   #e2f2ff, ture,     #ebf6ff,    #d9eeff;
+$btnTypeGroup: $btnDefault, $btnPrimary, $btnPrimaryLight, $btnSub, $btnSubLight, $btnInfo, $btnInfoLight;
 
 
 // button base style
-
 .#{$btnBaseClass}{
     display: inline-block;
     vertical-align: middle;
@@ -33,10 +42,21 @@ $btnColorGroup:  $btnColorRed $btnColorYellow $btnColorBlue $btnColorGray !defau
     padding: 0;
     margin: 0;
     border: none;
-    @include border-radius(3px);
+    @include border-radius($btnBorderRadius);
+    @if $ie6 {
+        _margin-bottom:1px;
+    }
 }
+// hack
 button.#{$btnBaseClass},
 input.#{$btnBaseClass}{
+
+    // fix black border problem under IE6 and IE7
+    @if $lte7 {
+        *overflow: visible;
+        *filter: chroma(color=#000);
+    }
+
     // for firefox
     &::-moz-focus-inner{
         border: none;
@@ -50,67 +70,129 @@ a.#{$btnBaseClass}:hover{
     text-decoration: none;
 }
 
-// button color style
-@each $colorItem in $btnColorGroup{
-    $colorClass: nth($colorItem,1);
-    $borderColor: nth($colorItem,2);
-    $fontColor: nth($colorItem,3);
-    $backgroundColor: nth($colorItem,4);
-    $gradient: nth($colorItem, 5);
-    $startColor: nth($colorItem,6);
-    $endColor: nth($colorItem,7);
+// button type style
+@each $btnTypeItem in $btnTypeGroup{
+    $btnTypeName: nth($btnTypeItem,1);
+    $btnBorderColor: nth($btnTypeItem,2);
+    $btnFontColor: nth($btnTypeItem,3);
+    $btnBgColor: nth($btnTypeItem,4);
+    $btnGradient: nth($btnTypeItem, 5);
+    $btnStartColor: nth($btnTypeItem,6);
+    $btnEndColor: nth($btnTypeItem,7);
 
-    $btnColorClass: $btnBaseClass+'-'+$colorClass;
+    $btnTypeClass: $btnBaseClass+'-'+$btnTypeName;
 
-    .#{$btnColorClass}{
-        color: $fontColor;
-        background-color: $backgroundColor;
-        &:link,
-        &:visited{
-            color: $fontColor;
+    .#{$btnTypeClass}{
+        color: $btnFontColor;
+        background-color: $btnBgColor;
+        border: 1px solid $btnBorderColor;
+        &:link,&:visited,&:hover{
+            color: $btnFontColor;
         }
         &:hover{
-            border-bottom-color: darken($borderColor, $darkerPercent);
-            background-color: darken($backgroundColor, $darkerPercent);
-            @if($gradient){
-                @include gradient-vertical(darken($startColor,$darkerPercent) 0,darken($endColor,$darkerPercent) 100%);
+            background-color: darken($btnBgColor, 3%);
+        }
+        @if($btnGradient){
+            @include gradient-vertical($btnStartColor 0, $btnEndColor 100%);
+            &:hover{
+                @include gradient-vertical(darken($btnStartColor, 3%) 0, darken($btnEndColor, 3%) 100%);
             }
-            color: $fontColor;
+            &:active{
+                @include gradient-vertical(darken($btnEndColor, 3%) 0, darken($btnStartColor, 3%) 100%);
+            }
         }
     }
 }
 
 // button size style
-@each $sizeItem in $btnSizeGroup{
-    $sizeClass: nth($sizeItem,1);
-    $height: nth($sizeItem,2);
-    $padding: nth($sizeItem,3);
-    $fontSize: nth($sizeItem,4);
+@each $btnSizeItem in $btnSizeGroup{
+    $btnSizeName: nth($btnSizeItem,1);
+    $btnHeight: nth($btnSizeItem,2);
+    $btnPadding: nth($btnSizeItem,3);
+    $btnFontSize: nth($btnSizeItem,4);
 
-    $btnSizeClass: $btnBaseClass+'-'+$sizeClass;
+    $btnSizeClass: $btnBaseClass+'-'+$btnSizeName;
 
     .#{$btnSizeClass}{
-        height: $height - 2;
-        line-height: $height - 2;
-        padding: 0 $padding;
-        font-size: $fontSize;
-        @if($fontSize >= 14){
-            font-family: arial, 'Microsoft Yahei', sans-serif;
+        height: $btnHeight - 2;
+        line-height: $btnHeight - 2;
+        padding: 0 $btnPadding;
+        font-size: $btnFontSize;
+        @if($btnFontSize >= 14){
+            font-family: $ffYahei;
+            @if($lte7){
+                *font-weight: bold;
+            }
         }
     }
     button.#{$btnSizeClass},
     input.#{$btnSizeClass}{
-        height: $height;
+        height: $btnHeight;
+        @if $ie6{
+            @if $btnSizeName != 's'{
+                _height: $btnHeight - 5;
+            }@else{
+                _line-height: $btnHeight - 5;
+            }
+        }
+        @if $ie7{
+            @if $btnSizeName != 's'{
+                *line-height: $btnHeight - 5;
+            }
+        }
     }
 }
-// button disabled
+
+// button with icon
+.btn-icon{
+    position: relative;
+    padding-left: 35px;
+    .icon{
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        margin-top: -8px;
+        @if($ie6){
+            _display: block;
+            _top: 4px;
+        }
+    }
+}
+// dropdown button
+
+// button group
+.btn-group{
+    overflow: hidden;
+    *zoom: 1;
+    .btn{
+        @include border-radius(0);
+        float: left;
+        margin-left: -1px;
+    }
+    .first{
+        @include border-top-left-radius(3px);
+        @include border-bottom-left-radius(3px);
+        margin-left: 0;
+    }
+    .last{
+        @include border-top-right-radius(5px);
+        @include border-bottom-right-radius(5px);
+    }
+    .active{
+        background: #fff;
+    }
+}
+
+// disabled button
 .#{$btnDisabledClass},
 .#{$btnDisabledClass}:hover{
-    background-color: #e0e0e0;
-    color: $grayLight;
+    background-image: none;
+    background-color: #eee;
+    border: 1px solid $bdGray;
+    color: $fcGrayLight;
     cursor: not-allowed;
-    opacity: .8;
 }
 a.#{$btnDisabledClass}{
-    color: $grayLight;
+    color: $fcGrayLight;
 }
+

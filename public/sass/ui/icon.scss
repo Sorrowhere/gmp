@@ -1,0 +1,58 @@
+// icon
+// author liw
+// =======================================
+// required: _css3.scss, _global.scss
+
+// import
+@import "../include/_global.scss";
+@import "../include/_css3.scss";
+
+// variables
+$iconPrefix: 'icon';
+$imgPath: '../../img/global/' !default;
+
+// icon group
+$iconDefault: $iconPrefix,         'icon.png',    16px, 16px !default;
+$icon2x:      $iconPrefix + '-2x', 'icon-2x.png', 32px, 32px !default;
+$icon3x:      $iconPrefix + '-3x', 'icon-3x.png', 48px, 48px !default;
+$iconGroup: $iconDefault, $icon2x, $icon3x;
+
+%iconBase{
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 0;
+}
+
+// background position mixin
+@mixin bgpos($axisX: 0, $axisY: 0){
+    background-position: $axisX $axisY;
+}
+
+@each $iconItem in $iconGroup{
+    $iconClass: nth($iconItem,1);
+    $iconImg: nth($iconItem,2);
+    $iconWidth: nth($iconItem,3);
+    $iconHeight: nth($iconItem,4);
+
+    $iconImgUrl: $imgPath + $iconImg;
+
+    .#{$iconClass}{
+        @extend %iconBase;
+        width: $iconWidth;
+        height: $iconHeight;
+        background: url($iconImgUrl) no-repeat;
+    }
+}
+
+// icon default
+.#{$iconPrefix}-succ{
+    @include bgpos(-16px, 0);
+}
+
+// icon 2x
+$icon2xClass: nth($icon2x, 1);
+.#{$icon2xClass}-succ{
+    @include bgpos(-32px, 0);
+}
+

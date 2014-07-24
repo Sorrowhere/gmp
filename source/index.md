@@ -54,16 +54,16 @@ style/
 |   |   |-- common.scss
 |   |   |-- ...
 |   |-- ui/
-|   |   |-- ui_button.scss
-|   |   |-- ui_tip.scss
-|   |   |-- ui_pop.scss
-|   |   |-- ui_form.scss
-|   |   |-- ui_table.scss
-|   |   |-- ui_font_icon.scss
+|   |   |-- button.scss
+|   |   |-- tip.scss
+|   |   |-- pop.scss
+|   |   |-- form.scss
+|   |   |-- table.scss
+|   |   |-- font_icon.scss
 |   |   |-- ...
 |   |-- func/
-|   |   |-- func_animation.scss
-|   |   |-- func_align.scss
+|   |   |-- animation.scss
+|   |   |-- align.scss
 |   |-- site/
 |   |   |-- _setting.scss
 |   |   |-- unit/
@@ -87,6 +87,7 @@ style/
 |   |   |   |-- _media_query.scss
 |   |   |   |-- _global.scss
 |   |   |   |-- ...
+|   |-- fonts/
 |-- css/
 |   |-- ...
 </pre>
@@ -95,11 +96,13 @@ style/
 
 <code>base/</code>、<code>func/</code>、<code>import/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。
 
-<code>site/</code>为具体项目样式。
+<code>site/</code>，原<code>module/</code>，为具体项目样式。
 
 <code>include/</code>为Sass引用文件，不会编译成样式文件。禁止在页面中直接引用。
 
 <code>_setting.scss</code>为项目Sass参数配置文件，定义根据项目重置的全局变量和UI变量，以实现UI定制。
+
+<code>fonts/</code>存放字体图标文件。
 
 
 

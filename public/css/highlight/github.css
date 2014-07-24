@@ -10,21 +10,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #333;
   background: #f7f7f9;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-  border-left: 5px solid #8aa4be;
   font-size: 12px;
   line-height: 1.5;
 }
 
-/* line 21, ../../sass/highlight/github.scss */
+/* line 20, ../../sass/highlight/github.scss */
 .hljs-comment,
 .hljs-template_comment,
 .diff .hljs-header,
 .hljs-javadoc {
-  color: #999;
-  font-style: italic;
+  color: #93a1a1;
 }
 
-/* line 33, ../../sass/highlight/github.scss */
+/* line 31, ../../sass/highlight/github.scss */
 .hljs-keyword,
 .css .rule .hljs-keyword,
 .hljs-winutils,
@@ -37,14 +35,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 
-/* line 40, ../../sass/highlight/github.scss */
+/* line 38, ../../sass/highlight/github.scss */
 .hljs-number,
 .hljs-hexcolor,
 .ruby .hljs-constant {
   color: #099;
 }
 
-/* line 47, ../../sass/highlight/github.scss */
+/* line 45, ../../sass/highlight/github.scss */
 .hljs-string,
 .hljs-tag .hljs-value,
 .hljs-phpdoc,
@@ -52,7 +50,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #d14;
 }
 
-/* line 54, ../../sass/highlight/github.scss */
+/* line 52, ../../sass/highlight/github.scss */
 .hljs-title,
 .hljs-id,
 .coffeescript .hljs-params,
@@ -61,7 +59,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 
-/* line 62, ../../sass/highlight/github.scss */
+/* line 60, ../../sass/highlight/github.scss */
 .javascript .hljs-title,
 .lisp .hljs-title,
 .clojure .hljs-title,
@@ -69,7 +67,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: normal;
 }
 
-/* line 69, ../../sass/highlight/github.scss */
+/* line 67, ../../sass/highlight/github.scss */
 .hljs-class .hljs-title,
 .haskell .hljs-type,
 .vhdl .hljs-literal,
@@ -78,7 +76,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 
-/* line 77, ../../sass/highlight/github.scss */
+/* line 75, ../../sass/highlight/github.scss */
 .hljs-tag,
 .hljs-tag .hljs-title,
 .hljs-rules .hljs-property,
@@ -87,19 +85,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: normal;
 }
 
-/* line 84, ../../sass/highlight/github.scss */
+/* line 82, ../../sass/highlight/github.scss */
 .hljs-attribute,
 .hljs-variable,
 .lisp .hljs-body {
   color: #008080;
 }
 
-/* line 88, ../../sass/highlight/github.scss */
+/* line 86, ../../sass/highlight/github.scss */
 .hljs-regexp {
   color: #009926;
 }
 
-/* line 96, ../../sass/highlight/github.scss */
+/* line 94, ../../sass/highlight/github.scss */
 .hljs-symbol,
 .ruby .hljs-symbol .hljs-string,
 .lisp .hljs-keyword,
@@ -108,14 +106,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #990073;
 }
 
-/* line 102, ../../sass/highlight/github.scss */
+/* line 100, ../../sass/highlight/github.scss */
 .hljs-built_in,
 .lisp .hljs-title,
 .clojure .hljs-built_in {
   color: #0086b3;
 }
 
-/* line 111, ../../sass/highlight/github.scss */
+/* line 109, ../../sass/highlight/github.scss */
 .hljs-preprocessor,
 .hljs-pragma,
 .hljs-pi,
@@ -126,22 +124,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 
-/* line 116, ../../sass/highlight/github.scss */
+/* line 114, ../../sass/highlight/github.scss */
 .hljs-deletion {
   background: #fdd;
 }
 
-/* line 120, ../../sass/highlight/github.scss */
+/* line 118, ../../sass/highlight/github.scss */
 .hljs-addition {
   background: #dfd;
 }
 
-/* line 124, ../../sass/highlight/github.scss */
+/* line 122, ../../sass/highlight/github.scss */
 .diff .hljs-change {
   background: #0086b3;
 }
 
-/* line 128, ../../sass/highlight/github.scss */
+/* line 126, ../../sass/highlight/github.scss */
 .hljs-chunk {
   color: #aaa;
 }

@@ -1,5 +1,5 @@
-/* line 422, ../../sass/import/_font_variable.scss */
-.icon {
+/* line 421, ../../sass/include/_font_variable.scss */
+.iconfont {
   display: inline-block;
   font-family: IconFont;
   font-style: normal;
@@ -7,7 +7,7 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 @font-face {
@@ -19,32 +19,17 @@
 }
 
 /* line 14, ../../sass/ui/font.scss */
-.icon {
+.iconfont {
   vertical-align: middle;
 }
 
 /* line 18, ../../sass/ui/font.scss */
-.icon-2x {
-  font-size: 2rem;
+.iconfont-2x {
+  font-size: 24px;
 }
 
-/* line 21, ../../sass/ui/font.scss */
-.icon-3x {
-  font-size: 3rem;
-}
-
-/* line 24, ../../sass/ui/font.scss */
-.icon-4x {
-  font-size: 4rem;
-}
-
-/* line 27, ../../sass/ui/font.scss */
-.icon-5x {
-  font-size: 5rem;
-}
-
-/* line 32, ../../sass/ui/font.scss */
-.icon-rotate:hover {
+/* line 23, ../../sass/ui/font.scss */
+.iconfont-rotate:hover {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -52,297 +37,297 @@
   transform: rotate(180deg);
 }
 
-/* line 37, ../../sass/ui/font.scss */
-.icon-search:before {
+/* line 28, ../../sass/ui/font.scss */
+.iconfont-search:before {
   content: "\f002";
 }
 
-/* line 40, ../../sass/ui/font.scss */
-.icon-th:before {
+/* line 31, ../../sass/ui/font.scss */
+.iconfont-th:before {
   content: "\f00a";
 }
 
-/* line 43, ../../sass/ui/font.scss */
-.icon-home:before {
+/* line 34, ../../sass/ui/font.scss */
+.iconfont-home:before {
   content: "\f015";
 }
 
-/* line 46, ../../sass/ui/font.scss */
-.icon-list:before {
+/* line 37, ../../sass/ui/font.scss */
+.iconfont-list:before {
   content: "\f03a";
 }
 
-/* line 49, ../../sass/ui/font.scss */
-.icon-angle-double-right:before {
+/* line 40, ../../sass/ui/font.scss */
+.iconfont-angle-double-right:before {
   content: "\f101";
 }
 
-/* line 52, ../../sass/ui/font.scss */
-.icon-angle-down:before {
+/* line 43, ../../sass/ui/font.scss */
+.iconfont-angle-down:before {
   content: "\f107";
 }
 
-/* line 55, ../../sass/ui/font.scss */
-.icon-angle-right:before {
+/* line 46, ../../sass/ui/font.scss */
+.iconfont-angle-right:before {
   content: "\f105";
 }
 
-/* line 58, ../../sass/ui/font.scss */
-.icon-angle-left:before {
+/* line 49, ../../sass/ui/font.scss */
+.iconfont-angle-left:before {
   content: "\f104";
 }
 
-/* line 61, ../../sass/ui/font.scss */
-.icon-caret-down:before {
+/* line 52, ../../sass/ui/font.scss */
+.iconfont-caret-down:before {
   content: "\f0d7";
 }
 
-/* line 64, ../../sass/ui/font.scss */
-.icon-times-circle:before {
+/* line 55, ../../sass/ui/font.scss */
+.iconfont-times-circle:before {
   content: "\f057";
 }
 
-/* line 67, ../../sass/ui/font.scss */
-.icon-cog:before {
+/* line 58, ../../sass/ui/font.scss */
+.iconfont-cog:before {
   content: "\f013";
 }
 
-/* line 70, ../../sass/ui/font.scss */
-.icon-arrow-circle-up:before {
+/* line 61, ../../sass/ui/font.scss */
+.iconfont-arrow-circle-up:before {
   content: "\f0aa";
 }
 
-/* line 73, ../../sass/ui/font.scss */
-.icon-arrow-circle-o-up:before {
+/* line 64, ../../sass/ui/font.scss */
+.iconfont-arrow-circle-o-up:before {
   content: "\f01b";
 }
 
-/* line 76, ../../sass/ui/font.scss */
-.icon-arrow-left:before {
+/* line 67, ../../sass/ui/font.scss */
+.iconfont-arrow-left:before {
   content: "\f060";
 }
 
-/* line 79, ../../sass/ui/font.scss */
-.icon-map-marker:before {
+/* line 70, ../../sass/ui/font.scss */
+.iconfont-map-marker:before {
   content: "\f041";
 }
 
-/* line 82, ../../sass/ui/font.scss */
-.icon-th-list:before {
+/* line 73, ../../sass/ui/font.scss */
+.iconfont-th-list:before {
   content: "\f00b";
 }
 
-/* line 85, ../../sass/ui/font.scss */
-.icon-bars:before {
+/* line 76, ../../sass/ui/font.scss */
+.iconfont-bars:before {
   content: "\f0c9";
 }
 
-/* line 88, ../../sass/ui/font.scss */
-.icon-arrow-up:before {
+/* line 79, ../../sass/ui/font.scss */
+.iconfont-arrow-up:before {
   content: "\f062";
 }
 
-/* line 91, ../../sass/ui/font.scss */
-.icon-th-large:before {
+/* line 82, ../../sass/ui/font.scss */
+.iconfont-th-large:before {
   content: "\f009";
 }
 
-/* line 94, ../../sass/ui/font.scss */
-.icon-jpy:before {
+/* line 85, ../../sass/ui/font.scss */
+.iconfont-jpy:before {
   content: "\f157";
 }
 
-/* line 97, ../../sass/ui/font.scss */
-.icon-heart:before {
+/* line 88, ../../sass/ui/font.scss */
+.iconfont-heart:before {
   content: "\f004";
 }
 
-/* line 100, ../../sass/ui/font.scss */
-.icon-chevron-down:before {
+/* line 91, ../../sass/ui/font.scss */
+.iconfont-chevron-down:before {
   content: "\f078";
 }
 
-/* line 103, ../../sass/ui/font.scss */
-.icon-times:before {
+/* line 94, ../../sass/ui/font.scss */
+.iconfont-times:before {
   content: "\f00d";
 }
 
-/* line 106, ../../sass/ui/font.scss */
-.icon-check:before {
+/* line 97, ../../sass/ui/font.scss */
+.iconfont-check:before {
   content: "\f00c";
 }
 
-/* line 111, ../../sass/ui/font.scss */
-.icon-food:before {
+/* line 102, ../../sass/ui/font.scss */
+.iconfont-food:before {
   content: "\e614";
 }
 
-/* line 114, ../../sass/ui/font.scss */
-.icon-apparel:before {
+/* line 105, ../../sass/ui/font.scss */
+.iconfont-apparel:before {
   content: "\e61f";
 }
 
-/* line 117, ../../sass/ui/font.scss */
-.icon-menu-more:before {
+/* line 108, ../../sass/ui/font.scss */
+.iconfont-menu-more:before {
   content: "\e600";
 }
 
-/* line 120, ../../sass/ui/font.scss */
-.icon-mode-text:before {
+/* line 111, ../../sass/ui/font.scss */
+.iconfont-mode-text:before {
   content: "\e601";
 }
 
-/* line 123, ../../sass/ui/font.scss */
-.icon-mode-big-picture:before {
+/* line 114, ../../sass/ui/font.scss */
+.iconfont-mode-big-picture:before {
   content: "\e602";
 }
 
-/* line 126, ../../sass/ui/font.scss */
-.icon-original:before {
+/* line 117, ../../sass/ui/font.scss */
+.iconfont-original:before {
   content: "\e604";
 }
 
-/* line 129, ../../sass/ui/font.scss */
-.icon-home-goods:before {
+/* line 120, ../../sass/ui/font.scss */
+.iconfont-home-goods:before {
   content: "\e605";
 }
 
-/* line 132, ../../sass/ui/font.scss */
-.icon-goods:before {
+/* line 123, ../../sass/ui/font.scss */
+.iconfont-goods:before {
   content: "\e606";
 }
 
-/* line 135, ../../sass/ui/font.scss */
-.icon-elec-component:before {
+/* line 126, ../../sass/ui/font.scss */
+.iconfont-elec-component:before {
   content: "\e622";
 }
 
-/* line 138, ../../sass/ui/font.scss */
-.icon-transport:before {
+/* line 129, ../../sass/ui/font.scss */
+.iconfont-transport:before {
   content: "\e603";
 }
 
-/* line 141, ../../sass/ui/font.scss */
-.icon-toys:before {
+/* line 132, ../../sass/ui/font.scss */
+.iconfont-toys:before {
   content: "\e607";
 }
 
-/* line 144, ../../sass/ui/font.scss */
-.icon-tools:before {
+/* line 135, ../../sass/ui/font.scss */
+.iconfont-tools:before {
   content: "\e608";
 }
 
-/* line 147, ../../sass/ui/font.scss */
-.icon-textile:before {
+/* line 138, ../../sass/ui/font.scss */
+.iconfont-textile:before {
   content: "\e609";
 }
 
-/* line 150, ../../sass/ui/font.scss */
-.icon-sporting:before {
+/* line 141, ../../sass/ui/font.scss */
+.iconfont-sporting:before {
   content: "\e60a";
 }
 
-/* line 153, ../../sass/ui/font.scss */
-.icon-daily-use:before {
+/* line 144, ../../sass/ui/font.scss */
+.iconfont-daily-use:before {
   content: "\e60c";
 }
 
-/* line 156, ../../sass/ui/font.scss */
-.icon-office:before {
+/* line 147, ../../sass/ui/font.scss */
+.iconfont-office:before {
   content: "\e60d";
 }
 
-/* line 159, ../../sass/ui/font.scss */
-.icon-manufacture:before {
+/* line 150, ../../sass/ui/font.scss */
+.iconfont-manufacture:before {
   content: "\e60e";
 }
 
-/* line 162, ../../sass/ui/font.scss */
-.icon-lights:before {
+/* line 153, ../../sass/ui/font.scss */
+.iconfont-lights:before {
   content: "\e60f";
 }
 
-/* line 165, ../../sass/ui/font.scss */
-.icon-instruments:before {
+/* line 156, ../../sass/ui/font.scss */
+.iconfont-instruments:before {
   content: "\e610";
 }
 
-/* line 168, ../../sass/ui/font.scss */
-.icon-industry:before {
+/* line 159, ../../sass/ui/font.scss */
+.iconfont-industry:before {
   content: "\e611";
 }
 
-/* line 171, ../../sass/ui/font.scss */
-.icon-health:before {
+/* line 162, ../../sass/ui/font.scss */
+.iconfont-health:before {
   content: "\e612";
 }
 
-/* line 174, ../../sass/ui/font.scss */
-.icon-furniture:before {
+/* line 165, ../../sass/ui/font.scss */
+.iconfont-furniture:before {
   content: "\e613";
 }
 
-/* line 177, ../../sass/ui/font.scss */
-.icon-energy:before {
+/* line 168, ../../sass/ui/font.scss */
+.iconfont-energy:before {
   content: "\e615";
 }
 
-/* line 180, ../../sass/ui/font.scss */
-.icon-electrical:before {
+/* line 171, ../../sass/ui/font.scss */
+.iconfont-electrical:before {
   content: "\e616";
 }
 
-/* line 183, ../../sass/ui/font.scss */
-.icon-edit:before {
+/* line 174, ../../sass/ui/font.scss */
+.iconfont-edit:before {
   content: "\e617";
 }
 
-/* line 186, ../../sass/ui/font.scss */
-.icon-decoration:before {
+/* line 177, ../../sass/ui/font.scss */
+.iconfont-decoration:before {
   content: "\e618";
 }
 
-/* line 189, ../../sass/ui/font.scss */
-.icon-consumer-electric:before {
+/* line 180, ../../sass/ui/font.scss */
+.iconfont-consumer-electric:before {
   content: "\e619";
 }
 
-/* line 192, ../../sass/ui/font.scss */
-.icon-computer:before {
+/* line 183, ../../sass/ui/font.scss */
+.iconfont-computer:before {
   content: "\e61a";
 }
 
-/* line 195, ../../sass/ui/font.scss */
-.icon-chemicals:before {
+/* line 186, ../../sass/ui/font.scss */
+.iconfont-chemicals:before {
   content: "\e61b";
 }
 
-/* line 198, ../../sass/ui/font.scss */
-.icon-bags:before {
+/* line 189, ../../sass/ui/font.scss */
+.iconfont-bags:before {
   content: "\e61c";
 }
 
-/* line 201, ../../sass/ui/font.scss */
-.icon-auto:before {
+/* line 192, ../../sass/ui/font.scss */
+.iconfont-auto:before {
   content: "\e61d";
 }
 
-/* line 204, ../../sass/ui/font.scss */
-.icon-arts:before {
+/* line 195, ../../sass/ui/font.scss */
+.iconfont-arts:before {
   content: "\e61e";
 }
 
-/* line 207, ../../sass/ui/font.scss */
-.icon-mode-text-picture:before {
+/* line 198, ../../sass/ui/font.scss */
+.iconfont-mode-text-picture:before {
   content: "\e623";
 }
 
-/* line 210, ../../sass/ui/font.scss */
-.icon-print:before {
+/* line 201, ../../sass/ui/font.scss */
+.iconfont-print:before {
   content: "\f02f";
 }
 
-/* line 213, ../../sass/ui/font.scss */
-.icon-safe:before {
+/* line 204, ../../sass/ui/font.scss */
+.iconfont-safe:before {
   content: "\e621";
 }

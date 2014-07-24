@@ -1,0 +1,38 @@
+/* line 20, ../../sass/ui/icon.scss */
+.icon, .icon-2x, .icon-3x {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 0;
+}
+
+/* line 40, ../../sass/ui/icon.scss */
+.icon {
+  width: 16px;
+  height: 16px;
+  background: url("../../img/global/icon.png") no-repeat;
+}
+
+/* line 40, ../../sass/ui/icon.scss */
+.icon-2x {
+  width: 32px;
+  height: 32px;
+  background: url("../../img/global/icon-2x.png") no-repeat;
+}
+
+/* line 40, ../../sass/ui/icon.scss */
+.icon-3x {
+  width: 48px;
+  height: 48px;
+  background: url("../../img/global/icon-3x.png") no-repeat;
+}
+
+/* line 49, ../../sass/ui/icon.scss */
+.icon-succ {
+  background-position: -16px 0;
+}
+
+/* line 55, ../../sass/ui/icon.scss */
+.icon-2x-succ {
+  background-position: -32px 0;
+}

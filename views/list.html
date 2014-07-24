@@ -16,7 +16,7 @@
                     <li class="active"><a href="/manage/list">页面管理</a></li>
                 </ul>
             </div>
-            <a class="gmp-module-switch btn btn-blue btn-small" href="/">规范库</a>
+            <a class="gmp-module-switch btn btn-blue btn-small" href="/" target="_blank">规范库</a>
         </div>
     </div>
 </div>
@@ -42,7 +42,7 @@
             <% pages.forEach(function(item, key){ %>
             <tr >
                 <td ><%= item.key %></td>
-                <td ><a href="/<%= item.pageName %>"><%= item.pageName %></a></td>
+                <td ><a href="/<%= item.pageName %>" target="_blank"><%= item.pageName %></a></td>
                 <td ><%= item.pageTitle %></td>
                 <td class="td-act">
                     <a target="_blank" href="/manage/page/<%= item.key %>">编辑</a>
@@ -51,7 +51,7 @@
             </tr>
             <% }) %>
             <% if(pages.length == 0){%>
-            <tr class="empty" ng-show="pages.length == 0">
+            <tr class="empty" >
                 <td colspan="4">暂无页面</td>
             </tr>
             <% } %>

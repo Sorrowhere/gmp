@@ -35,8 +35,11 @@ module.exports = function(grunt){
 			css: {
 				src: [
 					'public/css/base/reset.css',
+                    'public/css/base/common.css',
 					'public/css/ui/font.css',
 					'public/css/ui/button.css',
+                    'public/css/ui/icon.css',
+                    'public/css/ui/tip.css',
 					'public/css/gmp.css',
 					'public/css/highlight/github.css'
 				],

@@ -21,7 +21,6 @@
         });
 
         $(window).scroll(function(){
-
             var sideScrollTop = $(window).scrollTop();
             var $side = $('#gmpSide');
 
@@ -31,7 +30,6 @@
                 return scrollTop < $(href).offset().top + 1;
             }).filter(':first').addClass('active');
 
-
             $('.JS-menu-sub').find('li.active').closest('li.JS-menu-main-item').addClass('active');
 
             if($side.position().top < sideScrollTop){
@@ -39,8 +37,6 @@
             }else{
                 $side.removeClass('gmp-fixed');
             }
-
-
         });
         $('#gmpSide').find('a').on('click', function(){
             var href = $(this).attr('href');

@@ -1,5 +1,5 @@
-@import "../import/_font_variable";
-@import "../import/_css3";
+@import "../include/_font_variable";
+@import "../include/_css3";
 
 @font-face {
   	font-family: 'IconFont';
@@ -15,17 +15,8 @@
     @extend %iconFontBase;
     vertical-align: middle;
 }
-.icon-2x {
-    font-size: 2rem;
-}
-.icon-3x {
-    font-size: 3rem;
-}
-.icon-4x {
-    font-size: 4rem;
-}
-.icon-5x {
-    font-size: 5rem;
+.#{$baseClass}-2x {
+    font-size: 24px;
 }
 
 // icon animation

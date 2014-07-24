@@ -23,10 +23,59 @@
         <div class="gmp-side" id="gmpSide">
             <ul class="gmp-menu-main" id="gmpMenuMain">
                 
+                <li class="active JS-menu-main-item">
+                    <a href="#gmp-intro">说明</a>
+                    
+                </li>
+                
+                <li class=" JS-menu-main-item">
+                    <a href="#gmp-base">基本元素定义</a>
+                    
+                    <ul class="JS-menu-sub gmp-menu-sub">
+                        
+                        <li><a href="#gmp-base-body">Body定义</a></li>
+                        
+                        <li><a href="#gmp-base-link">链接</a></li>
+                        
+                    </ul>
+                    
+                </li>
+                
             </ul>
         </div>
         <div class="gmp-main">
-            <p>基础样式</p>
+            <h2 class="gmp-h" id="gmp-intro">说明</h2>
+
+<p class="gmp-para-lead">基础公共样式主要定义在<code>common.css</code>中。包括字体、颜色、标题、文本、链接、图片、表单元素等基础元素的样式定义。</p>
+
+<h2 class="gmp-h" id="gmp-base">基本元素定义</h2>
+
+<h3 class="gmp-h" id="gmp-base-body">Body定义</h3>
+
+<p><code>body</code>内主要定义了全局字体、行高、字号、背景。</p>
+<pre><code class="hljs css"><span class="hljs-tag">body</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">12</span>px/<span class="hljs-number">1.3</span> arial, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-base-link">链接</h3>
+
+<p>默认蓝色，hover状态为红色加下划线。</p>
+<div class="gmp-example">
+    <a href="">默认链接样式</a>
+</div>
+
+<pre><code class="hljs css"><span class="hljs-tag">a</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:link</span>, <span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#05c</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#c02</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> underline</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
 
         </div>
     </div>

@@ -11,7 +11,7 @@ HTML文档统一使用HTML5文档类型：
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>title</title>
 </head>
 <body>
     ...
@@ -50,6 +50,7 @@ HTML标签必须小写，标签必须关闭。
             <td><code>frameset</code></td>
             <td><code>noframes</code></td>
             <td><code>acronym</code></td>
+            <td><code>tt</code></td>
         </tr>
     </tbody>
 </table>

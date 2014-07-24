@@ -1,8 +1,7 @@
 // font variables here
 
 $path: '../fonts';
-$baseClass: icon !default;
-
+$baseClass: iconfont !default;
 $iconNames:
 	glass "\f000",
 	music "\f001",
@@ -427,5 +426,5 @@ $iconNames:
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1rem;
+    font-size: 16px;
 }
