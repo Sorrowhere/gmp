@@ -19,26 +19,9 @@ $bgColor: #ecf0f5;
 
 // base
 // ========================================
-body{
-	font: 13px/1.3 arial, 'Source Han Sans','Microsoft Yahei', sans-serif;
-	color: $fcText;
-}
-input, select, textarea, button{
+body, input, select, textarea, button{
+    font: 13px/1.5 arial, 'Microsoft Yahei', sans-serif;
 	outline: none;
-	font: inherit;
-}
-a{
-	text-decoration: none;
-	&:link, &:visited{
-		color: $fcLink;
-	}
-	&:hover{
-		color: $fcLinkHover;
-		text-decoration: underline;
-	}
-}
-img{
-	vertical-align: middle;
 }
 input{
     &[type='text']{
@@ -359,14 +342,14 @@ h2.gmp-h{
         margin-top: 20px;
     }
 }
-h3{
+h3.gmp-h{
     font-size: 25px;
 }
-h4{
+h4.gmp-h{
     font-size: 19px;
     margin: 15px 0 10px;
 }
-h5{
+h5.gmp-h{
     font-size: 15px;
     margin: 10px 0 6px;
 }
@@ -375,8 +358,8 @@ pre{
 }
 p{
     font-size: 14px;
-    line-height: 1.6;
     margin-bottom: 8px;
+    line-height: 1.6;
     code{
         @extend %codeInline;
     }
@@ -402,6 +385,7 @@ p{
     p{
         font-size: 12px;
         margin: 0;
+        line-height: 1.5;
     }
 }
 .gmp-example-item{

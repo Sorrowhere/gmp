@@ -83,3 +83,31 @@ $bgGreenLight: #eaffe5 !default;
 $bgYellowLight: #fff7e5 !default;
 $bgGrayLight: #fafafa !default;
 
+// ui module base cass
+// =================================
+// button
+$btnBaseClass: btn !default;
+$btnDisabledClass: btn-disabled !default;
+$btnSize1: s !default;
+$btnSize2: m !default;
+$btnSize3: l !default;
+$btnSize4: xl !default;
+$btnSize5: xxl !default;
+
+$btnTypeDefault:      default !default;
+$btnTypePrimary:      primary  !default;
+$btnTypePrimaryLight: primary-light !default;
+$btnTypeSub:          sub  !default;
+$btnTypeSubLight:     sub-light !default;
+$btnTypeInfo:         info !default;
+$btnTypeInfoLight:    info-light !default;
+
+// icon
+$iconBaseClass: icon !default;
+$icon2xClass: $iconBaseClass + '-2x';
+$icon3xClass: $iconBaseClass + '-3x';
+
+// tip
+$tipBaseClass: tip !default;
+
+

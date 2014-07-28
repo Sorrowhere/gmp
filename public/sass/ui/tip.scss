@@ -7,49 +7,104 @@
 @import "../include/_global.scss";
 @import "../include/_css3.scss";
 
-// variables
-$tipBaseClass: tip !default;
-$poptipBaseClass: poptip !default;
-$poptipArrowClass: arrow !default;
-
-// tip size class
-//           className, paddingTop, paddingRight, paddingBottom, paddingLeft, color, border, iconMarginLeft
-$tipSizeNor: nor        15px        20px          15px           62px         #333   none    -42px;
-$tipSizeBig: big        15px        40px          15px           88px         #333   none    -58px;
-$tipSizeGroup: $tipSizeNor, $tipSizeBig  !default;
-// tip type class
-//          typeName, backgroundColor, borderColor, color
+// tip type setting
+//          typeName,  backgroundColor, borderColor, color
 $tipInfo:   info       #edf4fa          #c7dbeb      #1c75bb;
 $tipSucc:   succ       #ebf9df          #bed7a8      #58991f;
 $tipError:  error      #faedee          #fad2cd      #cc220b;
 $tipWarn:   warn       #fcf5e3          #e8d4a8      #c59120;
-$tipStateGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
+$tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 
-//poptip state class
-//         poptipClassName, backgroundColor, borderColor, arrowClassName, positionY, positionX, marginTop, marginLeft
-$popInfo:  info             #edf4fa          #c7dbeb      top             -16px      20px       -7px       -8px;
-$popSucc:  succ             #ebf9df          #bed7a8      right           20px       -16px      -8px       -9px;
-$popError: error            #faedee          #fad2cd      bottom          -16px      20px       -9px       -8px;
-$popWarn:  warn             #fcf5e3          #e8d4a8      left            20px       -16px      -8px       -7px;
-$poptipGroup: $popInfo, $popSucc, $popError, $popWarn !default;
+// tip type
+// ===========================
+@each $tipTypeItem in $tipTypeGroup{
+    $tipTypeName: nth($tipTypeItem,1);
+    $backgroundColor: nth($tipTypeItem,2);
+    $borderColor: nth($tipTypeItem,3);
+    $color: nth($tipTypeItem,4);
 
+    $tipTypeClass: $tipBaseClass + '-' + $tipTypeName;
+    .#{$tipTypeClass}{
+        background-color: $backgroundColor;
+        border: 1px solid $borderColor;
+        color: $color;
+    }
+}
 
+// tip size
+// size: default, m(middle), l(large)
+// ==========================
+// tip default
 .#{$tipBaseClass}{
     padding:7px 10px 7px 31px;
     overflow:hidden;
     *zoom:1;
-    .icon{
+    .#{$iconBaseClass}{
         float: left;
-        margin:1px 0 0 -21px;
+        margin:2px 0 0 -21px;
     }
 }
+
+.#{$tipBaseClass}-m,
+.#{$tipBaseClass}-l{
+    border: none;
+    color: $fcText;
+}
+
+// tip middle
+.#{$tipBaseClass}-m{
+    padding: 20px 20px 25px 62px;
+    .#{$icon2xClass}{
+        float: left;
+        margin-left: -42px;
+    }
+    .#{$tipBaseClass}-hd{
+        padding: 5px 0 0;
+        font-size: 14px;
+    }
+}
+
+// tip large
+.#{$tipBaseClass}-l{
+    padding: 20px 40px 35px 88px;
+    .#{$icon3xClass}{
+        float: left;
+        margin-left: -58px;
+    }
+    .#{$tipBaseClass}-hd{
+        padding: 12px 0;
+        font-size: 18px;
+    }
+}
+
+
 .#{$tipBaseClass}-close{
     float:right;
     font:bold 12px/14px $ffTahoma;
     cursor:pointer;
 }
+
+// tip head style
+.#{$tipBaseClass}-hd{
+    font-family: $ffYahei;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+// tip content style
+.#{$tipBaseClass}-bd{
+    p,.text-lst{
+        margin-bottom: 10px;
+    }
+}
 .#{$tipBaseClass}-sub-hd{
+    font-size: 14px;
     margin-bottom: 6px;
+}
+.#{$tipBaseClass}-links{
+    .v-sep{
+        margin: 0 10px;
+    }
 }
 .#{$tipBaseClass}-ope{
     margin:10px 0 15px;
@@ -65,207 +120,3 @@ $poptipGroup: $popInfo, $popSucc, $popError, $popWarn !default;
     }
 }
 
-// tip multi style
-.#{$tipBaseClass}-multi{
-    padding:9px 10px 15px 10px;
-}
-
-// tip header style
-.#{$tipBaseClass}-hd{
-    font:bold 18px/20px $ffYahei;
-    margin-bottom: 7px;
-    overflow:hidden;
-    *zoom:1;
-}
-
-// tip content style
-.#{$tipBaseClass}-bd{
-    overflow:hidden;
-    *zoom:1;
-    ul,ol{
-        margin-bottom: 6px;
-    }
-    p,li{
-        padding: 3px 0;
-    }
-}
-
-// tip pop style
-.#{$tipBaseClass}-pop{
-    position: absolute;
-    i{
-        position: absolute;
-        @if $ie6{_left: 30px; }
-    }
-    p{
-        @if $ie6{_float: left; }
-    }
-}
-
-/* tip state style */
-@each $stateItem in $tipStateGroup{
-    $stateClass: nth($stateItem,1);
-    $backgroundColor: nth($stateItem,2);
-    $borderColor: nth($stateItem,3);
-    $color: nth($stateItem,4);
-
-    $tipStateClass: unquote('tip-'+$stateClass);
-    .#{$tipStateClass}{
-        background-color: $backgroundColor;
-        border: 1px solid $borderColor;
-        color: $color;
-        @if $tipStateClass == 'tip-notice'{
-            padding-left: 10px;
-        }
-    }
-}
-
-/* tip size style */
-@each $sizeItem in $tipSizeGroup{
-    $sizeClass: nth($sizeItem,1);
-    $paddingTop: nth($sizeItem,2);
-    $paddingRight: nth($sizeItem,3);
-    $paddingBottom: nth($sizeItem,4);
-    $paddingLeft: nth($sizeItem,5);
-    $color: nth($sizeItem,6);
-    $border: nth($sizeItem,7);
-    $iconSizeClass: nth($sizeItem,1);
-    $iconMarginLeft: nth($sizeItem,8);
-
-    $tipSizeClass: unquote('tip-'+$sizeClass);
-    $iconSizeClass: unquote('icon-'+$iconSizeClass);
-    .#{$tipSizeClass}{
-        padding: $paddingTop $paddingRight $paddingBottom $paddingLeft;
-        color: $color;
-        border: $border;
-        overflow: hidden;
-        *zoom: 1;
-        .#{$iconSizeClass}{
-            float: left;
-            margin-left: $iconMarginLeft;
-        }
-        @if $tipSizeClass == 'tip-nor'{
-            .#{$tipBaseClass}-hd{
-                padding: 5px 0 0;
-                font-size: 14px;
-            }
-        }
-        @else if $tipSizeClass == 'tip-big'{
-            .#{$tipBaseClass}-hd{
-                padding: 12px 0;
-            }
-        }
-    }
-}
-
-
-
-/************************* poptip style *************************/
-.#{$poptipBaseClass}{
-    padding: 5px 20px 5px 10px;
-    font-size: 12px;
-    background: #fff;
-    border: 1px solid #d9d9d9;
-    position: absolute;
-    .#{$poptipBaseClass}-close{
-        color: #999;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        cursor: pointer;
-        &:hover{color: #666;}
-    }
-}
-
-/* poptip arrow style */
-.#{$poptipBaseClass}{
-    .#{$poptipArrowClass}{
-        width: 0px;
-        height: 0px;
-        line-height: 0;
-        font-size: 0;
-        border: 8px dashed transparent;
-        position: absolute;
-        zoom: 1;
-    }
-    @each $arrowItem in $poptipGroup{
-        $arrowBorderStyle: 8px solid transparent;
-        $arrowPositionClass: nth($arrowItem,4);
-        $arrowPositionY: nth($arrowItem,5);
-        $arrowPositionX: nth($arrowItem,6);
-        $arrowMarginTop: nth($arrowItem,7);
-        $arrowMarginLeft: nth($arrowItem,8);
-
-        $arrowClass: unquote('arrow-'+$arrowPositionClass);
-
-        .#{$arrowClass}{
-            @if $arrowClass == 'arrow-top'{
-                border-bottom:  $arrowBorderStyle;
-                top: $arrowPositionY;
-                left: $arrowPositionX;
-                .#{$poptipArrowClass}-in{border-bottom: $arrowBorderStyle;}
-            }
-            @else if $arrowClass == 'arrow-right'{
-                border-left: $arrowBorderStyle;
-                top: $arrowPositionY;
-                right: $arrowPositionX;
-                .#{$poptipArrowClass}-in{border-left: $arrowBorderStyle;}
-                @if $ie6{_right: -17px;}
-            }
-            @else if $arrowClass == 'arrow-bottom'{
-                border-top: $arrowBorderStyle;
-                bottom: $arrowPositionY;
-                left: $arrowPositionX;
-                .#{$poptipArrowClass}-in{border-top: $arrowBorderStyle;}
-            }
-            @else if $arrowClass == 'arrow-left'{
-                border-right: $arrowBorderStyle;
-                top: $arrowPositionY;
-                left: $arrowPositionX;
-                .#{$poptipArrowClass}-in{border-left: $arrowBorderStyle;}
-            }
-            .#{$poptipArrowClass}-in{
-                margin-top: $arrowMarginTop;
-                margin-left: $arrowMarginLeft;
-            }
-        }
-    }
-}
-
-/* poptip state style */
-@each $poptipItem in $poptipGroup{
-    $stateClass: nth($poptipItem,1);
-    $backgroundColor: nth($poptipItem,2);
-    $borderColor: nth($poptipItem,3);
-
-    $poptipClass: unquote('poptip-'+$stateClass);
-
-    .#{$poptipClass}{
-        border: 1px solid $borderColor;
-        background-color: $backgroundColor;
-        @each $arrowItem in $poptipGroup{
-
-            $arrowPositionClass: nth($arrowItem,4);
-            $arrowClass: unquote('arrow-'+$arrowPositionClass);
-
-            .#{$arrowClass}{
-                @if $arrowClass == 'arrow-top'{
-                    border-bottom-color:  $borderColor;
-                    .#{$poptipArrowClass}-in{border-bottom-color: $backgroundColor;}
-                }
-                @else if $arrowClass == 'arrow-right'{
-                    border-left-color: $borderColor;
-                    .#{$poptipArrowClass}-in{border-left-color: $backgroundColor;}
-                }
-                @else if $arrowClass == 'arrow-bottom'{
-                    border-top-color: $borderColor;
-                    .#{$poptipArrowClass}-in{border-top-color: $backgroundColor;}
-                }
-                @else if $arrowClass == 'arrow-left'{
-                    border-right-color: $borderColor;
-                    .#{$poptipArrowClass}-in{border-right-color: $backgroundColor;}
-                }
-            }
-        }
-    }
-}

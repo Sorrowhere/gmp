@@ -6,29 +6,44 @@
 @import "../include/_css3";
 
 // base style
+// =============================
 body{
-    font: 12px/1.3 $ffDefault;
+    color: $fcText;
     background-color: #fff;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
-a{
-    &:link,&:visited{
-        color: $fcLink;
-    }
-    &:hover{
-        color: $fcLinkHover;
-    }
-}
-img{
-    vertical-align: middle;
-}
-input, select, textarea, button{
-    font: inherit;
+body, input, select, textarea, button{
+    font: 12px/1.5 $ffDefault;
     outline: none;
 }
 textarea{
     resize: none;
 }
+a{
+    text-decoration: none;
+    &:link,&:visited{
+        color: $fcLink;
+    }
+    &:hover{
+        color: $fcLinkHover;
+        text-decoration: underline;
+    }
+}
+img{
+    vertical-align: middle;
+}
 
+// text
+// ============================
+.text-lst{
+    li{
+        padding: 3px 0 3px 9px;
+        background: url(/img/global/list-style.png) 0 10px no-repeat;
+    }
+}
+
+// text emphasis
 .yellow{
     color: $fcYellow;
 }

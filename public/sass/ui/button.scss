@@ -8,28 +8,26 @@
 @import "../include/_css3.scss";
 
 // variables
-$btnBaseClass: btn !default;
-$btnDisabledClass: disabled !default;
 $btnBorderRadius: 2px !default;
 
 // button size class
-//       className,  height,  padding,  fontSize
-$btnS:   s,          22px,    10px,     12px !default;
-$btnM:   m,          26px,    15px,     12px !default;
-$btnL:   l,          32px,    20px,     14px !default;
-$btnXL:  xl,         36px,    25px,     14px !default;
-$btnXXL: xxl,        40px,    30px,     16px !default;
-$btnSizeGroup: $btnS, $btnM, $btnL, $btnXL, $btnXXL !default;
+//     sizeName,  height,  padding,  fontSize
+$btn1: $btnSize1, 22px,    10px,     12px !default;
+$btn2: $btnSize2, 26px,    15px,     12px !default;
+$btn3: $btnSize3, 32px,    20px,     14px !default;
+$btn4: $btnSize4, 36px,    25px,     14px !default;
+$btn5: $btnSize5, 40px,    30px,     16px !default;
+$btnSizeGroup: $btn1, $btn2, $btn3, $btn4, $btn5;
 
 // button type class
-//                className,     bdColor, fontColor, bgColor, gradient, startColor, endColor
-$btnDefault:      default,       $bdGray, $fcText,   $bgGray, true,     #fafafa,    #ebebeb;
-$btnPrimary:      primary,       #d94146, #fff,      #e6454a, true,     #f2494e,    #d94146;
-$btnPrimaryLight: primary-light, #ffb2b5, #e5454a,   #ffe0e1, true,     #ffe5e6,    #ffd9da;
-$btnSub:          sub,           #f2b10c, #785206,   #f9bc13, true,     #ffc619,    #f2b10c;
-$btnSubLight:     sub-light,     #f2d785, #997300,   #fff6da, true,     #fff9e5,    #fff2cc;
-$btnInfo:         info,          #4197d9, #fff,      #3e9ee7, true,     #3da4f2,    #4197d9;
-$btnInfoLight:    info-light,    #a6d8ff, #3692d9,   #e2f2ff, ture,     #ebf6ff,    #d9eeff;
+//                type Name,            bdColor, fontColor, bgColor, gradient, startColor, endColor
+$btnDefault:      $btnTypeDefault,      $bdGray, $fcText,   $bgGray, true,     #fafafa,    #ebebeb;
+$btnPrimary:      $btnTypePrimary,      #d94146, #fff,      #e6454a, true,     #f2494e,    #d94146;
+$btnPrimaryLight: $btnTypePrimaryLight, #ffb2b5, #e5454a,   #ffe0e1, true,     #ffe5e6,    #ffd9da;
+$btnSub:          $btnTypeSub,          #f2b10c, #785206,   #f9bc13, true,     #ffc619,    #f2b10c;
+$btnSubLight:     $btnTypeSubLight,     #f2d785, #997300,   #fff6da, true,     #fff9e5,    #fff2cc;
+$btnInfo:         $btnTypeInfo,         #4197d9, #fff,      #3e9ee7, true,     #3da4f2,    #4197d9;
+$btnInfoLight:    $btnTypeInfoLight,    #a6d8ff, #3692d9,   #e2f2ff, ture,     #ebf6ff,    #d9eeff;
 $btnTypeGroup: $btnDefault, $btnPrimary, $btnPrimaryLight, $btnSub, $btnSubLight, $btnInfo, $btnInfoLight;
 
 
