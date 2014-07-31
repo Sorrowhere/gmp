@@ -3,6 +3,7 @@
 // import
 @import "include/_global";
 @import "include/_css3";
+@import "include/_mixin";
 
 // variable reset
 $borderColor: #ced9e5;
@@ -36,18 +37,7 @@ input{
         border-color: #a22721;
     }
 }
-.red{
-    color: $fcRed;
-}
-.bg-green{
-    background-color: #e8fdec;
-}
-.bg-blue{
-    background-color: #e8e9fd;
-}
-.bg-red{
-    background-color: #fde8ec;
-}
+
 // layout
 .gmp-layout,
 .gmp-layout-doc{
@@ -61,7 +51,7 @@ input{
 $headerHeight: 50px;
 .gmp-header-wrap{
 	background-color: #2c3e50;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 .gmp-header{
 	padding-left: 10px;
@@ -328,30 +318,23 @@ $gmpSideGutter: 40px;
 .gmp-h{
     font-family: 'Microsoft Yahei';
 }
-h2,h3{
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin: 20px 0 10px;
-}
-h2{
-    font-size: 33px;
-}
 h2.gmp-h{
-    margin-top: 50px;
+    margin: 50px 0 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $bdGray;
     &:first-child{
         margin-top: 20px;
     }
 }
 h3.gmp-h{
-    font-size: 25px;
-}
-h4.gmp-h{
-    font-size: 19px;
     margin: 15px 0 10px;
 }
-h5.gmp-h{
-    font-size: 15px;
+h4.gmp-h{
     margin: 10px 0 6px;
+    font-size: 18px;
+}
+h5.gmp-h{
+    margin-bottom: 5px;
 }
 pre{
     margin-bottom: 10px;
@@ -382,10 +365,21 @@ p{
     margin-bottom: 10px;
     font-family: $ffDefault;
     font-size: 12px;
+    overflow: hidden;
+    *zoom:1;
     p{
         font-size: 12px;
         margin: 0;
         line-height: 1.5;
+    }
+    .text{
+        margin-bottom: 10px;
+    }
+    .gmp-bubble{
+        float: left;
+        position: relative;
+        width: 150px;
+        height:70px;
     }
 }
 .gmp-example-item{

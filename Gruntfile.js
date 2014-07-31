@@ -40,6 +40,7 @@ module.exports = function(grunt){
 					'public/css/ui/button.css',
                     'public/css/ui/icon.css',
                     'public/css/ui/tip.css',
+                    'public/css/ui/bubble.css',
 					'public/css/gmp.css',
 					'public/css/highlight/github.css'
 				],

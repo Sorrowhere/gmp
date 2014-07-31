@@ -16,7 +16,9 @@ time, mark, audio, video {
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
-    *font-weight:normal;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
 }
 
 body {

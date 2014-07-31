@@ -1,27 +1,27 @@
 /* line 27, ../../sass/ui/tip.scss */
 .tip-succ {
-  background-color: #ebf9df;
+  background-color: #e5fae1;
   border: 1px solid #bed7a8;
   color: #58991f;
 }
 
 /* line 27, ../../sass/ui/tip.scss */
 .tip-error {
-  background-color: #faedee;
+  background-color: #fae6e6;
   border: 1px solid #fad2cd;
   color: #cc220b;
 }
 
 /* line 27, ../../sass/ui/tip.scss */
 .tip-warn {
-  background-color: #fcf5e3;
+  background-color: #fcf3de;
   border: 1px solid #e8d4a8;
   color: #c59120;
 }
 
 /* line 27, ../../sass/ui/tip.scss */
 .tip-info {
-  background-color: #edf4fa;
+  background-color: #e6f1fa;
   border: 1px solid #c7dbeb;
   color: #1c75bb;
 }
@@ -90,36 +90,22 @@
 }
 
 /* line 96, ../../sass/ui/tip.scss */
-.tip-bd p, .tip-bd .text-lst {
+.tip-bd .text, .tip-bd .text-lst {
   margin-bottom: 10px;
 }
 
 /* line 100, ../../sass/ui/tip.scss */
 .tip-sub-hd {
   font-size: 14px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 /* line 105, ../../sass/ui/tip.scss */
-.tip-links .v-sep {
+.tip-lnks .v-sep {
   margin: 0 10px;
 }
 
 /* line 109, ../../sass/ui/tip.scss */
 .tip-ope {
-  margin: 10px 0 15px;
-}
-
-/* line 112, ../../sass/ui/tip.scss */
-.tip-lnk-lst {
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 115, ../../sass/ui/tip.scss */
-.tip-lnk-lst li {
-  float: left;
-}
-/* line 118, ../../sass/ui/tip.scss */
-.tip-lnk-lst .v-sep {
-  margin: 0 10px;
+  margin: 20px 0 0;
 }

@@ -130,17 +130,11 @@
 </div>
 ```
 
-<h2 class="gmp-h" id="gmp-tip">提示</h2>
+<h2 class="gmp-h" id="gmp-tip">常规提示</h2>
 
-提示分为常规提示、即时提示、气泡提示。每一种都分为<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">温馨</span>
+常规提示分为<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>。基础引用类为<code>.tip</code>。三种尺寸定义：normal（默认）、middle、large。默认提示需要添加<code>.tip</code>和<code>.tip-{type}</code>两个类名，中等尺寸和大尺寸提示需要添加<code>.tip</code>、<code>.tip-{type}</code>、<code>.tip-{size}</code>3个类名。<code>.tip-close</code>为选择性添加。
 
-<h3 class="gmp-h" id="gmp-tip-normal">常规提示</h3>
-
-基础引用类为<code>.tip</code>。三种尺寸定义：normal（默认）、middle、large。默认提示需要添加<code>.tip</code>和<code>.tip-{type}</code>两个类名，中等尺寸和大尺寸提示需要添加<code>.tip</code>、<code>.tip-{type}</code>、<code>.tip-{size}</code>3个类名。
-
-<code>.tip-close</code>为选择性添加。
-
-<h4 class="gmp-h">基本 HTML 格式</h4>
+<h3 class="gmp-h" id="gmp-tip-html">基本 HTML 格式</h3>
 
 ```html
 <!-- 外层容器 -->
@@ -156,7 +150,7 @@
 </div>
 ```
 
-<h4 class="gmp-h">成功提示</h4>
+<h3 class="gmp-h" id="gmp-tip-succ">成功提示</h3>
 
 <div class="gmp-example">
     <div class="gmp-example-item">
@@ -169,7 +163,7 @@
     <div class="gmp-example-item">
         <div class="tip tip-succ tip-m">
             <i class="icon-2x icon-2x-succ"></i>
-            <div class="tip-hd">成功类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
                 <p>提示正文</p>
             </div>
@@ -178,7 +172,7 @@
     <div class="gmp-example-item">
         <div class="tip tip-succ tip-l">
             <i class="icon-3x icon-3x-succ"></i>
-            <div class="tip-hd">成功类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
                 <h4 class="tip-sub-hd">次级标题</h4>
                 <p class="text">CSS结构按照模块化组织，分为：全局公共模块、网站公共模块、底层页面模块。</p>
@@ -187,7 +181,12 @@
                     <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
                     <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
                 </ul>
-                <div class="tip-links">
+                <ol class="text-lst">
+                    <li>HTML标签必须小写，标签必须关闭。</li>
+                    <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+                    <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+                </ol>
+                <div class="tip-lnks">
                     <a href="#">跳转链接</a>
                     <span class="v-sep">|</span>
                     <a href="#">跳转链接</a>
@@ -195,6 +194,9 @@
                     <a href="#">跳转链接</a>
                     <span class="v-sep">|</span>
                     <a href="#">跳转链接</a>
+                </div>
+                <div class="tip-ope">
+                    <a href="" class="btn btn-xl btn-info">操作按钮</a>
                 </div>
             </div>
         </div>
@@ -211,7 +213,7 @@
 <!-- 中等大小 -->
 <div class="tip tip-succ tip-m">
     <i class="icon-2x icon-2x-succ"></i>
-    <div class="tip-hd">成功类提示</div>
+    <div class="tip-hd">提示标题</div>
     <div class="tip-bd">
         <p>提示正文</p>
     </div>
@@ -219,14 +221,45 @@
 <!-- 最大 -->
 <div class="tip tip-succ tip-l">
     <i class="icon-3x icon-3x-succ"></i>
-    <div class="tip-hd">成功类提示</div>
+    <!-- 提示标题 -->
+    <div class="tip-hd">提示标题</div>
+    <!-- 提示内容区 -->
     <div class="tip-bd">
-        <p>提示正文</p>
+        <!-- 次级标题 -->
+        <h4 class="tip-sub-hd">次级标题</h4>
+        <!-- 提示内容：段落 -->
+        <p class="text">CSS结构按照模块化组织，分为：全局公共模块、网站公共模块、底层页面模块。</p>
+        <!-- 提示内容：无序列表 -->
+        <ul class="text-lst">
+            <li>HTML标签必须小写，标签必须关闭。</li>
+            <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+            <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+        </ul>
+        <!-- 提示内容：有序列表 -->
+        <ol class="text-lst">
+            <li>HTML标签必须小写，标签必须关闭。</li>
+            <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+            <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+        </ol>
+        <!-- 提示内容：跳转链接 -->
+        <div class="tip-lnks">
+            <a href="#">跳转链接</a>
+            <span class="v-sep">|</span>
+            <a href="#">跳转链接</a>
+            <span class="v-sep">|</span>
+            <a href="#">跳转链接</a>
+            <span class="v-sep">|</span>
+            <a href="#">跳转链接</a>
+        </div>
+        <!-- 提示内容：主操作 -->
+        <div class="tip-ope">
+            <a href="" class="btn btn-xl btn-info">操作按钮</a>
+        </div>
     </div>
 </div>
 ```
 
-<h4 class="gmp-h">报错提示</h4>
+<h3 id="gmp-tip-error" class="gmp-h">报错提示</h3>
 
 <div class="gmp-example">
     <div class="gmp-example-item">
@@ -239,16 +272,16 @@
     <div class="gmp-example-item">
         <div class="tip tip-error tip-m">
             <i class="icon-2x icon-2x-error"></i>
-            <div class="tip-hd">报错类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
-                <p>提示正文</p>
+                <p class="text">提示正文</p>
             </div>
         </div>
     </div>
     <div class="gmp-example-item">
         <div class="tip tip-error tip-l">
             <i class="icon-3x icon-3x-error"></i>
-            <div class="tip-hd">报错类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
                 <p>提示正文</p>
             </div>
@@ -266,7 +299,7 @@
 <!-- 中等大小 -->
 <div class="tip tip-error tip-m">
     <i class="icon-2x icon-2x-error"></i>
-    <div class="tip-hd">报错类提示</div>
+    <div class="tip-hd">提示标题</div>
     <div class="tip-bd">
         <p>提示正文</p>
     </div>
@@ -274,14 +307,139 @@
 <!-- 最大 -->
 <div class="tip tip-error tip-l">
     <i class="icon-3x icon-3x-error"></i>
-    <div class="tip-hd">报错类提示</div>
+    <div class="tip-hd">提示标题</div>
     <div class="tip-bd">
         <p>提示正文</p>
     </div>
 </div>
 ```
 
+<h3 class="gmp-h" id="gmp-tip-warn">警告提示</h3>
 
+<div class="gmp-example">
+    <div class="gmp-example-item">
+        <div class="tip tip-warn">
+            <i class="icon icon-warn"></i>
+            <i class="tip-close">×</i>
+            <div class="tip-bd">提示正文</div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-warn tip-m">
+            <i class="icon-2x icon-2x-warn"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p class="text">提示正文</p>
+            </div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-warn tip-l">
+            <i class="icon-3x icon-3x-warn"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p>提示正文</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+```html
+<!-- 默认大小 -->
+<div class="tip tip-warn">
+    <i class="icon icon-warn"></i>
+    <i class="tip-close">×</i>
+    <div class="tip-bd">提示正文</div>
+</div>
+<!-- 中等大小 -->
+<div class="tip tip-warn tip-m">
+    <i class="icon-2x icon-2x-warn"></i>
+    <div class="tip-hd">提示标题</div>
+    <div class="tip-bd">
+        <p>提示正文</p>
+    </div>
+</div>
+<!-- 最大 -->
+<div class="tip tip-warn tip-l">
+    <i class="icon-3x icon-3x-warn"></i>
+    <div class="tip-hd">提示标题</div>
+    <div class="tip-bd">
+        <p>提示正文</p>
+    </div>
+</div>
+```
+
+<h3 class="gmp-h" id="gmp-tip-info">信息提示</h3>
+
+<div class="gmp-example">
+    <div class="gmp-example-item">
+        <div class="tip tip-info">
+            <i class="icon icon-info"></i>
+            <i class="tip-close">×</i>
+            <div class="tip-bd">提示正文</div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-info tip-m">
+            <i class="icon-2x icon-2x-info"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p class="text">提示正文</p>
+            </div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-info tip-l">
+            <i class="icon-3x icon-3x-info"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p>提示正文</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+```html
+<!-- 默认大小 -->
+<div class="tip tip-info">
+    <i class="icon icon-info"></i>
+    <i class="tip-close">×</i>
+    <div class="tip-bd">提示正文</div>
+</div>
+<!-- 中等大小 -->
+<div class="tip tip-info tip-m">
+    <i class="icon-2x icon-2x-info"></i>
+    <div class="tip-hd">提示标题</div>
+    <div class="tip-bd">
+        <p>提示正文</p>
+    </div>
+</div>
+<!-- 最大 -->
+<div class="tip tip-info tip-l">
+    <i class="icon-3x icon-3x-info"></i>
+    <div class="tip-hd">提示标题</div>
+    <div class="tip-bd">
+        <p>提示正文</p>
+    </div>
+</div>
+```
+
+<h2 class="gmp-h" id="gmp-bubble">气泡提示</h2>
+
+气泡提示分为默认、<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>。基础引用类为<code>.bubble</code>。上、下、左、右四个位置。至少要引用<code>.bubble</code>、<code>.bubble-{direction}</code>两个 <strong>class</strong>，默认样式为灰色。要得到不用类别的样式需要引用<code>.bubble-{type}</code>。
+
+<h4 class="gmp-h">示例：</h4>
+
+<div class="gmp-example">
+    <div class="gmp-bubble">
+        <div class="bubble bubble-top">
+            <i class="bubble-arrow"><i class="bubble-arrow-in"></i></i>
+            <span class="bubble-close">×</span>
+            <h6 class="bubble-hd">气泡提示</h6>
+            <div class="bubble-bd">高端大气上档次</div>
+        </div>
+    </div>
+</div>
 
 
 

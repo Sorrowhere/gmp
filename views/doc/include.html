@@ -33,6 +33,8 @@
                     
                     <ul class="JS-menu-sub gmp-menu-sub">
                         
+                        <li><a href="#gmp-global-bs">浏览器兼容</a></li>
+                        
                         <li><a href="#gmp-global-ff">字体</a></li>
                         
                         <li><a href="#gmp-global-color">颜色</a></li>
@@ -107,8 +109,7 @@
             </ul>
         </div>
         <div class="gmp-main">
-            <p><!-- global --></p>
-<h2 class="gmp-h" id="gmp-intro">说明</h2>
+            <h2 class="gmp-h" id="gmp-intro">说明</h2>
 
 <p class="gmp-para-lead"><code>include/</code>内包含全局参数定义、CSS3辅助方法定义、媒体查询辅助方法定义、字体图标变量定义。Sass变量定义采用骆驼定义法，如：<code>$fontName</code>。</p>
 
@@ -116,6 +117,15 @@
 
 <p class="gmp-para-lead"><code>_global.scss</code>，包括字体、颜色等相关全局变量的定义。不同项目通过<code>site/_setting.scss</code>定义。</p>
 
+<h3 class="gmp-h" id="gmp-global-bs">浏览器兼容</h3>
+
+<pre><code class="hljs css"><span class="hljs-comment">// browser support set</span>
+<span class="hljs-comment">// default: Chrome, Firefox, IE8+</span>
+<span class="hljs-comment">// alternative: IE7, IE6</span>
+<span class="hljs-variable">$lte7</span>: <span class="hljs-keyword">true</span> !<span class="hljs-keyword">default</span>;
+<span class="hljs-variable">$ie7</span>: <span class="hljs-keyword">true</span> !<span class="hljs-keyword">default</span>;
+<span class="hljs-variable">$ie6</span>: <span class="hljs-keyword">true</span> !<span class="hljs-keyword">default</span>;
+</code></pre>
 <h3 class="gmp-h" id="gmp-global-ff">字体</h3>
 
 <p>变量名称以<code>ff</code>开头。</p>
@@ -125,13 +135,14 @@
 <span class="hljs-variable">$ffSimsun</span>: arial, simsun, sans<span class="hljs-attribute">-serif</span>;
 <span class="hljs-variable">$ffSimhei</span>: arial, simhei, sans<span class="hljs-attribute">-serif</span>;
 <span class="hljs-variable">$ffCode</span>: Monaco, Menlo, Consolas, <span class="hljs-string">"Courier New"</span>, monospace;
+<span class="hljs-variable">$ffTahoma</span>: tahoma, arial, sans<span class="hljs-attribute">-serif</span>;
 </code></pre>
 <h3 class="gmp-h" id="gmp-global-color">颜色</h3>
 
 <p>以中文站颜色体系为默认值。背景、文字、边框等颜色尽量使用规范中的颜色，不要再使用其它相似颜色。前端在编写代码的时候，如遇到规范中没有的颜色，使用规范中相近颜色代替。</p>
-<h4>内贸站视觉定义</h4>
+<h4 class="gmp-h">内贸站视觉定义</h4>
 
-<h5>标准色（主色）：</h5>
+<h5 class="gmp-h">标准色（主色）：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -156,7 +167,7 @@
 <span class="hljs-variable">$mainYellow</span>: <span class="hljs-comment">#ffc20e !default;</span>
 <span class="hljs-variable">$mainDark</span>: <span class="hljs-comment">#231f20 !default;</span>
 </code></pre>
-<h5>辅助色：</h5>
+<h5 class="gmp-h">辅助色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -214,7 +225,7 @@
 <span class="hljs-variable">$subYellowLight</span>: <span class="hljs-comment">#e6b345 !default;</span>
 <span class="hljs-variable">$subYellowLighter</span>: <span class="hljs-comment">#ffcf66 !default;</span>
 </code></pre>
-<h5>字体颜色：</h5>
+<h5 class="gmp-h">字体颜色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -270,7 +281,7 @@
 <span class="hljs-variable">$fcLinkGray</span>: <span class="hljs-variable">$fcGrayDark</span>;
 <span class="hljs-variable">$fcLinkHover</span>: <span class="hljs-variable">$mainRed</span>;
 </code></pre>
-<h5>边框颜色：</h5>
+<h5 class="gmp-h">边框颜色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -295,7 +306,7 @@
 <span class="hljs-variable">$bdGray</span>: <span class="hljs-comment">#d9d9d9 !default;</span>
 <span class="hljs-variable">$bdGrayLight</span>: <span class="hljs-comment">#e6e6e6 !default;</span>
 </code></pre>
-<h5>背景颜色：</h5>
+<h5 class="gmp-h">背景颜色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color gmp-color-bg">
@@ -582,7 +593,7 @@ Example:
 </code></pre>
 <h3 class="gmp-h" id="gmp-media-screen">Response</h3>
 
-<h4>宽度</h4>
+<h4 class="gmp-h">宽度</h4>
 
 <pre><code class="hljs css"><span class="hljs-comment">// min, max, min and max</span>
 <span class="hljs-comment">// 示例</span>
@@ -590,7 +601,7 @@ Example:
 @<span class="hljs-preprocessor"><span class="hljs-keyword">include</span> max-screen(1190px);</span>
 @<span class="hljs-preprocessor"><span class="hljs-keyword">include</span> screen(990px, 1190px);</span>
 </code></pre>
-<h4>高度</h4>
+<h4 class="gmp-h">高度</h4>
 
 <pre><code class="hljs css"><span class="hljs-comment">// min, max, min and max</span>
 <span class="hljs-comment">// 示例</span>
@@ -666,7 +677,9 @@ Example:
     <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1</span>rem</span></span>;
 <span class="hljs-rule">}</span></span>
 </code></pre>
-<h4 class="gmp-h">可以直接引用基本样式：</h4><pre><code class="hljs css">.selector{
+<h4 class="gmp-h">可以直接引用基本样式：</h4>
+
+<pre><code class="hljs css">.selector{
     @<span class="hljs-preprocessor"><span class="hljs-keyword">include</span> %iconFontBase;</span>
 }
 </code></pre>
@@ -691,7 +704,9 @@ Example:
     }
 }
 </code></pre>
-<h4 class="gmp-h">使用方法：</h4><pre><code class="hljs css"><span class="hljs-class">.icon-</span>$<span class="hljs-tag">iconName</span><span class="hljs-pseudo">:before</span><span class="hljs-rules">{
+<h4 class="gmp-h">使用方法：</h4>
+
+<pre><code class="hljs css"><span class="hljs-class">.icon-</span>$<span class="hljs-tag">iconName</span><span class="hljs-pseudo">:before</span><span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-function">get($iconName)</span></span></span>;
 <span class="hljs-rule">}</span></span>
 </code></pre>

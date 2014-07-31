@@ -4,6 +4,7 @@
 // import
 @import "../include/_global";
 @import "../include/_css3";
+@import "../include/_mixin";
 
 // base style
 // =============================
@@ -34,16 +35,10 @@ img{
     vertical-align: middle;
 }
 
-// text
-// ============================
-.text-lst{
-    li{
-        padding: 3px 0 3px 9px;
-        background: url(/img/global/list-style.png) 0 10px no-repeat;
-    }
+// text color
+.red{
+    color: $fcRed;
 }
-
-// text emphasis
 .yellow{
     color: $fcYellow;
 }
@@ -52,4 +47,104 @@ img{
 }
 .green{
     color: $fcGreen;
+}
+.gray{
+    color: $fcGray;
+}
+.gray-light{
+    color: $fcGrayLight;
+}
+
+// background color
+.bg-green{
+    background-color: $bgGreen;
+}
+.bg-red{
+    background-color: $bgRed;
+}
+.bg-yellow{
+    background-color: $bgYellow;
+}
+.bg-blue{
+    background-color: $bgBlue;
+}
+.bg-gray{
+    background-color: $bgGray;
+}
+
+// typography
+// ============================
+// head
+h2, h3, h4, h5{
+    font-family: $ffYahei;
+    color: $fcHead;
+    @if $lte7{
+        *font-weight: normal;
+    }
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 16px;
+}
+h5{
+    font-size: 14px;
+}
+h6{
+    font-size: 12px;
+    font-weight: bold;
+}
+// head group
+.hd{
+    @extend %bfc;
+    .h{
+        float: left;
+    }
+    .h-sub{
+        font-size:12px;
+        margin-left: 10px;
+        color: $fcGrayLight;
+        font-family: $ffDefault;
+    }
+    .h-ope{
+        float: right;
+    }
+}
+// text body
+.text{
+    margin-bottom: 10px;
+}
+.text-lst{
+    li{
+        padding: 2px 0 2px 9px;
+        background: url(/img/global/list-style.png) 0 9px no-repeat;
+    }
+
+}
+ol.text-lst{
+    margin-left: 1.6em;
+    @if $lte7{
+        *margin-left: 2em;
+    }
+    li{
+        background: none;
+        list-style-type: decimal;
+        padding-left: 0;
+    }
+}
+
+// inline text style
+strong{
+    font-weight: bold;
+}
+.v-sep{
+    margin: 0 5px;
+    color: $fcGrayLight;
+}
+.text-space{
+    margin: 0 3px;
 }

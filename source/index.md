@@ -36,6 +36,8 @@ h3标题ID命名格式：<code>.gmp-区块英文名-当前区块英文名</code>
 
 文档中所需图片拷贝到<code>/public/img/doc</code>文件夹下，命名格式为：<code>docname_imgname.jpg|png|gif</code>
 
+CSS预编译处理使用SASS，版本号 <strong>3.3.12</strong>。
+
 <h2 class="gmp-h" id="gmp-spec">规范说明</h2>
 
 百卓规范库包括视觉规范、前端规范。前端规范包括Sass、基础样式（base）、样式组件（ui）、功能（func）、百卓公共组件（abiz）、中文公共组件（cn）。
@@ -61,7 +63,7 @@ style/
 |   |   |-- table.scss
 |   |   |-- font_icon.scss
 |   |   |-- ...
-|   |-- func/
+|   |-- utility/
 |   |   |-- animation.scss
 |   |   |-- align.scss
 |   |-- site/
@@ -94,7 +96,7 @@ style/
 
 以上结构为Sass文件结构，css结构与之相同。
 
-<code>base/</code>、<code>func/</code>、<code>import/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。
+<code>base/</code>、<code>utility/</code>、<code>import/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。
 
 <code>site/</code>，原<code>module/</code>，为具体项目样式。
 

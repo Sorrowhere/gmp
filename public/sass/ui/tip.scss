@@ -9,10 +9,10 @@
 
 // tip type setting
 //          typeName,  backgroundColor, borderColor, color
-$tipInfo:   info       #edf4fa          #c7dbeb      #1c75bb;
-$tipSucc:   succ       #ebf9df          #bed7a8      #58991f;
-$tipError:  error      #faedee          #fad2cd      #cc220b;
-$tipWarn:   warn       #fcf5e3          #e8d4a8      #c59120;
+$tipInfo:   info       $bgBlue          $bdBlue      #1c75bb;
+$tipSucc:   succ       $bgGreen         $bdGreen     #58991f;
+$tipError:  error      $bgRed           $bdRed       #cc220b;
+$tipWarn:   warn       $bgYellow        $bdYellow    #c59120;
 $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 
 // tip type
@@ -79,7 +79,7 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 
 
 .#{$tipBaseClass}-close{
-    float:right;
+    float: right;
     font:bold 12px/14px $ffTahoma;
     cursor:pointer;
 }
@@ -93,30 +93,20 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 
 // tip content style
 .#{$tipBaseClass}-bd{
-    p,.text-lst{
+    .text, .text-lst{
         margin-bottom: 10px;
     }
 }
 .#{$tipBaseClass}-sub-hd{
     font-size: 14px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
-.#{$tipBaseClass}-links{
+.#{$tipBaseClass}-lnks{
     .v-sep{
         margin: 0 10px;
     }
 }
 .#{$tipBaseClass}-ope{
-    margin:10px 0 15px;
-}
-.#{$tipBaseClass}-lnk-lst{
-    overflow: hidden;
-    *zoom:1;
-    li{
-        float: left;
-    }
-    .v-sep{
-        margin: 0 10px;
-    }
+    margin:20px 0 0;
 }
 

@@ -1,4 +1,4 @@
-<!-- global -->
+
 <h2 class="gmp-h" id="gmp-intro">说明</h2>
 
 <p class="gmp-para-lead"><code>include/</code>内包含全局参数定义、CSS3辅助方法定义、媒体查询辅助方法定义、字体图标变量定义。Sass变量定义采用骆驼定义法，如：<code>$fontName</code>。</p>
@@ -6,6 +6,17 @@
 <h2 class="gmp-h" id="gmp-global">全局参数定义</h2>
 
 <p class="gmp-para-lead"><code>_global.scss</code>，包括字体、颜色等相关全局变量的定义。不同项目通过<code>site/_setting.scss</code>定义。</p>
+
+<h3 class="gmp-h" id="gmp-global-bs">浏览器兼容</h3>
+
+```css
+// browser support set
+// default: Chrome, Firefox, IE8+
+// alternative: IE7, IE6
+$lte7: true !default;
+$ie7: true !default;
+$ie6: true !default;
+```
 
 <h3 class="gmp-h" id="gmp-global-ff">字体</h3>
 
@@ -18,15 +29,16 @@ $ffYahei: arial, 'Microsoft Yahei', sans-serif;
 $ffSimsun: arial, simsun, sans-serif;
 $ffSimhei: arial, simhei, sans-serif;
 $ffCode: Monaco, Menlo, Consolas, "Courier New", monospace;
+$ffTahoma: tahoma, arial, sans-serif;
 ```
 
 <h3 class="gmp-h" id="gmp-global-color">颜色</h3>
 
 以中文站颜色体系为默认值。背景、文字、边框等颜色尽量使用规范中的颜色，不要再使用其它相似颜色。前端在编写代码的时候，如遇到规范中没有的颜色，使用规范中相近颜色代替。
 
-<h4>内贸站视觉定义</h4>
+<h4 class="gmp-h">内贸站视觉定义</h4>
 
-<h5>标准色（主色）：</h5>
+<h5 class="gmp-h">标准色（主色）：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -53,7 +65,7 @@ $mainYellow: #ffc20e !default;
 $mainDark: #231f20 !default;
 ```
 
-<h5>辅助色：</h5>
+<h5 class="gmp-h">辅助色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -113,7 +125,7 @@ $subYellowLight: #e6b345 !default;
 $subYellowLighter: #ffcf66 !default;
 ```
 
-<h5>字体颜色：</h5>
+<h5 class="gmp-h">字体颜色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -171,7 +183,7 @@ $fcLinkGray: $fcGrayDark;
 $fcLinkHover: $mainRed;
 ```
 
-<h5>边框颜色：</h5>
+<h5 class="gmp-h">边框颜色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color">
@@ -198,7 +210,7 @@ $bdGray: #d9d9d9 !default;
 $bdGrayLight: #e6e6e6 !default;
 ```
 
-<h5>背景颜色：</h5>
+<h5 class="gmp-h">背景颜色：</h5>
 
 <div class="gmp-example gmp-cn">
     <ul class="gmp-color gmp-color-bg">
@@ -514,7 +526,7 @@ Portrait: 竖屏
 
 <h3 class="gmp-h" id="gmp-media-screen">Response</h3>
 
-<h4>宽度</h4>
+<h4 class="gmp-h">宽度</h4>
 
 ```css
 // min, max, min and max
@@ -524,7 +536,7 @@ Portrait: 竖屏
 @include screen(990px, 1190px);
 ```
 
-<h4>高度</h4>
+<h4 class="gmp-h">高度</h4>
 
 ```css
 // min, max, min and max
@@ -612,7 +624,7 @@ $baseClass: icon !default;
 }
 ```
 
-####可以直接引用基本样式：
+<h4 class="gmp-h">可以直接引用基本样式：</h4>
 
 ```css
 .selector{
@@ -647,7 +659,7 @@ $iconNames:
 }
 ```
 
-####使用方法：
+<h4 class="gmp-h">使用方法：</h4>
 
 ```css
 .icon-$iconName:before{

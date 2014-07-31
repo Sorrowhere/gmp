@@ -29,13 +29,38 @@
                 </li>
                 
                 <li class=" JS-menu-main-item">
-                    <a href="#gmp-base">基本元素定义</a>
+                    <a href="#gmp-base">默认样式</a>
                     
                     <ul class="JS-menu-sub gmp-menu-sub">
                         
                         <li><a href="#gmp-base-body">Body定义</a></li>
                         
+                        <li><a href="#gmp-base-font">字体</a></li>
+                        
                         <li><a href="#gmp-base-link">链接</a></li>
+                        
+                        <li><a href="#gmp-base-link">图片</a></li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class=" JS-menu-main-item">
+                    <a href="#gmp-class">基础样式</a>
+                    
+                    <ul class="JS-menu-sub gmp-menu-sub">
+                        
+                        <li><a href="#gmp-class-font">文本颜色</a></li>
+                        
+                        <li><a href="#gmp-class-bg">背景颜色</a></li>
+                        
+                        <li><a href="#gmp-class-head">标题</a></li>
+                        
+                        <li><a href="#gmp-class-para">段落</a></li>
+                        
+                        <li><a href="#gmp-class-list">列表</a></li>
+                        
+                        <li><a href="#gmp-class-inline">内联元素样式</a></li>
                         
                     </ul>
                     
@@ -46,16 +71,26 @@
         <div class="gmp-main">
             <h2 class="gmp-h" id="gmp-intro">说明</h2>
 
-<p class="gmp-para-lead">基础公共样式主要定义在<code>common.css</code>中。包括字体、颜色、标题、文本、链接、图片、表单元素等基础元素的样式定义。</p>
+<p class="gmp-para-lead">基础样式主要定义在<code>common.css</code>中。包括字体、颜色、标题、文本、链接、图片、表单元素等基础元素的样式定义。</p>
 
-<h2 class="gmp-h" id="gmp-base">基本元素定义</h2>
+<h2 class="gmp-h" id="gmp-base">默认样式</h2>
+
+<p class="gmp-para-lead">默认样式设置了一些基本元素在没有引用样式类的情况下呈现的样式。</p>
 
 <h3 class="gmp-h" id="gmp-base-body">Body定义</h3>
 
-<p><code>body</code>内主要定义了全局字体、行高、字号、背景。</p>
 <pre><code class="hljs css"><span class="hljs-tag">body</span><span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">12</span>px/<span class="hljs-number">1.3</span> arial, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#4d4d4d</span></span></span>;
     <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-backface-visibility</span>:<span class="hljs-value"> hidden</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-font-smoothing</span>:<span class="hljs-value"> antialiased</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-base-font">字体</h3>
+
+<pre><code class="hljs css"><span class="hljs-tag">body</span>, <span class="hljs-tag">input</span>, <span class="hljs-tag">select</span>, <span class="hljs-tag">textarea</span>, <span class="hljs-tag">button</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">12</span>px/<span class="hljs-number">1.5</span> arial, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">outline</span>:<span class="hljs-value"> none</span></span>;
 <span class="hljs-rule">}</span></span>
 </code></pre>
 <h3 class="gmp-h" id="gmp-base-link">链接</h3>
@@ -69,13 +104,210 @@
     <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
 <span class="hljs-rule">}</span></span>
 <span class="hljs-tag">a</span><span class="hljs-pseudo">:link</span>, <span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span><span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#05c</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#06d</span></span></span>;
 <span class="hljs-rule">}</span></span>
 <span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span><span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#c02</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#d9363c</span></span></span>;
     <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> underline</span></span>;
 <span class="hljs-rule">}</span></span>
 </code></pre>
+<h3 class="gmp-h" id="gmp-base-link">图片</h3>
+
+<pre><code class="hljs css"><span class="hljs-tag">img</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> middle</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<h2 class="gmp-h" id="gmp-class">基础样式</h2>
+
+<p>基础样式定义了简单的、非组件类的公共样式。</p>
+<h3 class="gmp-h" id="gmp-class-font">文本颜色</h3>
+
+<div class="gmp-example">
+    <p class="red">红色强调文本</p>
+    <p class="yellow">黄色强调文本</p>
+    <p class="green">绿色强调文本</p>
+    <p class="gray">辅助灰色文本</p>
+    <p class="gray-light">辅助浅灰色文本</p>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"red"</span>&gt;</span>红色强调文本<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"yellow"</span>&gt;</span>黄色强调文本<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"green"</span>&gt;</span>绿色强调文本<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gray"</span>&gt;</span>辅助灰色文本<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gray-light"</span>&gt;</span>辅助浅灰色文本<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-class-bg">背景颜色</h3>
+
+<div class="gmp-example">
+    <div class="gmp-example-item">
+        <div class="bg-red">红色背景区块</div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="bg-yellow">黄色背景区块</div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="bg-green">绿色背景区块</div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="bg-blue">蓝色背景区块</div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="bg-gray">灰色背景区块</div>
+    </div>
+</div>
+
+<pre><code class="hljs html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"bg-red"</span>&gt;红色背景区块&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"bg-yellow"</span>&gt;黄色背景区块&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"bg-green"</span>&gt;绿色背景区块&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"bg-blue"</span>&gt;蓝色背景区块&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"bg-gray"</span>&gt;灰色背景区块&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+<h3 class="gmp-h" id="gmp-class-head">标题</h3>
+
+<p>内容区标题使用 h2 ~ h6 标签，h1 标签只用于用于logo（奇葩的SEO要求另议）。</p>
+<h4 class="gmp-h">简单标题：</h4>
+
+<div class="gmp-example">
+    <h2>h2.标题文字 32PX</h2>
+    <h3>h3.标题文字 24PX</h3>
+    <h4>h4.标题文字 16px</h4>
+    <h5>h5.标题文字 14px</h5>
+    <h6>h6.标题文字 12px</h6>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>h2.标题文字 32PX<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>h3.标题文字 24PX<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>h4.标题文字 16px<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>h5.标题文字 14px<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>h6.标题文字 12px<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
+</code></pre>
+<h4 class="gmp-h">标题组：</h4>
+
+<p>标题组一般由标题和其它一些辅助性元素组成，如链接、按钮等。比较常见的结构为标题+更多链接。</p>
+<div class="gmp-example">
+    <div class="hd">
+        <h4 class="h">标题文字<span class="h-sub">辅助文字</span></h4>
+        <a href="#" class="h-ope btn btn-s btn-default">更多</a>
+    </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h"</span>&gt;</span>标题文字<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h-sub"</span>&gt;</span>辅助文字<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h-ope btn btn-s btn-default"</span>&gt;</span>更多<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-class-para">段落</h3>
+
+<p>文本段落使用标签<code>p</code>，同时添加 class <code>.text</code>。默认行高 <strong>1.5</strong>，段落间距 <strong>10px</strong>。</p>
+<div class="gmp-example">
+    <p class="text">11岁时被诊断出发育荷尔蒙缺乏，会阻碍他的骨骼生长。家里的经济条件难以承受小梅 西的治疗费用。梅西的侏儒症并非不可医治，但是注射生长激素每月花费高达900美元，母队纽维尔老伙计不愿意为一个前途未卜的孩子支付这笔费用，一度觊觎梅西的河床得知他的顽疾后也打消了挖角的念头。</p>
+    <p class="text">2000年，被教练库卡看中，被带到了巴塞罗那，梅西也举家搬迁到西班牙。2000年9月，年仅13岁身高只有140cm的梅西去了巴塞罗那青训营拉玛西亚试训。在试训期间，梅西的表现征服了巴萨青年队教练，他们与梅西签订了一份2012年才会到期的工作合同。巴塞罗那俱乐部在帮助梅西成长方面作出了巨大的努力，由于梅西的骨骺线早已闭合，俱乐部专家专门为他制定了腿部系列运动，帮助梅西生长。</p>
+</div>
+
+<h3 class="gmp-h" id="gmp-class-list">列表</h3>
+
+<h4 class="gmp-h">默认列表：</h4>
+
+<p>在<code>ul</code>标签上引用class<code>.text-lst</code>。</p>
+<div class="gmp-example">
+    <ul class="text-lst">
+        <li>可以运行在当前任何流行的浏a览器。浏览器可以没有实现ES6的规范；</li>
+        <li>提供最基本的AMD方法：define和require；</li>
+        <li>被Uglify.js压缩后，应该尽可能的小，但是可读性要强。</li>
+    </ul>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-lst"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>可以运行在当前任何流行的浏a览器。浏览器可以没有实现ES6的规范；<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>提供最基本的AMD方法：define和require；<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>被Uglify.js压缩后，应该尽可能的小，但是可读性要强。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<h4 class="gmp-h">有序列表</h4>
+
+<p>有序列表使用标签<code>ol</code>，并引用 class<code>.text-lst</code>。</p>
+<div class="gmp-example">
+    <ol class="text-lst">
+        <li>超八成中国人对未来乐观，你特么逗我呢</li>
+        <li>超八成中国人对未来乐观，你特么逗我呢</li>
+        <li>超八成中国人对未来乐观，你特么逗我呢</li>
+    </ol>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-lst"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>可以运行在当前任何流行的浏a览器。浏览器可以没有实现ES6的规范；<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>提供最基本的AMD方法：define和require；<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>被Uglify.js压缩后，应该尽可能的小，但是可读性要强。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-class-inline">内联元素样式</h3>
+
+<p>定义基本的内联元素样式。有些样式可以直接使用未重置样式的标签。其它样式类可以使用<code>s</code>、<code>b</code>、<code>i</code>、<code>span</code>等标签。</p>
+<h4 class="gmp-h">加粗：</h4>
+
+<p>使用标签<code>strong</code>。</p>
+<div class="gmp-example">
+    <strong>加粗文本</strong>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>加粗文本<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+</code></pre>
+<h4 class="gmp-h">下划线：</h4>
+
+<p>使用标签<code>u</code>。</p>
+<div class="gmp-example">
+    <u>带下划线文本</u>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">u</span>&gt;</span>带下划线文本<span class="hljs-tag">&lt;/<span class="hljs-title">u</span>&gt;</span>
+</code></pre>
+<h4 class="gmp-h">斜体：</h4>
+
+<p>中文斜体可读性差，一般很少使用。</p>
+<div class="gmp-example">
+    <em>斜体文字</em>
+</div>
+
+<h4 class="gmp-h">元素分割线：</h4>
+
+<p>默认左右间隔 <strong>5px</strong>，颜色为 <code>#999</code>。</p>
+<div class="gmp-example">
+    <a href="">链接</a>
+    <span class="v-sep">|</span>
+    <a href="">链接</a>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"v-sep"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<h4 class="gmp-h">文本空白：</h4>
+
+<p>引用 class<code>.text-space</code>。左右间距 <strong>3px</strong></p>
+<div class="gmp-example">
+    <p>这是一段文本这是一段<span class="text-space">100</span>文本这是一段文本</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     </div>

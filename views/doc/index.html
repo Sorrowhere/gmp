@@ -69,6 +69,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
 <p>文档中所需图片拷贝到<code>/public/img/doc</code>文件夹下，命名格式为：<code>docname_imgname.jpg|png|gif</code></p>
+<p>CSS预编译处理使用SASS，版本号 <strong>3.3.12</strong>。</p>
 <h2 class="gmp-h" id="gmp-spec">规范说明</h2>
 
 <p>百卓规范库包括视觉规范、前端规范。前端规范包括Sass、基础样式（base）、样式组件（ui）、功能（func）、百卓公共组件（abiz）、中文公共组件（cn）。</p>
@@ -91,7 +92,7 @@
 |   |   |-- table.scss
 |   |   |-- font_icon.scss
 |   |   |-- ...
-|   |-- func/
+|   |-- utility/
 |   |   |-- animation.scss
 |   |   |-- align.scss
 |   |-- site/
@@ -123,7 +124,7 @@
 </pre>
 
 <p>以上结构为Sass文件结构，css结构与之相同。</p>
-<p><code>base/</code>、<code>func/</code>、<code>import/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。</p>
+<p><code>base/</code>、<code>utility/</code>、<code>import/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。</p>
 <p><code>site/</code>，原<code>module/</code>，为具体项目样式。</p>
 <p><code>include/</code>为Sass引用文件，不会编译成样式文件。禁止在页面中直接引用。</p>
 <p><code>_setting.scss</code>为项目Sass参数配置文件，定义根据项目重置的全局变量和UI变量，以实现UI定制。</p>

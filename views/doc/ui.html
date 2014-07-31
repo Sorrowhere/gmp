@@ -45,13 +45,26 @@
                 </li>
                 
                 <li class=" JS-menu-main-item">
-                    <a href="#gmp-tip">提示</a>
+                    <a href="#gmp-tip">常规提示</a>
                     
                     <ul class="JS-menu-sub gmp-menu-sub">
                         
-                        <li><a href="#gmp-tip-normal">常规提示</a></li>
+                        <li><a href="#gmp-tip-html">基本 HTML 格式</a></li>
+                        
+                        <li><a href="#gmp-tip-succ">成功提示</a></li>
+                        
+                        <li><a href="#gmp-tip-error">报错提示</a></li>
+                        
+                        <li><a href="#gmp-tip-warn">警告提示</a></li>
+                        
+                        <li><a href="#gmp-tip-info">信息提示</a></li>
                         
                     </ul>
+                    
+                </li>
+                
+                <li class=" JS-menu-main-item">
+                    <a href="#gmp-bubble">气泡提示</a>
                     
                 </li>
                 
@@ -169,14 +182,10 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-m btn-default last"</span>&gt;</span>按钮<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<h2 class="gmp-h" id="gmp-tip">提示</h2>
+<h2 class="gmp-h" id="gmp-tip">常规提示</h2>
 
-<p>提示分为常规提示、即时提示、气泡提示。每一种都分为<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">温馨</span></p>
-<h3 class="gmp-h" id="gmp-tip-normal">常规提示</h3>
-
-<p>基础引用类为<code>.tip</code>。三种尺寸定义：normal（默认）、middle、large。默认提示需要添加<code>.tip</code>和<code>.tip-{type}</code>两个类名，中等尺寸和大尺寸提示需要添加<code>.tip</code>、<code>.tip-{type}</code>、<code>.tip-{size}</code>3个类名。</p>
-<p><code>.tip-close</code>为选择性添加。</p>
-<h4 class="gmp-h">基本 HTML 格式</h4>
+<p>常规提示分为<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>。基础引用类为<code>.tip</code>。三种尺寸定义：normal（默认）、middle、large。默认提示需要添加<code>.tip</code>和<code>.tip-{type}</code>两个类名，中等尺寸和大尺寸提示需要添加<code>.tip</code>、<code>.tip-{type}</code>、<code>.tip-{size}</code>3个类名。<code>.tip-close</code>为选择性添加。</p>
+<h3 class="gmp-h" id="gmp-tip-html">基本 HTML 格式</h3>
 
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 外层容器 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip"</span>&gt;</span>
@@ -190,7 +199,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<h4 class="gmp-h">成功提示</h4>
+<h3 class="gmp-h" id="gmp-tip-succ">成功提示</h3>
 
 <div class="gmp-example">
     <div class="gmp-example-item">
@@ -203,7 +212,7 @@
     <div class="gmp-example-item">
         <div class="tip tip-succ tip-m">
             <i class="icon-2x icon-2x-succ"></i>
-            <div class="tip-hd">成功类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
                 <p>提示正文</p>
             </div>
@@ -212,7 +221,7 @@
     <div class="gmp-example-item">
         <div class="tip tip-succ tip-l">
             <i class="icon-3x icon-3x-succ"></i>
-            <div class="tip-hd">成功类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
                 <h4 class="tip-sub-hd">次级标题</h4>
                 <p class="text">CSS结构按照模块化组织，分为：全局公共模块、网站公共模块、底层页面模块。</p>
@@ -221,7 +230,12 @@
                     <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
                     <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
                 </ul>
-                <div class="tip-links">
+                <ol class="text-lst">
+                    <li>HTML标签必须小写，标签必须关闭。</li>
+                    <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+                    <li>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。</li>
+                </ol>
+                <div class="tip-lnks">
                     <a href="#">跳转链接</a>
                     <span class="v-sep">|</span>
                     <a href="#">跳转链接</a>
@@ -229,6 +243,9 @@
                     <a href="#">跳转链接</a>
                     <span class="v-sep">|</span>
                     <a href="#">跳转链接</a>
+                </div>
+                <div class="tip-ope">
+                    <a href="" class="btn btn-xl btn-info">操作按钮</a>
                 </div>
             </div>
         </div>
@@ -244,7 +261,7 @@
 <span class="hljs-comment">&lt;!-- 中等大小 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-succ tip-m"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-2x icon-2x-succ"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>成功类提示<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -252,13 +269,44 @@
 <span class="hljs-comment">&lt;!-- 最大 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-succ tip-l"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-3x icon-3x-succ"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>成功类提示<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- 提示标题 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- 提示内容区 --&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 次级标题 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-sub-hd"</span>&gt;</span>次级标题<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 提示内容：段落 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text"</span>&gt;</span>CSS结构按照模块化组织，分为：全局公共模块、网站公共模块、底层页面模块。<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 提示内容：无序列表 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-lst"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>HTML标签必须小写，标签必须关闭。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 提示内容：有序列表 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-lst"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>HTML标签必须小写，标签必须关闭。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>页面嵌套避免不必要的容器层和标签，嵌套层级尽量不超过12级。<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 提示内容：跳转链接 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-lnks"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>跳转链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"v-sep"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>跳转链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"v-sep"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>跳转链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"v-sep"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>跳转链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 提示内容：主操作 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-ope"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-xl btn-info"</span>&gt;</span>操作按钮<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<h4 class="gmp-h">报错提示</h4>
+<h3 id="gmp-tip-error" class="gmp-h">报错提示</h3>
 
 <div class="gmp-example">
     <div class="gmp-example-item">
@@ -271,16 +319,16 @@
     <div class="gmp-example-item">
         <div class="tip tip-error tip-m">
             <i class="icon-2x icon-2x-error"></i>
-            <div class="tip-hd">报错类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
-                <p>提示正文</p>
+                <p class="text">提示正文</p>
             </div>
         </div>
     </div>
     <div class="gmp-example-item">
         <div class="tip tip-error tip-l">
             <i class="icon-3x icon-3x-error"></i>
-            <div class="tip-hd">报错类提示</div>
+            <div class="tip-hd">提示标题</div>
             <div class="tip-bd">
                 <p>提示正文</p>
             </div>
@@ -297,7 +345,7 @@
 <span class="hljs-comment">&lt;!-- 中等大小 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-error tip-m"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-2x icon-2x-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>报错类提示<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -305,12 +353,145 @@
 <span class="hljs-comment">&lt;!-- 最大 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-error tip-l"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-3x icon-3x-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>报错类提示<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
+<h3 class="gmp-h" id="gmp-tip-warn">警告提示</h3>
+
+<div class="gmp-example">
+    <div class="gmp-example-item">
+        <div class="tip tip-warn">
+            <i class="icon icon-warn"></i>
+            <i class="tip-close">×</i>
+            <div class="tip-bd">提示正文</div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-warn tip-m">
+            <i class="icon-2x icon-2x-warn"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p class="text">提示正文</p>
+            </div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-warn tip-l">
+            <i class="icon-3x icon-3x-warn"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p>提示正文</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 默认大小 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-warn"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon icon-warn"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 中等大小 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-warn tip-m"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-2x icon-2x-warn"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 最大 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-warn tip-l"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-3x icon-3x-warn"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-tip-info">信息提示</h3>
+
+<div class="gmp-example">
+    <div class="gmp-example-item">
+        <div class="tip tip-info">
+            <i class="icon icon-info"></i>
+            <i class="tip-close">×</i>
+            <div class="tip-bd">提示正文</div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-info tip-m">
+            <i class="icon-2x icon-2x-info"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p class="text">提示正文</p>
+            </div>
+        </div>
+    </div>
+    <div class="gmp-example-item">
+        <div class="tip tip-info tip-l">
+            <i class="icon-3x icon-3x-info"></i>
+            <div class="tip-hd">提示标题</div>
+            <div class="tip-bd">
+                <p>提示正文</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 默认大小 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-info"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon icon-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 中等大小 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-info tip-m"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-2x icon-2x-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 最大 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-info tip-l"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-3x icon-3x-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-hd"</span>&gt;</span>提示标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>提示正文<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 class="gmp-h" id="gmp-bubble">气泡提示</h2>
+
+<p>气泡提示分为默认、<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>。基础引用类为<code>.bubble</code>。上、下、左、右四个位置。至少要引用<code>.bubble</code>、<code>.bubble-{direction}</code>两个 <strong>class</strong>，默认样式为灰色。要得到不用类别的样式需要引用<code>.bubble-{type}</code>。</p>
+<h4 class="gmp-h">示例：</h4>
+
+<div class="gmp-example">
+    <div class="gmp-bubble">
+        <div class="bubble bubble-top">
+            <i class="bubble-arrow"><i class="bubble-arrow-in"></i></i>
+            <span class="bubble-close">×</span>
+            <h6 class="bubble-hd">气泡提示</h6>
+            <div class="bubble-bd">高端大气上档次</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     </div>

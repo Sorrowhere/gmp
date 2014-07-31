@@ -1,0 +1,50 @@
+// global mixin
+// author liw
+// =====================================
+// require _global
+
+// import
+@import "../include/_global";
+
+// opacity
+@mixin opacity($opacityValue: .5){
+    opacity: $opacityValue;
+    filter: alpha(opacity = $opacityValue * 100);
+}
+
+// Center-align a block level element
+@mixin center-block{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Sizing
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}
+
+// Text clip, width must be set
+%text-clip{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Min height
+@mixin min-height($height){
+    min-height: $height;
+    height: auto;
+    @if($ie6){
+        _height: $height;
+    }
+}
+
+// generate block formatting context
+// IE hasLayout
+%bfc{
+    overflow: hidden;
+    @if $lte7{
+        *zoom:1;
+    }
+}
