@@ -132,6 +132,8 @@
 
 <h2 class="gmp-h" id="gmp-tip">常规提示</h2>
 
+常规提示定义在文件<code>tip.scss</code>中。
+
 常规提示分为<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>。基础引用类为<code>.tip</code>。三种尺寸定义：normal（默认）、middle、large。默认提示需要添加<code>.tip</code>和<code>.tip-{type}</code>两个类名，中等尺寸和大尺寸提示需要添加<code>.tip</code>、<code>.tip-{type}</code>、<code>.tip-{size}</code>3个类名。<code>.tip-close</code>为选择性添加。
 
 <h3 class="gmp-h" id="gmp-tip-html">基本 HTML 格式</h3>
@@ -424,7 +426,23 @@
 </div>
 ```
 
+<h3 class="gmp-h" id="gmp-tip-notice">公告类提示</h3>
+
+公告类提示常出现于页面正式内容顶部，如通知、提醒等。
+
+公告类提示基类为<code>.tip-notice</code>，无图标。划分类别及类定义与其它提示相同。
+
+<h4 class="gmp-h">示例：</h4>
+
+<div class="gmp-example">
+    <div class="tip tip-notice tip-warn">
+        <div class="tip-bd">你需要完善会员资料并验证邮箱。才可<a href="#">添加产品</a>。</div>
+    </div>
+</div>
+
 <h2 class="gmp-h" id="gmp-bubble">气泡提示</h2>
+
+气泡提示定义在文件<code>bubble.scss</code>中。
 
 气泡提示分为默认、<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>，基础引用类为<code>.bubble</code>，不同类别引用<code>.bubble-{type}</code>。
 

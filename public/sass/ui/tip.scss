@@ -19,15 +19,15 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 // ===========================
 @each $tipTypeItem in $tipTypeGroup{
     $tipTypeName: nth($tipTypeItem,1);
-    $backgroundColor: nth($tipTypeItem,2);
-    $borderColor: nth($tipTypeItem,3);
-    $color: nth($tipTypeItem,4);
+    $tipBgColor: nth($tipTypeItem,2);
+    $tipBdColor: nth($tipTypeItem,3);
+    $tipFontColor: nth($tipTypeItem,4);
 
     $tipTypeClass: $tipBaseClass + '-' + $tipTypeName;
     .#{$tipTypeClass}{
-        background-color: $backgroundColor;
-        border: 1px solid $borderColor;
-        color: $color;
+        border: 0 solid $tipBdColor;
+        background-color: $tipBgColor;
+        color: $tipFontColor;
     }
 }
 
@@ -38,16 +38,24 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 .#{$tipBaseClass}{
     padding:7px 10px 7px 31px;
     overflow:hidden;
-    *zoom:1;
     .#{$iconBaseClass}{
         float: left;
         margin:2px 0 0 -21px;
     }
+    @if $lte7 {
+        *zoom:1;
+    }
+}
+
+// tip notice
+.#{$tipBaseClass}-notice{
+    padding-left: 10px;
+    border-width: 1px;
+    color: $fcText;
 }
 
 .#{$tipBaseClass}-m,
 .#{$tipBaseClass}-l{
-    border: none;
     color: $fcText;
 }
 

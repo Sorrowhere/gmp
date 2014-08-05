@@ -48,6 +48,23 @@ input{
 .gmp-layout-doc{
     margin: 0 0 0 20px;
 }
+.gmp-backtop{
+    position: fixed;
+    bottom: 100px;
+    left: 1220px;
+    background: #eee;
+    text-align: center;
+    line-height: 40px;
+    @include border-radius(3px);
+    &:hover{
+        background-color: #ddd;
+    }
+    a{
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+}
 $headerHeight: 50px;
 .gmp-header-wrap{
 	background-color: #2c3e50;
