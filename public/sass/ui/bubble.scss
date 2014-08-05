@@ -12,35 +12,37 @@ $bubbleBaseClass: bubble !default;
 $bubbleArrowClass: $bubbleBaseClass + '-' + arrow !default;;
 
 // bubblePos
-$bubblePos: top, right, bottom, left;
+$bubbleArrowGroup: top, right, bottom, left;
 
 
 //bubble type class
-//            typeName, bgColor,   bdColor
-$bubbleInfo:  info,     $bgBlue,   $bdBlue;
-$bubbleSucc:  succ,     $bgGreen,  $bdGreen;
-$bubbleError: error,    $bgRed,    $bdRed;
-$bubbleWarn:  warn,     $bgYellow, $bdYellow;
-$bubbleGroup: $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleWarn !default;
-
+//              typeName, bgColor,   bdColor
+$bubbleDefault: default,  $bgGray,   $bdGray;
+$bubbleInfo:    info,     $bgBlue,   $bdBlue;
+$bubbleSucc:    succ,     $bgGreen,  $bdGreen;
+$bubbleError:   error,    $bgRed,    $bdRed;
+$bubbleWarn:    warn,     $bgYellow, $bdYellow;
+$bubbleGroup:   $bubbleDefault, $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleWarn !default;
 
 // bubble style
 .#{$bubbleBaseClass}{
     position: absolute;
     padding: 8px 20px 8px 10px;
-    border: 1px solid $bdGray;
-    background-color: $bgGray;
 }
-.#{$bubbleArrowClass}{
+.#{$bubbleArrowClass},
+.#{$bubbleArrowClass}-in{
     position: absolute;
     width: 0;
     height: 0;
-    overflow: hidden;
     font-size: 0;
-    border: 8px solid $bdGray;
-    .#{$bubbleArrowClass}-in{
-        @extend .#{$bubbleArrowClass};
+    border: 8px solid transparent;
+    @if $lte7 {
+        *zoom: 1;
     }
+}
+.#{$bubbleArrowClass}-in{
+    left: 0;
+    top: 0;
 }
 @each $bubbleItem in $bubbleGroup{
     $bubbleType: nth($bubbleItem, 1);
@@ -52,22 +54,68 @@ $bubbleGroup: $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleWarn !default;
     .#{$bubbleTypeClass}{
         border: 1px solid $bubbleBdColor;
         background-color: $bubbleBgColor;
-        .#{$bubbleArrowClass}{
-            border-color: $bubbleBdColor;
-        }
-        .#{$bubbleArrowClass}-in{
-            border-color: $bubbleBgColor;
+        @each $bubbleArrowPos in $bubbleArrowGroup{
+            .#{$bubbleArrowClass}-#{$bubbleArrowPos}{
+                @if $bubbleArrowPos == 'top'{
+                    border-bottom-color: $bubbleBdColor;
+                    .#{$bubbleArrowClass}-in{
+                        border-bottom-color: $bubbleBgColor;
+                    }
+                }
+                @if $bubbleArrowPos == 'right'{
+                    border-left-color: $bubbleBdColor;
+                    .#{$bubbleArrowClass}-in{
+                        border-left-color: $bubbleBgColor;
+                    }
+                }
+                @if $bubbleArrowPos == 'bottom'{
+                    border-top-color: $bubbleBdColor;
+                    .#{$bubbleArrowClass}-in{
+                        border-top-color: $bubbleBgColor;
+                    }
+                }
+                @if $bubbleArrowPos == 'left'{
+                    border-right-color: $bubbleBdColor;
+                    .#{$bubbleArrowClass}-in{
+                        border-right-color: $bubbleBgColor;
+                    }
+                }
+            }
         }
     }
 }
 
-@each $bubblePosItem in $bubblePos{
-    $bubblePosClass: $bubbleBaseClass + '-' + $bubblePosItem;
-    .#{$bubblePosClass}{
+@each $bubbleArrowPos in $bubbleArrowGroup {
+    $bubbleArrowPosClass: $bubbleArrowClass + '-' + $bubbleArrowPos;
+    .#{$bubbleArrowPosClass}{
+        #{$bubbleArrowPos}: -16px;
 
+        @if $bubbleArrowPos == 'top'{
+            .#{$bubbleArrowClass}-in{
+                margin-left: -8px;
+                margin-top: -7px;
+            }
+        }
+        @if $bubbleArrowPos == 'right'{
+            .#{$bubbleArrowClass}-in{
+                margin-left: -9px;
+                margin-top: -8px;
+            }
+        }
+        @if $bubbleArrowPos == 'bottom'{
+            .#{$bubbleArrowClass}-in{
+                margin-left: -8px;
+                margin-top: -9px;
+            }
+        }
+        @if $bubbleArrowPos == 'left'{
+            .#{$bubbleArrowClass}-in{
+                margin-left: -7px;
+                margin-top: -8px;
+            }
+        }
     }
 }
-
 
 .#{$bubbleBaseClass}-hd{
     margin-bottom: 5px;

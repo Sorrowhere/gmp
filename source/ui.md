@@ -426,14 +426,18 @@
 
 <h2 class="gmp-h" id="gmp-bubble">气泡提示</h2>
 
-气泡提示分为默认、<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>。基础引用类为<code>.bubble</code>。上、下、左、右四个位置。至少要引用<code>.bubble</code>、<code>.bubble-{direction}</code>两个 <strong>class</strong>，默认样式为灰色。要得到不用类别的样式需要引用<code>.bubble-{type}</code>。
+气泡提示分为默认、<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>，基础引用类为<code>.bubble</code>，不同类别引用<code>.bubble-{type}</code>。
+
+气泡箭头分为上、下、左、右四个方向，基础引用类为<code>.bubble-arrow</code>，不同方位引用<code>.bubble-arrow-{direction}</code>；内部标签引用固定类<code>.bubble-arrow-in</code>。
 
 <h4 class="gmp-h">示例：</h4>
 
 <div class="gmp-example">
     <div class="gmp-bubble">
-        <div class="bubble bubble-top">
-            <i class="bubble-arrow"><i class="bubble-arrow-in"></i></i>
+        <div class="bubble bubble-default">
+            <i class="bubble-arrow bubble-arrow-bottom">
+                <i class="bubble-arrow-in"></i>
+            </i>
             <span class="bubble-close">×</span>
             <h6 class="bubble-hd">气泡提示</h6>
             <div class="bubble-bd">高端大气上档次</div>
@@ -441,8 +445,70 @@
     </div>
 </div>
 
+```html
+<div class="bubble bubble-default">
+    <i class="bubble-arrow bubble-arrow-bottom">
+        <i class="bubble-arrow-in"></i>
+    </i>
+    <span class="bubble-close">×</span>
+    <h6 class="bubble-hd">气泡提示</h6>
+    <div class="bubble-bd">高端大气上档次</div>
+</div>
+```
 
+<div class="gmp-example">
+    <div class="gmp-bubble">
+        <div class="bubble bubble-succ">
+            <i class="bubble-arrow bubble-arrow-top">
+                <i class="bubble-arrow-in"></i>
+            </i>
+            <span class="bubble-close">×</span>
+            <h6 class="bubble-hd">气泡提示</h6>
+            <div class="bubble-bd">高端大气上档次</div>
+        </div>
+    </div>
+    <div class="gmp-bubble">
+        <div class="bubble bubble-warn">
+            <i class="bubble-arrow bubble-arrow-left">
+                <i class="bubble-arrow-in"></i>
+            </i>
+            <span class="bubble-close">×</span>
+            <h6 class="bubble-hd">气泡提示</h6>
+            <div class="bubble-bd">高端大气上档次</div>
+        </div>
+    </div>
+    <div class="gmp-bubble">
+        <div class="bubble bubble-info">
+            <i class="bubble-arrow bubble-arrow-right">
+                <i class="bubble-arrow-in"></i>
+            </i>
+            <span class="bubble-close">×</span>
+            <h6 class="bubble-hd">气泡提示</h6>
+            <div class="bubble-bd">高端大气上档次</div>
+        </div>
+    </div>
+    <div class="gmp-bubble">
+        <div class="bubble bubble-error">
+            <i class="bubble-arrow bubble-arrow-left">
+                <i class="bubble-arrow-in"></i>
+            </i>
+            <span class="bubble-close">×</span>
+            <h6 class="bubble-hd">气泡提示</h6>
+            <div class="bubble-bd">高端大气上档次</div>
+        </div>
+    </div>
+</div>
 
+```html
+<div class="bubble bubble-succ">
+    <i class="bubble-arrow bubble-arrow-top">
+        <i class="bubble-arrow-in"></i>
+    </i>
+    <span class="bubble-close">×</span>
+    <h6 class="bubble-hd">气泡提示</h6>
+    <div class="bubble-bd">高端大气上档次</div>
+</div>
+```
 
 
 
