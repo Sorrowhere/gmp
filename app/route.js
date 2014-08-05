@@ -89,7 +89,6 @@ router.get('/page/detail/:key', function(req, res){
 // preview
 router.post('/preview', function(req, res){
     var markContent = req.body.content;
-    // console.log(req.body.content);
 
     res.json({
         content: markToHtml(markContent)

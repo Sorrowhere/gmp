@@ -271,6 +271,8 @@ $gmpSideGutter: 40px;
 }
 .gmp-menu-main{
     > li{
+        margin-bottom: 5px;
+        font-size: 15px;
         a{
             display: block;
             line-height: 28px;
@@ -283,7 +285,6 @@ $gmpSideGutter: 40px;
                 color: $fcLinkHover;
             }
         }
-        margin-bottom: 5px;
     }
     > .active{
         > a{
@@ -301,7 +302,8 @@ $gmpSideGutter: 40px;
     li{
         a{
             padding-left: 20px;
-            font-size: 12px;
+            font-size: 13px;
+            line-height: 26px;
         }
     }
     .active{

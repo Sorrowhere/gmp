@@ -19,8 +19,8 @@ app.engine('.html', require('ejs').renderFile);
 
 app.use(favicon());
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb'}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -39,7 +39,7 @@ app.use(function(req, res, next) {
 /// error handlers
 
 // development error handler
-// will print stacktrace
+// will print stack trace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);

@@ -9,7 +9,8 @@
 
 // variables
 $bubbleBaseClass: bubble !default;
-$bubbleArrowClass: $bubbleBaseClass + '-' + arrow !default;;
+$bubbleArrowClass: $bubbleBaseClass + '-' + arrow !default;
+$bubbleArrowWidth: 16px;
 
 // bubblePos
 $bubbleArrowGroup: top, right, bottom, left;
@@ -35,7 +36,7 @@ $bubbleGroup:   $bubbleDefault, $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleW
     width: 0;
     height: 0;
     font-size: 0;
-    border: 8px solid transparent;
+    border: $bubbleArrowWidth/2 dashed transparent;
     @if $lte7 {
         *zoom: 1;
     }
@@ -43,6 +44,9 @@ $bubbleGroup:   $bubbleDefault, $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleW
 .#{$bubbleArrowClass}-in{
     left: 0;
     top: 0;
+    @if $ie6{
+        _border: $bubbleArrowWidth/2 dashed transparent;
+    }
 }
 @each $bubbleItem in $bubbleGroup{
     $bubbleType: nth($bubbleItem, 1);
@@ -57,27 +61,27 @@ $bubbleGroup:   $bubbleDefault, $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleW
         @each $bubbleArrowPos in $bubbleArrowGroup{
             .#{$bubbleArrowClass}-#{$bubbleArrowPos}{
                 @if $bubbleArrowPos == 'top'{
-                    border-bottom-color: $bubbleBdColor;
+                    border-bottom: $bubbleArrowWidth/2 solid $bubbleBdColor;
                     .#{$bubbleArrowClass}-in{
-                        border-bottom-color: $bubbleBgColor;
+                        border-bottom: $bubbleArrowWidth/2 solid $bubbleBgColor;
                     }
                 }
                 @if $bubbleArrowPos == 'right'{
-                    border-left-color: $bubbleBdColor;
+                    border-left: $bubbleArrowWidth/2 solid $bubbleBdColor;
                     .#{$bubbleArrowClass}-in{
-                        border-left-color: $bubbleBgColor;
+                        border-left: $bubbleArrowWidth/2 solid $bubbleBgColor;
                     }
                 }
                 @if $bubbleArrowPos == 'bottom'{
-                    border-top-color: $bubbleBdColor;
+                    border-top: $bubbleArrowWidth/2 solid $bubbleBdColor;
                     .#{$bubbleArrowClass}-in{
-                        border-top-color: $bubbleBgColor;
+                        border-top: $bubbleArrowWidth/2 solid $bubbleBgColor;
                     }
                 }
                 @if $bubbleArrowPos == 'left'{
-                    border-right-color: $bubbleBdColor;
+                    border-right: $bubbleArrowWidth/2 solid $bubbleBdColor;
                     .#{$bubbleArrowClass}-in{
-                        border-right-color: $bubbleBgColor;
+                        border-right: $bubbleArrowWidth/2 solid $bubbleBgColor;
                     }
                 }
             }
@@ -88,30 +92,29 @@ $bubbleGroup:   $bubbleDefault, $bubbleInfo, $bubbleSucc, $bubbleError, $bubbleW
 @each $bubbleArrowPos in $bubbleArrowGroup {
     $bubbleArrowPosClass: $bubbleArrowClass + '-' + $bubbleArrowPos;
     .#{$bubbleArrowPosClass}{
-        #{$bubbleArrowPos}: -16px;
-
+        #{$bubbleArrowPos}: -$bubbleArrowWidth;
         @if $bubbleArrowPos == 'top'{
             .#{$bubbleArrowClass}-in{
-                margin-left: -8px;
-                margin-top: -7px;
+                margin-left: -$bubbleArrowWidth/2;
+                margin-top: -($bubbleArrowWidth/2 - 1);
             }
         }
         @if $bubbleArrowPos == 'right'{
             .#{$bubbleArrowClass}-in{
-                margin-left: -9px;
-                margin-top: -8px;
+                margin-left: -($bubbleArrowWidth/2 + 1);
+                margin-top: -$bubbleArrowWidth/2;
             }
         }
         @if $bubbleArrowPos == 'bottom'{
             .#{$bubbleArrowClass}-in{
-                margin-left: -8px;
-                margin-top: -9px;
+                margin-left: -$bubbleArrowWidth/2;
+                margin-top: -($bubbleArrowWidth/2 + 1);
             }
         }
         @if $bubbleArrowPos == 'left'{
             .#{$bubbleArrowClass}-in{
-                margin-left: -7px;
-                margin-top: -8px;
+                margin-left: -($bubbleArrowWidth/2 - 1);
+                margin-top: -$bubbleArrowWidth/2;
             }
         }
     }

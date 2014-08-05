@@ -14,7 +14,7 @@
                 <ul id="navList" class="gmp-nav-lst">
                 </ul>
             </div>
-            <a class="gmp-module-switch btn btn-blue btn-small" href="/manage/">页面管理</a>
+            <a class="gmp-module-switch btn btn-info btn-l" href="/manage/">页面管理</a>
         </div>
     </div>
 </div>
@@ -65,6 +65,30 @@
                 
                 <li class=" JS-menu-main-item">
                     <a href="#gmp-bubble">气泡提示</a>
+                    
+                    <ul class="JS-menu-sub gmp-menu-sub">
+                        
+                        <li><a href="#gmp-bubble-default">默认</a></li>
+                        
+                        <li><a href="#gmp-bubble-success">成功</a></li>
+                        
+                        <li><a href="#gmp-bubble-warn">警告</a></li>
+                        
+                        <li><a href="#gmp-bubble-info">信息</a></li>
+                        
+                        <li><a href="#gmp-bubble-error">错误</a></li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class=" JS-menu-main-item">
+                    <a href="#gmp-instant">即时提示</a>
+                    
+                </li>
+                
+                <li class=" JS-menu-main-item">
+                    <a href="#gmp-pop">弹出框</a>
                     
                 </li>
                 
@@ -469,7 +493,8 @@
 
 <p>气泡提示分为默认、<span class="green">成功</span>、<span class="yellow">警告</span>、<span class="red">报错</span>、<span class="blue">信息</span>，基础引用类为<code>.bubble</code>，不同类别引用<code>.bubble-{type}</code>。</p>
 <p>气泡箭头分为上、下、左、右四个方向，基础引用类为<code>.bubble-arrow</code>，不同方位引用<code>.bubble-arrow-{direction}</code>；内部标签引用固定类<code>.bubble-arrow-in</code>。</p>
-<h4 class="gmp-h">示例：</h4>
+<p>气泡提示定位需要在具体上下文中定义。</p>
+<h3 class="gmp-h" id="gmp-bubble-default">默认</h3>
 
 <div class="gmp-example">
     <div class="gmp-bubble">
@@ -484,15 +509,22 @@
     </div>
 </div>
 
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-default"</span>&gt;</span>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--默认样式气泡提示--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-default"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--箭头--&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow bubble-arrow-bottom"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--关闭图标（可选）--&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--提示标题（可选）--&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-hd"</span>&gt;</span>气泡提示<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--提示内容--&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-bd"</span>&gt;</span>高端大气上档次<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
+<h3 class="gmp-h" id="gmp-bubble-success">成功</h3>
+
 <div class="gmp-example">
     <div class="gmp-bubble">
         <div class="bubble bubble-succ">
@@ -504,6 +536,21 @@
             <div class="bubble-bd">高端大气上档次</div>
         </div>
     </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--成功类气泡提示--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-succ"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow bubble-arrow-top"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-hd"</span>&gt;</span>气泡提示<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-bd"</span>&gt;</span>高端大气上档次<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-bubble-warn">警告</h3>
+
+<div class="gmp-example">
     <div class="gmp-bubble">
         <div class="bubble bubble-warn">
             <i class="bubble-arrow bubble-arrow-left">
@@ -514,6 +561,21 @@
             <div class="bubble-bd">高端大气上档次</div>
         </div>
     </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--警告类气泡提示--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-warn"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow bubble-arrow-left"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-hd"</span>&gt;</span>气泡提示<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-bd"</span>&gt;</span>高端大气上档次<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-bubble-info">信息</h3>
+
+<div class="gmp-example">
     <div class="gmp-bubble">
         <div class="bubble bubble-info">
             <i class="bubble-arrow bubble-arrow-right">
@@ -524,6 +586,21 @@
             <div class="bubble-bd">高端大气上档次</div>
         </div>
     </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--信息类气泡提示--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-info"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow bubble-arrow-right"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-hd"</span>&gt;</span>气泡提示<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-bd"</span>&gt;</span>高端大气上档次<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 class="gmp-h" id="gmp-bubble-error">错误</h3>
+
+<div class="gmp-example">
     <div class="gmp-bubble">
         <div class="bubble bubble-error">
             <i class="bubble-arrow bubble-arrow-left">
@@ -536,8 +613,9 @@
     </div>
 </div>
 
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-succ"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow bubble-arrow-top"</span>&gt;</span>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--错误类气泡提示--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble bubble-error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow bubble-arrow-left"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-arrow-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-close"</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
@@ -545,6 +623,20 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bubble-bd"</span>&gt;</span>高端大气上档次<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
+<h2 class="gmp-h" id="gmp-instant">即时提示</h2>
+
+<h2 class="gmp-h" id="gmp-pop">弹出框</h2>
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     </div>
