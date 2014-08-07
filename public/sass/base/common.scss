@@ -2,9 +2,7 @@
 // author liw
 // ========================================
 // import
-@import "../include/_global";
-@import "../include/_css3";
-@import "../include/_mixin";
+@import "../lib/import";
 
 // base style
 // =============================
@@ -100,7 +98,7 @@ h6{
 }
 // head group
 .hd{
-    @extend %bfc;
+    @extend %clear-simple;
     .h{
         float: left;
     }

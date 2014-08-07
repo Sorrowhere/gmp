@@ -1,117 +1,97 @@
-/* line 27, ../../sass/ui/tip.scss */
 .tip-succ {
   border: 0 solid #bed7a8;
   background-color: #e5fae1;
   color: #58991f;
 }
 
-/* line 27, ../../sass/ui/tip.scss */
 .tip-error {
   border: 0 solid #fad2cd;
   background-color: #fae6e6;
   color: #cc220b;
 }
 
-/* line 27, ../../sass/ui/tip.scss */
 .tip-warn {
   border: 0 solid #e8d4a8;
   background-color: #fcf3de;
   color: #c59120;
 }
 
-/* line 27, ../../sass/ui/tip.scss */
 .tip-info {
   border: 0 solid #c7dbeb;
   background-color: #e6f1fa;
   color: #1c75bb;
 }
 
-/* line 38, ../../sass/ui/tip.scss */
 .tip {
   padding: 7px 10px 7px 31px;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 41, ../../sass/ui/tip.scss */
 .tip .icon {
   float: left;
   margin: 2px 0 0 -21px;
 }
 
-/* line 51, ../../sass/ui/tip.scss */
 .tip-notice {
   padding-left: 10px;
   border-width: 1px;
   color: #4d4d4d;
 }
 
-/* line 58, ../../sass/ui/tip.scss */
 .tip-m,
 .tip-l {
   color: #4d4d4d;
 }
 
-/* line 63, ../../sass/ui/tip.scss */
 .tip-m {
   padding: 20px 20px 25px 62px;
 }
-/* line 65, ../../sass/ui/tip.scss */
 .tip-m .icon-2x {
   float: left;
   margin-left: -42px;
 }
-/* line 69, ../../sass/ui/tip.scss */
 .tip-m .tip-hd {
   padding: 5px 0 0;
   font-size: 14px;
 }
 
-/* line 76, ../../sass/ui/tip.scss */
 .tip-l {
   padding: 20px 40px 35px 88px;
 }
-/* line 78, ../../sass/ui/tip.scss */
 .tip-l .icon-3x {
   float: left;
   margin-left: -58px;
 }
-/* line 82, ../../sass/ui/tip.scss */
 .tip-l .tip-hd {
   padding: 12px 0;
   font-size: 18px;
 }
 
-/* line 89, ../../sass/ui/tip.scss */
 .tip-close {
   float: right;
   font: bold 12px/14px tahoma, arial, sans-serif;
   cursor: pointer;
 }
 
-/* line 96, ../../sass/ui/tip.scss */
 .tip-hd {
   font-family: arial, "Microsoft Yahei", sans-serif;
   font-weight: bold;
   margin-bottom: 7px;
 }
 
-/* line 104, ../../sass/ui/tip.scss */
 .tip-bd .text, .tip-bd .text-lst {
   margin-bottom: 10px;
 }
 
-/* line 108, ../../sass/ui/tip.scss */
 .tip-sub-hd {
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-/* line 113, ../../sass/ui/tip.scss */
 .tip-lnks .v-sep {
   margin: 0 10px;
 }
 
-/* line 117, ../../sass/ui/tip.scss */
 .tip-ope {
   margin: 20px 0 0;
 }

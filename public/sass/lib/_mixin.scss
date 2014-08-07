@@ -4,7 +4,7 @@
 // require _global
 
 // import
-@import "../include/_global";
+@import "../lib/_global";
 
 // opacity
 @mixin opacity($opacityValue: .5){
@@ -24,27 +24,13 @@
     height: $height;
 }
 
-// Text clip, width must be set
-%text-clip{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+
 
 // Min height
 @mixin min-height($height){
     min-height: $height;
     height: auto;
-    @if($ie6){
+    @if $ie6{
         _height: $height;
-    }
-}
-
-// generate block formatting context
-// IE hasLayout
-%bfc{
-    overflow: hidden;
-    @if $lte7{
-        *zoom:1;
     }
 }

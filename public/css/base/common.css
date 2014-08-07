@@ -1,10 +1,8 @@
-/* line 45, ../../sass/include/_mixin.scss */
 .hd {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 11, ../../sass/base/common.scss */
 body {
   color: #4d4d4d;
   background-color: #fff;
@@ -12,175 +10,142 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 17, ../../sass/base/common.scss */
 body, input, select, textarea, button {
   font: 12px/1.5 arial, sans-serif;
   outline: none;
 }
 
-/* line 21, ../../sass/base/common.scss */
 textarea {
   resize: none;
 }
 
-/* line 24, ../../sass/base/common.scss */
 a {
   text-decoration: none;
 }
-/* line 26, ../../sass/base/common.scss */
 a:link, a:visited {
   color: #0066dd;
 }
-/* line 29, ../../sass/base/common.scss */
 a:hover {
   color: #d9363c;
   text-decoration: underline;
 }
 
-/* line 34, ../../sass/base/common.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 39, ../../sass/base/common.scss */
 .red {
   color: #d9363c;
 }
 
-/* line 42, ../../sass/base/common.scss */
 .yellow {
   color: #cc9829;
 }
 
-/* line 45, ../../sass/base/common.scss */
 .blue {
   color: #0066dd;
 }
 
-/* line 48, ../../sass/base/common.scss */
 .green {
   color: #199900;
 }
 
-/* line 51, ../../sass/base/common.scss */
 .gray {
   color: #666666;
 }
 
-/* line 54, ../../sass/base/common.scss */
 .gray-light {
   color: #999999;
 }
 
-/* line 59, ../../sass/base/common.scss */
 .bg-green {
   background-color: #e5fae1;
 }
 
-/* line 62, ../../sass/base/common.scss */
 .bg-red {
   background-color: #fae6e6;
 }
 
-/* line 65, ../../sass/base/common.scss */
 .bg-yellow {
   background-color: #fcf3de;
 }
 
-/* line 68, ../../sass/base/common.scss */
 .bg-blue {
   background-color: #e6f1fa;
 }
 
-/* line 71, ../../sass/base/common.scss */
 .bg-gray {
   background-color: #f2f2f2;
 }
 
-/* line 78, ../../sass/base/common.scss */
 h2, h3, h4, h5 {
   font-family: arial, "Microsoft Yahei", sans-serif;
   color: #333333;
   *font-weight: normal;
 }
 
-/* line 85, ../../sass/base/common.scss */
 h2 {
   font-size: 32px;
 }
 
-/* line 88, ../../sass/base/common.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 91, ../../sass/base/common.scss */
 h4 {
   font-size: 16px;
 }
 
-/* line 94, ../../sass/base/common.scss */
 h5 {
   font-size: 14px;
 }
 
-/* line 97, ../../sass/base/common.scss */
 h6 {
   font-size: 12px;
   font-weight: bold;
 }
 
-/* line 104, ../../sass/base/common.scss */
 .hd .h {
   float: left;
 }
-/* line 107, ../../sass/base/common.scss */
 .hd .h-sub {
   font-size: 12px;
   margin-left: 10px;
   color: #999999;
   font-family: arial, sans-serif;
 }
-/* line 113, ../../sass/base/common.scss */
 .hd .h-ope {
   float: right;
 }
 
-/* line 118, ../../sass/base/common.scss */
 .text {
   margin-bottom: 10px;
 }
 
-/* line 122, ../../sass/base/common.scss */
 .text-lst li {
   padding: 2px 0 2px 9px;
   background: url(/img/global/list-style.png) 0 9px no-repeat;
 }
 
-/* line 128, ../../sass/base/common.scss */
 ol.text-lst {
   margin-left: 1.6em;
   *margin-left: 2em;
 }
-/* line 133, ../../sass/base/common.scss */
 ol.text-lst li {
   background: none;
   list-style-type: decimal;
   padding-left: 0;
 }
 
-/* line 141, ../../sass/base/common.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 144, ../../sass/base/common.scss */
 .v-sep {
   margin: 0 5px;
   color: #999999;
 }
 
-/* line 148, ../../sass/base/common.scss */
 .text-space {
   margin: 0 3px;
 }

@@ -1,0 +1,23 @@
+// global placehoder
+// author liw
+// =====================================
+// required:  _global.scss
+
+// import
+@import "../lib/_global";
+
+// Text clip
+%text-clip{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// generate block formatting context
+// IE hasLayout
+%clear-simple {
+    overflow: hidden;
+    @if $lte7{
+        *zoom:1;
+    }
+}

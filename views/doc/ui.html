@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>样式组件</title>
-    <link rel="stylesheet" href="/css/bundle.css"/>
+    <link rel="stylesheet" href="/css/gmp.css"/>
 </head>
 <body>
 <div class="gmp-header-wrap">
@@ -504,6 +504,10 @@
     </div>
 </div>
 
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip tip-notice tip-warn"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tip-bd"</span>&gt;</span>你需要完善会员资料并验证邮箱。才可<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>添加产品<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>。<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
 <h2 class="gmp-h" id="gmp-bubble">气泡提示</h2>
 
 <p>气泡提示定义在文件<code>bubble.scss</code>中。</p>
@@ -641,18 +645,11 @@
 </code></pre>
 <h2 class="gmp-h" id="gmp-instant">即时提示</h2>
 
+<p>即时提示为某些操作后的反馈提示，一段时间后自动消失。</p>
 <h2 class="gmp-h" id="gmp-pop">弹出框</h2>
 
-
-
-
-
-
-
-
-
-
-
+<p>遮罩层基类为<code>.masker</code></p>
+<p>弹出框基础类为<code>.pop</code>，不同功能的弹出层在相应模块内通过添加<code>.pop-{function}</code>定义其它样式。</p>
 
         </div>
     </div>

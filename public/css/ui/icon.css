@@ -1,4 +1,3 @@
-/* line 19, ../../sass/ui/icon.scss */
 .icon, .icon-2x, .icon-3x {
   display: inline-block;
   vertical-align: middle;
@@ -6,83 +5,68 @@
   font-size: 0;
 }
 
-/* line 39, ../../sass/ui/icon.scss */
 .icon {
   width: 16px;
   height: 16px;
   background: url("../../img/global/icon.png") no-repeat;
 }
 
-/* line 39, ../../sass/ui/icon.scss */
 .icon-2x {
   width: 32px;
   height: 32px;
   background: url("../../img/global/icon-2x.png") no-repeat;
 }
 
-/* line 39, ../../sass/ui/icon.scss */
 .icon-3x {
   width: 48px;
   height: 48px;
   background: url("../../img/global/icon-3x.png") no-repeat;
 }
 
-/* line 48, ../../sass/ui/icon.scss */
 .icon-warn {
   background-position: 0 0;
 }
 
-/* line 51, ../../sass/ui/icon.scss */
 .icon-succ {
   background-position: -16px 0;
 }
 
-/* line 54, ../../sass/ui/icon.scss */
 .icon-error {
   background-position: -80px 0;
 }
 
-/* line 57, ../../sass/ui/icon.scss */
 .icon-info {
   background-position: -32px 0;
 }
 
-/* line 62, ../../sass/ui/icon.scss */
 .icon-2x-succ {
   background-position: -32px 0;
 }
 
-/* line 65, ../../sass/ui/icon.scss */
 .icon-2x-info {
   background-position: -64px 0;
 }
 
-/* line 68, ../../sass/ui/icon.scss */
 .icon-2x-warn {
   background-position: -64px -32px;
 }
 
-/* line 71, ../../sass/ui/icon.scss */
 .icon-2x-error {
   background-position: 0 0;
 }
 
-/* line 76, ../../sass/ui/icon.scss */
 .icon-3x-warn {
   background-position: 0 0;
 }
 
-/* line 79, ../../sass/ui/icon.scss */
 .icon-3x-succ {
   background-position: -48px 0;
 }
 
-/* line 82, ../../sass/ui/icon.scss */
 .icon-3x-info {
   background-position: -96px 0;
 }
 
-/* line 85, ../../sass/ui/icon.scss */
 .icon-3x-error {
   background-position: 0 -48px;
 }

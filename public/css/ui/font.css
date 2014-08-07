@@ -1,5 +1,4 @@
-/* line 421, ../../sass/include/_font_variable.scss */
-.iconfont {
+.fcon {
   display: inline-block;
   font-family: IconFont;
   font-style: normal;
@@ -18,18 +17,15 @@
   font-style: normal;
 }
 
-/* line 14, ../../sass/ui/font.scss */
-.iconfont {
+.fcon {
   vertical-align: middle;
 }
 
-/* line 18, ../../sass/ui/font.scss */
-.iconfont-2x {
+.fcon-2x {
   font-size: 24px;
 }
 
-/* line 23, ../../sass/ui/font.scss */
-.iconfont-rotate:hover {
+.fcon-rotate:hover {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -37,297 +33,238 @@
   transform: rotate(180deg);
 }
 
-/* line 28, ../../sass/ui/font.scss */
-.iconfont-search:before {
+.fcon-search:before {
   content: "\f002";
 }
 
-/* line 31, ../../sass/ui/font.scss */
-.iconfont-th:before {
+.fcon-th:before {
   content: "\f00a";
 }
 
-/* line 34, ../../sass/ui/font.scss */
-.iconfont-home:before {
+.fcon-home:before {
   content: "\f015";
 }
 
-/* line 37, ../../sass/ui/font.scss */
-.iconfont-list:before {
+.fcon-list:before {
   content: "\f03a";
 }
 
-/* line 40, ../../sass/ui/font.scss */
-.iconfont-angle-double-right:before {
+.fcon-angle-double-right:before {
   content: "\f101";
 }
 
-/* line 43, ../../sass/ui/font.scss */
-.iconfont-angle-down:before {
+.fcon-angle-down:before {
   content: "\f107";
 }
 
-/* line 46, ../../sass/ui/font.scss */
-.iconfont-angle-right:before {
+.fcon-angle-right:before {
   content: "\f105";
 }
 
-/* line 49, ../../sass/ui/font.scss */
-.iconfont-angle-left:before {
+.fcon-angle-left:before {
   content: "\f104";
 }
 
-/* line 52, ../../sass/ui/font.scss */
-.iconfont-caret-down:before {
+.fcon-caret-down:before {
   content: "\f0d7";
 }
 
-/* line 55, ../../sass/ui/font.scss */
-.iconfont-times-circle:before {
+.fcon-times-circle:before {
   content: "\f057";
 }
 
-/* line 58, ../../sass/ui/font.scss */
-.iconfont-cog:before {
+.fcon-cog:before {
   content: "\f013";
 }
 
-/* line 61, ../../sass/ui/font.scss */
-.iconfont-arrow-circle-up:before {
+.fcon-arrow-circle-up:before {
   content: "\f0aa";
 }
 
-/* line 64, ../../sass/ui/font.scss */
-.iconfont-arrow-circle-o-up:before {
+.fcon-arrow-circle-o-up:before {
   content: "\f01b";
 }
 
-/* line 67, ../../sass/ui/font.scss */
-.iconfont-arrow-left:before {
+.fcon-arrow-left:before {
   content: "\f060";
 }
 
-/* line 70, ../../sass/ui/font.scss */
-.iconfont-map-marker:before {
+.fcon-map-marker:before {
   content: "\f041";
 }
 
-/* line 73, ../../sass/ui/font.scss */
-.iconfont-th-list:before {
+.fcon-th-list:before {
   content: "\f00b";
 }
 
-/* line 76, ../../sass/ui/font.scss */
-.iconfont-bars:before {
+.fcon-bars:before {
   content: "\f0c9";
 }
 
-/* line 79, ../../sass/ui/font.scss */
-.iconfont-arrow-up:before {
+.fcon-arrow-up:before {
   content: "\f062";
 }
 
-/* line 82, ../../sass/ui/font.scss */
-.iconfont-th-large:before {
+.fcon-th-large:before {
   content: "\f009";
 }
 
-/* line 85, ../../sass/ui/font.scss */
-.iconfont-jpy:before {
+.fcon-jpy:before {
   content: "\f157";
 }
 
-/* line 88, ../../sass/ui/font.scss */
-.iconfont-heart:before {
+.fcon-heart:before {
   content: "\f004";
 }
 
-/* line 91, ../../sass/ui/font.scss */
-.iconfont-chevron-down:before {
+.fcon-chevron-down:before {
   content: "\f078";
 }
 
-/* line 94, ../../sass/ui/font.scss */
-.iconfont-times:before {
+.fcon-times:before {
   content: "\f00d";
 }
 
-/* line 97, ../../sass/ui/font.scss */
-.iconfont-check:before {
+.fcon-check:before {
   content: "\f00c";
 }
 
-/* line 102, ../../sass/ui/font.scss */
-.iconfont-food:before {
+.fcon-food:before {
   content: "\e614";
 }
 
-/* line 105, ../../sass/ui/font.scss */
-.iconfont-apparel:before {
+.fcon-apparel:before {
   content: "\e61f";
 }
 
-/* line 108, ../../sass/ui/font.scss */
-.iconfont-menu-more:before {
+.fcon-menu-more:before {
   content: "\e600";
 }
 
-/* line 111, ../../sass/ui/font.scss */
-.iconfont-mode-text:before {
+.fcon-mode-text:before {
   content: "\e601";
 }
 
-/* line 114, ../../sass/ui/font.scss */
-.iconfont-mode-big-picture:before {
+.fcon-mode-big-picture:before {
   content: "\e602";
 }
 
-/* line 117, ../../sass/ui/font.scss */
-.iconfont-original:before {
+.fcon-original:before {
   content: "\e604";
 }
 
-/* line 120, ../../sass/ui/font.scss */
-.iconfont-home-goods:before {
+.fcon-home-goods:before {
   content: "\e605";
 }
 
-/* line 123, ../../sass/ui/font.scss */
-.iconfont-goods:before {
+.fcon-goods:before {
   content: "\e606";
 }
 
-/* line 126, ../../sass/ui/font.scss */
-.iconfont-elec-component:before {
+.fcon-elec-component:before {
   content: "\e622";
 }
 
-/* line 129, ../../sass/ui/font.scss */
-.iconfont-transport:before {
+.fcon-transport:before {
   content: "\e603";
 }
 
-/* line 132, ../../sass/ui/font.scss */
-.iconfont-toys:before {
+.fcon-toys:before {
   content: "\e607";
 }
 
-/* line 135, ../../sass/ui/font.scss */
-.iconfont-tools:before {
+.fcon-tools:before {
   content: "\e608";
 }
 
-/* line 138, ../../sass/ui/font.scss */
-.iconfont-textile:before {
+.fcon-textile:before {
   content: "\e609";
 }
 
-/* line 141, ../../sass/ui/font.scss */
-.iconfont-sporting:before {
+.fcon-sporting:before {
   content: "\e60a";
 }
 
-/* line 144, ../../sass/ui/font.scss */
-.iconfont-daily-use:before {
+.fcon-daily-use:before {
   content: "\e60c";
 }
 
-/* line 147, ../../sass/ui/font.scss */
-.iconfont-office:before {
+.fcon-office:before {
   content: "\e60d";
 }
 
-/* line 150, ../../sass/ui/font.scss */
-.iconfont-manufacture:before {
+.fcon-manufacture:before {
   content: "\e60e";
 }
 
-/* line 153, ../../sass/ui/font.scss */
-.iconfont-lights:before {
+.fcon-lights:before {
   content: "\e60f";
 }
 
-/* line 156, ../../sass/ui/font.scss */
-.iconfont-instruments:before {
+.fcon-instruments:before {
   content: "\e610";
 }
 
-/* line 159, ../../sass/ui/font.scss */
-.iconfont-industry:before {
+.fcon-industry:before {
   content: "\e611";
 }
 
-/* line 162, ../../sass/ui/font.scss */
-.iconfont-health:before {
+.fcon-health:before {
   content: "\e612";
 }
 
-/* line 165, ../../sass/ui/font.scss */
-.iconfont-furniture:before {
+.fcon-furniture:before {
   content: "\e613";
 }
 
-/* line 168, ../../sass/ui/font.scss */
-.iconfont-energy:before {
+.fcon-energy:before {
   content: "\e615";
 }
 
-/* line 171, ../../sass/ui/font.scss */
-.iconfont-electrical:before {
+.fcon-electrical:before {
   content: "\e616";
 }
 
-/* line 174, ../../sass/ui/font.scss */
-.iconfont-edit:before {
+.fcon-edit:before {
   content: "\e617";
 }
 
-/* line 177, ../../sass/ui/font.scss */
-.iconfont-decoration:before {
+.fcon-decoration:before {
   content: "\e618";
 }
 
-/* line 180, ../../sass/ui/font.scss */
-.iconfont-consumer-electric:before {
+.fcon-consumer-electric:before {
   content: "\e619";
 }
 
-/* line 183, ../../sass/ui/font.scss */
-.iconfont-computer:before {
+.fcon-computer:before {
   content: "\e61a";
 }
 
-/* line 186, ../../sass/ui/font.scss */
-.iconfont-chemicals:before {
+.fcon-chemicals:before {
   content: "\e61b";
 }
 
-/* line 189, ../../sass/ui/font.scss */
-.iconfont-bags:before {
+.fcon-bags:before {
   content: "\e61c";
 }
 
-/* line 192, ../../sass/ui/font.scss */
-.iconfont-auto:before {
+.fcon-auto:before {
   content: "\e61d";
 }
 
-/* line 195, ../../sass/ui/font.scss */
-.iconfont-arts:before {
+.fcon-arts:before {
   content: "\e61e";
 }
 
-/* line 198, ../../sass/ui/font.scss */
-.iconfont-mode-text-picture:before {
+.fcon-mode-text-picture:before {
   content: "\e623";
 }
 
-/* line 201, ../../sass/ui/font.scss */
-.iconfont-print:before {
+.fcon-print:before {
   content: "\f02f";
 }
 
-/* line 204, ../../sass/ui/font.scss */
-.iconfont-safe:before {
+.fcon-safe:before {
   content: "\e621";
 }

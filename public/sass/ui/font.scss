@@ -1,5 +1,4 @@
-@import "../include/_font_variable";
-@import "../include/_css3";
+@import "../lib/import";
 
 @font-face {
   	font-family: 'IconFont';
@@ -12,7 +11,7 @@
   	font-style: normal;
 }
 .#{$baseClass} {
-    @extend %iconFontBase;
+    @extend %fontIconBase;
     vertical-align: middle;
 }
 .#{$baseClass}-2x {

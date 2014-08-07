@@ -16,7 +16,8 @@ module.exports = function(grunt){
 				options: {
 					sassDir: 'public/sass',
 					cssDir: 'public/css',
-					outputStyle: 'expanded'
+					outputStyle: 'expanded',
+                    noLineComments: true
 				}
 			}
 		},
@@ -58,11 +59,11 @@ module.exports = function(grunt){
 			},
 			sass: {
 				files: '**/*.{scss,sass}',
-				tasks: ['compass', 'concat']
+				tasks: ['compass']
 			}
 		}
 	});
 
 	// register default tasks
-	grunt.registerTask('default', ['clean', 'compass', 'concat']);
+	grunt.registerTask('default', ['clean', 'compass']);
 }

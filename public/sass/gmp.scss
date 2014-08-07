@@ -1,9 +1,17 @@
 // app style
 // ========================================
 // import
-@import "include/_global";
-@import "include/_css3";
-@import "include/_mixin";
+@import "lib/import";
+
+@import "base/reset";
+@import "base/common";
+@import "ui/bubble";
+@import "ui/button";
+@import "ui/font";
+@import "ui/icon";
+@import "ui/pop";
+@import "ui/tip";
+@import "highlight/github";
 
 // variable reset
 $borderColor: #ced9e5;
@@ -15,13 +23,13 @@ $bgColor: #ecf0f5;
     margin: 0 5px;
     background-color: #eee;
     color: #0a8;
-    @include border-radius(3px);
+    @include border-radius(3px)
 }
 
 // base
 // ========================================
 body, input, select, textarea, button{
-    font: 13px/1.5 arial, 'Microsoft Yahei', sans-serif;
+    font: 13px/1.5 $ffYahei;
 	outline: none;
 }
 input{
@@ -34,7 +42,7 @@ input{
 }
 .error{
     &[type='text']{
-        border-color: #a22721;
+        border-color: $fcRed;
     }
 }
 

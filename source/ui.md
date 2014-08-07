@@ -440,6 +440,12 @@
     </div>
 </div>
 
+```html
+<div class="tip tip-notice tip-warn">
+    <div class="tip-bd">你需要完善会员资料并验证邮箱。才可<a href="#">添加产品</a>。</div>
+</div>
+```
+
 <h2 class="gmp-h" id="gmp-bubble">气泡提示</h2>
 
 气泡提示定义在文件<code>bubble.scss</code>中。
@@ -591,7 +597,13 @@
 
 <h2 class="gmp-h" id="gmp-instant">即时提示</h2>
 
+即时提示为某些操作后的反馈提示，一段时间后自动消失。
+
 <h2 class="gmp-h" id="gmp-pop">弹出框</h2>
+
+遮罩层基类为<code>.masker</code>
+
+弹出框基础类为<code>.pop</code>，不同功能的弹出层在相应模块内通过添加<code>.pop-{function}</code>定义其它样式。
 
 
 

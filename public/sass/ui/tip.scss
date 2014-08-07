@@ -4,8 +4,7 @@
 // required: _css3.scss, _global.scss
 
 // import
-@import "../include/_global.scss";
-@import "../include/_css3.scss";
+@import "../lib/import";
 
 // tip type setting
 //          typeName,  backgroundColor, borderColor, color

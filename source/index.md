@@ -40,7 +40,7 @@ CSS预编译处理使用SASS，版本号 <strong>3.3.12</strong>。
 
 <h2 class="gmp-h" id="gmp-spec">规范说明</h2>
 
-百卓规范库包括视觉规范、前端规范。前端规范包括Sass、基础样式（base）、样式组件（ui）、功能（func）、百卓公共组件（abiz）、中文公共组件（cn）。
+百卓规范库包括视觉规范、前端规范。前端规范包括Sass、基础样式（base）、样式组件（ui）、功能（utility）、百卓公共组件（abiz）、中文公共组件（cn）。
 
 所有样式均通过Sass来编写，不能直接编辑<code>css</code>文件。由于目前各项目都没有增加Sass编译功能，所以直接拷贝样式文件到项目中（以后会添加下载功能）。规范库中的样式更新必须及时更新到项目中。
 
@@ -83,7 +83,7 @@ style/
 |   |   |   |-- page_example.scss
 |   |   |   |-- page_example.scss
 |   |   |-- ...
-|   |-- include/
+|   |-- lib/
 |   |   |   |-- _css3.scss
 |   |   |   |-- _font_icon.scss
 |   |   |   |-- _media_query.scss
@@ -96,11 +96,11 @@ style/
 
 以上结构为Sass文件结构，css结构与之相同。
 
-<code>base/</code>、<code>utility/</code>、<code>import/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。
+<code>base/</code>、<code>utility/</code>、<code>lib/</code>属于全局公共样式，不涉及视觉样式，各个项目统一，无需修改。
 
 <code>site/</code>，原<code>module/</code>，为具体项目样式。
 
-<code>include/</code>为Sass引用文件，不会编译成样式文件。禁止在页面中直接引用。
+<code>import/</code>为Sass引用文件，不会编译成样式文件。禁止在页面中直接引用。
 
 <code>_setting.scss</code>为项目Sass参数配置文件，定义根据项目重置的全局变量和UI变量，以实现UI定制。
 

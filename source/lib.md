@@ -1,7 +1,7 @@
 
 <h2 class="gmp-h" id="gmp-intro">说明</h2>
 
-<p class="gmp-para-lead"><code>include/</code>内包含全局参数定义、CSS3辅助方法定义、媒体查询辅助方法定义、字体图标变量定义。Sass变量定义采用骆驼定义法，如：<code>$fontName</code>。</p>
+<p class="gmp-para-lead"><code>lib/</code>内包含全局参数定义、CSS3辅助方法定义、媒体查询辅助方法定义、字体图标变量定义。Sass变量定义采用骆驼定义法，如：<code>$fontName</code>。</p>
 
 <h2 class="gmp-h" id="gmp-global">全局参数定义</h2>
 

@@ -1,7 +1,7 @@
 // font variables here
 
 $path: '../fonts';
-$baseClass: iconfont !default;
+$baseClass: fcon !default;
 $iconNames:
 	glass "\f000",
 	music "\f001",
@@ -418,7 +418,7 @@ $iconNames:
 		}
 	}
 }
-%iconFontBase{
+%fontIconBase {
     display: inline-block;
     font-family: IconFont;
     font-style: normal;
