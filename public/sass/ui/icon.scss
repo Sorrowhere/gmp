@@ -4,13 +4,13 @@
 // required: _css3.scss, _global.scss
 
 // import
-@import "../lib/import";
+@import "../lib/all";
 
 // variables
 $imgPath: '../../img/global/' !default;
 
 // icon group
-$iconDefault: $iconBaseClass, 'icon.png',    16px, 16px !default;
+$iconDefault: $iconClass, 'icon.png',    16px, 16px !default;
 $icon2x:      $icon2xClass,   'icon-2x.png', 32px, 32px !default;
 $icon3x:      $icon3xClass,   'icon-3x.png', 48px, 48px !default;
 $iconGroup: $iconDefault, $icon2x, $icon3x;
@@ -28,33 +28,37 @@ $iconGroup: $iconDefault, $icon2x, $icon3x;
 }
 
 @each $iconItem in $iconGroup{
-    $iconClass: nth($iconItem,1);
+    $iconType: nth($iconItem,1);
     $iconImg: nth($iconItem,2);
     $iconWidth: nth($iconItem,3);
     $iconHeight: nth($iconItem,4);
 
     $iconImgUrl: $imgPath + $iconImg;
 
-    .#{$iconClass}{
+    .#{$iconType}{
         @extend %iconBase;
         width: $iconWidth;
         height: $iconHeight;
-        background: url($iconImgUrl) no-repeat;
+        background: url($iconImgUrl) no-repeat
     }
 }
 
 // icon default
-.#{$iconBaseClass}-warn{
-    @include bgpos(0, 0);
-}
-.#{$iconBaseClass}-succ{
+.#{$iconClass}-info{
     @include bgpos(-16px, 0);
 }
-.#{$iconBaseClass}-error{
-    @include bgpos(-80px, 0);
-}
-.#{$iconBaseClass}-info{
+.#{$iconClass}-error{
     @include bgpos(-32px, 0);
+}
+.#{$iconClass}-warn{
+    @include bgpos(-48px, 0);
+}
+.#{$iconClass}-close{
+    @include bgpos(0, -16px);
+    cursor: pointer;
+}
+.#{$iconClass}-close:hover{
+    @include bgpos(-16px, -16px);
 }
 
 // icon 2x

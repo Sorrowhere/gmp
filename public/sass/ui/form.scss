@@ -1,0 +1,25 @@
+// form
+// author liw
+// =======================================
+
+// import
+@import "../lib/all";
+
+// variables
+$fieldHdWidth: 110px !default;
+// space between field-hd and field-bd
+$fieldHdSpace: 10px !default;
+// space between two fields
+$fieldGutter: 16px !default;
+$txtHeight: 26px !default;
+
+// field
+.field{
+    @extend %clear;
+    padding: 7px 0 7px ($fieldHdWidth + $fieldHdSpace);
+}
+.field-hd{
+    float: left;
+    margin-left: -$fieldHdWidth;
+    line-height: $txtHeight;
+}

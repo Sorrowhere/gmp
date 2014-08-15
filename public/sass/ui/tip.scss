@@ -4,7 +4,7 @@
 // required: _css3.scss, _global.scss
 
 // import
-@import "../lib/import";
+@import "../lib/all";
 
 // tip type setting
 //          typeName,  backgroundColor, borderColor, color
@@ -22,7 +22,7 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
     $tipBdColor: nth($tipTypeItem,3);
     $tipFontColor: nth($tipTypeItem,4);
 
-    $tipTypeClass: $tipBaseClass + '-' + $tipTypeName;
+    $tipTypeClass: $tipClass + '-' + $tipTypeName;
     .#{$tipTypeClass}{
         border: 0 solid $tipBdColor;
         background-color: $tipBgColor;
@@ -34,10 +34,10 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 // size: default, m(middle), l(large)
 // ==========================
 // tip default
-.#{$tipBaseClass}{
+.#{$tipClass}{
     padding:7px 10px 7px 31px;
     overflow:hidden;
-    .#{$iconBaseClass}{
+    .#{$iconClass}{
         float: left;
         margin:2px 0 0 -21px;
     }
@@ -47,73 +47,73 @@ $tipTypeGroup: $tipSucc, $tipError, $tipWarn,$tipInfo !default;
 }
 
 // tip notice
-.#{$tipBaseClass}-notice{
+.#{$tipClass}-notice{
     padding-left: 10px;
     border-width: 1px;
     color: $fcText;
 }
 
-.#{$tipBaseClass}-m,
-.#{$tipBaseClass}-l{
+.#{$tipClass}-m,
+.#{$tipClass}-l{
     color: $fcText;
 }
 
 // tip middle
-.#{$tipBaseClass}-m{
+.#{$tipClass}-m{
     padding: 20px 20px 25px 62px;
     .#{$icon2xClass}{
         float: left;
         margin-left: -42px;
     }
-    .#{$tipBaseClass}-hd{
+    .#{$tipClass}-hd{
         padding: 5px 0 0;
         font-size: 14px;
     }
 }
 
 // tip large
-.#{$tipBaseClass}-l{
+.#{$tipClass}-l{
     padding: 20px 40px 35px 88px;
     .#{$icon3xClass}{
         float: left;
         margin-left: -58px;
     }
-    .#{$tipBaseClass}-hd{
+    .#{$tipClass}-hd{
         padding: 12px 0;
         font-size: 18px;
     }
 }
 
 
-.#{$tipBaseClass}-close{
+.#{$tipClass}-close{
     float: right;
     font:bold 12px/14px $ffTahoma;
     cursor:pointer;
 }
 
 // tip head style
-.#{$tipBaseClass}-hd{
+.#{$tipClass}-hd{
     font-family: $ffYahei;
     font-weight: bold;
     margin-bottom: 7px;
 }
 
 // tip content style
-.#{$tipBaseClass}-bd{
+.#{$tipClass}-bd{
     .text, .text-lst{
         margin-bottom: 10px;
     }
 }
-.#{$tipBaseClass}-sub-hd{
+.#{$tipClass}-sub-hd{
     font-size: 14px;
     margin-bottom: 10px;
 }
-.#{$tipBaseClass}-lnks{
+.#{$tipClass}-lnks{
     .v-sep{
         margin: 0 10px;
     }
 }
-.#{$tipBaseClass}-ope{
+.#{$tipClass}-ope{
     margin:20px 0 0;
 }
 

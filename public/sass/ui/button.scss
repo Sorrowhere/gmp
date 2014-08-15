@@ -1,10 +1,9 @@
 // button
 // author liw
 // =======================================
-// required: _css3.scss, _global.scss
 
 // import
-@import "../lib/import";
+@import "../lib/all";
 
 // variables
 $btnBorderRadius: 2px !default;
@@ -31,7 +30,7 @@ $btnTypeGroup: $btnDefault, $btnPrimary, $btnPrimaryLight, $btnSub, $btnSubLight
 
 
 // button base style
-.#{$btnBaseClass}{
+.#{$btnClass}{
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -45,8 +44,8 @@ $btnTypeGroup: $btnDefault, $btnPrimary, $btnPrimaryLight, $btnSub, $btnSubLight
     }
 }
 // hack
-button.#{$btnBaseClass},
-input.#{$btnBaseClass}{
+button.#{$btnClass},
+input.#{$btnClass}{
 
     // fix black border problem under IE6 and IE7
     @if $lte7 {
@@ -63,7 +62,7 @@ input.#{$btnBaseClass}{
         outline: none;
     }
 }
-a.#{$btnBaseClass}:hover{
+a.#{$btnClass}:hover{
     text-decoration: none;
 }
 
@@ -77,7 +76,7 @@ a.#{$btnBaseClass}:hover{
     $btnStartColor: nth($btnTypeItem,6);
     $btnEndColor: nth($btnTypeItem,7);
 
-    $btnTypeClass: $btnBaseClass+'-'+$btnTypeName;
+    $btnTypeClass: $btnClass+'-'+$btnTypeName;
 
     .#{$btnTypeClass}{
         color: $btnFontColor;
@@ -108,7 +107,7 @@ a.#{$btnBaseClass}:hover{
     $btnPadding: nth($btnSizeItem,3);
     $btnFontSize: nth($btnSizeItem,4);
 
-    $btnSizeClass: $btnBaseClass+'-'+$btnSizeName;
+    $btnSizeClass: $btnClass+'-'+$btnSizeName;
 
     .#{$btnSizeClass}{
         height: $btnHeight - 2;

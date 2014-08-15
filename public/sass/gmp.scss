@@ -1,7 +1,7 @@
 // app style
 // ========================================
 // import
-@import "lib/import";
+@import "lib/all";
 
 @import "base/reset";
 @import "base/common";
@@ -11,7 +11,8 @@
 @import "ui/icon";
 @import "ui/pop";
 @import "ui/tip";
-@import "highlight/github";
+@import "ui/form";
+@import "vendor/github";
 
 // variable reset
 $borderColor: #ced9e5;
@@ -27,10 +28,9 @@ $bgColor: #ecf0f5;
 }
 
 // base
-// ========================================
-body, input, select, textarea, button{
-    font: 13px/1.5 $ffYahei;
-	outline: none;
+// =======================================
+body{
+    font-family: $ffYahei;
 }
 input{
     &[type='text']{
@@ -503,3 +503,8 @@ p{
     }
 }
 
+// Example: pop
+.gmp-example-pop{
+    position: relative;
+    height: 130px;
+}

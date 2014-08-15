@@ -4,10 +4,11 @@
 // require _global
 
 // import
-@import "../lib/_global";
+@import "../lib/global";
 
 // opacity
-@mixin opacity($opacityValue: .5){
+@mixin opacity($bgColor: #000, $opacityValue: .5){
+    background-color: $bgColor;
     opacity: $opacityValue;
     filter: alpha(opacity = $opacityValue * 100);
 }
@@ -32,5 +33,17 @@
     height: auto;
     @if $ie6{
         _height: $height;
+    }
+}
+
+// link
+@mixin link-style($defaultColor: $fcLink, $hoverColor: $fcLinkHover, $defaultDecoration: none, $hoverDecoration: underline){
+    text-decoration: $defaultDecoration;
+    &:link,&:visited{
+        color: $defaultColor;
+    }
+    &:hover{
+        color: $hoverColor;
+        text-decoration: $hoverDecoration;
     }
 }

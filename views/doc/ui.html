@@ -94,6 +94,11 @@
                     
                 </li>
                 
+                <li class=" JS-menu-main-item">
+                    <a href="#gmp-form">biaodia</a>
+                    
+                </li>
+                
             </ul>
         </div>
         <div class="gmp-main">
@@ -648,8 +653,69 @@
 <p>即时提示为某些操作后的反馈提示，一段时间后自动消失。</p>
 <h2 class="gmp-h" id="gmp-pop">弹出框</h2>
 
-<p>遮罩层基类为<code>.masker</code></p>
-<p>弹出框基础类为<code>.pop</code>，不同功能的弹出层在相应模块内通过添加<code>.pop-{function}</code>定义其它样式。</p>
+<p>遮罩层基类为<code>.masker</code>，默认背景颜色<code>#000</code>，默认透明度 <strong>.5</strong></p>
+<p>弹出框基础类为<code>.pop</code>，默认宽度 <strong>400px</strong>。不同功能的弹出层在相应模块内通过添加<code>.pop-{function}</code>定义其它样式。</p>
+<h4 class="gmp-h">有标题弹出框</h4>
+
+<div class="gmp-example gmp-example-pop">
+    <div class="masker"></div>
+    <div class="pop">
+        <span class="icon icon-close"></span>
+        <div class="pop-hd">
+            <h5>弹出框标题</h5>
+        </div>
+        <div class="pop-bd">弹出框内容区域</div>
+        <div class="pop-ft">
+            <a href="#" class="btn btn-m btn-info">确认</a>
+            <a href="#" class="btn btn-m btn-default">取消</a>
+        </div>
+    </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon icon-close"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop-hd"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>弹出框标题<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop-bd"</span>&gt;</span>弹出框内容区域<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop-ft"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-m btn-info"</span>&gt;</span>确认<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-m btn-default"</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 class="gmp-h">无标题弹出框</h4>
+
+<div class="gmp-example gmp-example-pop">
+    <div class="masker"></div>
+    <div class="pop">
+        <span class="icon icon-close"></span>
+        <div class="pop-bd">弹出框内容区域</div>
+        <div class="pop-ft">
+            <a href="#" class="btn btn-m btn-info">确认</a>
+            <a href="#" class="btn btn-m btn-default">取消</a>
+        </div>
+    </div>
+</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon icon-close"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop-bd"</span>&gt;</span>弹出框内容区域<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pop-ft"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-m btn-info"</span>&gt;</span>确认<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-m btn-default"</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 class="gmp-h" id="gmp-form">biaodia</h2>
+
+
+
+
+
+
+
+
 
         </div>
     </div>

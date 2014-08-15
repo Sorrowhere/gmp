@@ -91,7 +91,7 @@ $bgGrayLight: #fafafa !default;
 // ui module base cass
 // =================================
 // button
-$btnBaseClass: btn !default;
+$btnClass: btn !default;
 $btnDisabledClass: btn-disabled !default;
 $btnSize1: s !default;
 $btnSize2: m !default;
@@ -108,13 +108,14 @@ $btnTypeInfo:         info !default;
 $btnTypeInfoLight:    info-light !default;
 
 // icon
-$iconBaseClass: icon !default;
-$icon2xClass: $iconBaseClass + '-2x';
-$icon3xClass: $iconBaseClass + '-3x';
+$iconClass: icon !default;
+$icon2xClass: $iconClass + '-2x';
+$icon3xClass: $iconClass + '-3x';
 
 // tip
-$tipBaseClass: tip !default;
+$tipClass: tip !default;
 
 // pop
-$popBaseClass: pop !default;
+$maskerBgColor: #000 !default;
+$popClass: pop !default;
 

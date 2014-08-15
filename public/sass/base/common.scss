@@ -2,7 +2,7 @@
 // author liw
 // ========================================
 // import
-@import "../lib/import";
+@import "../lib/_all";
 
 // base style
 // =============================
@@ -19,20 +19,22 @@ body, input, select, textarea, button{
 textarea{
     resize: none;
 }
+.txt, select, textarea{
+    border-color: 1px solid $bdGrayDark;
+}
+.txt, textarea{
+    padding: 4px 5px;
+}
+.txt{
+    height: 14px;
+    line-height: 14px;
+}
 a{
-    text-decoration: none;
-    &:link,&:visited{
-        color: $fcLink;
-    }
-    &:hover{
-        color: $fcLinkHover;
-        text-decoration: underline;
-    }
+    @include link-style;
 }
 img{
     vertical-align: middle;
 }
-
 // text color
 .red{
     color: $fcRed;
@@ -71,7 +73,7 @@ img{
 }
 
 // typography
-// ============================
+// ======================================
 // head
 h2, h3, h4, h5{
     font-family: $ffYahei;

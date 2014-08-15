@@ -601,12 +601,67 @@
 
 <h2 class="gmp-h" id="gmp-pop">弹出框</h2>
 
-遮罩层基类为<code>.masker</code>
+遮罩层基类为<code>.masker</code>，默认背景颜色<code>#000</code>，默认透明度 <strong>.5</strong>
 
-弹出框基础类为<code>.pop</code>，不同功能的弹出层在相应模块内通过添加<code>.pop-{function}</code>定义其它样式。
+弹出框基础类为<code>.pop</code>，默认宽度 <strong>400px</strong>。不同功能的弹出层在相应模块内通过添加<code>.pop-{function}</code>定义其它样式。
 
+<h4 class="gmp-h">有标题弹出框</h4>
 
+<div class="gmp-example gmp-example-pop">
+    <div class="masker"></div>
+    <div class="pop">
+        <span class="icon icon-close"></span>
+        <div class="pop-hd">
+            <h5>弹出框标题</h5>
+        </div>
+        <div class="pop-bd">弹出框内容区域</div>
+        <div class="pop-ft">
+            <a href="#" class="btn btn-m btn-info">确认</a>
+            <a href="#" class="btn btn-m btn-default">取消</a>
+        </div>
+    </div>
+</div>
 
+```html
+<div class="pop">
+    <span class="icon icon-close"></span>
+    <div class="pop-hd">
+        <h5>弹出框标题</h5>
+    </div>
+    <div class="pop-bd">弹出框内容区域</div>
+    <div class="pop-ft">
+        <a href="#" class="btn btn-m btn-info">确认</a>
+        <a href="#" class="btn btn-m btn-default">取消</a>
+    </div>
+</div>
+```
+
+<h4 class="gmp-h">无标题弹出框</h4>
+
+<div class="gmp-example gmp-example-pop">
+    <div class="masker"></div>
+    <div class="pop">
+        <span class="icon icon-close"></span>
+        <div class="pop-bd">弹出框内容区域</div>
+        <div class="pop-ft">
+            <a href="#" class="btn btn-m btn-info">确认</a>
+            <a href="#" class="btn btn-m btn-default">取消</a>
+        </div>
+    </div>
+</div>
+
+```html
+<div class="pop">
+    <span class="icon icon-close"></span>
+    <div class="pop-bd">弹出框内容区域</div>
+    <div class="pop-ft">
+        <a href="#" class="btn btn-m btn-info">确认</a>
+        <a href="#" class="btn btn-m btn-default">取消</a>
+    </div>
+</div>
+```
+
+<h2 class="gmp-h" id="gmp-form">表单</h2>
 
 
 

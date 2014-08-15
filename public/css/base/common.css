@@ -19,6 +19,19 @@ textarea {
   resize: none;
 }
 
+.txt, select, textarea {
+  border-color: 1px solid #cccccc;
+}
+
+.txt, textarea {
+  padding: 4px 5px;
+}
+
+.txt {
+  height: 14px;
+  line-height: 14px;
+}
+
 a {
   text-decoration: none;
 }

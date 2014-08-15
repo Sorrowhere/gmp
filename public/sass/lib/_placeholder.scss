@@ -13,11 +13,26 @@
     white-space: nowrap;
 }
 
-// generate block formatting context
-// IE hasLayout
+// clear
+%clear{
+    &:before,
+    &:after{
+        content: ' ';
+        display: table;
+    }
+    &:after{
+        clear: both;
+    }
+    @if $lte7 {
+        *zoom: 1;
+    }
+}
+
+
 %clear-simple {
     overflow: hidden;
     @if $lte7{
         *zoom:1;
     }
 }
+

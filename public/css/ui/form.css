@@ -1,0 +1,20 @@
+.field {
+  *zoom: 1;
+}
+.field:before, .field:after {
+  content: ' ';
+  display: table;
+}
+.field:after {
+  clear: both;
+}
+
+.field {
+  padding: 7px 0 7px 120px;
+}
+
+.field-hd {
+  float: left;
+  margin-left: -110px;
+  line-height: 26px;
+}

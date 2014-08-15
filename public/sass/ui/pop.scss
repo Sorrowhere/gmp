@@ -4,8 +4,44 @@
 // required: _css3.scss, _global.scss
 
 // import
-@import "../lib/import";
+@import "../lib/all";
 
 .masker{
-
+    @include opacity($maskerBgColor, .6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.#{$popClass}{
+    position: absolute;
+    width: 400px;
+    border: 5px solid #4c4c4c;
+    background-color: #fff;
+    .#{$iconClass}-close{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+.#{$popClass}-hd{
+    @extend %clear-simple;
+    height: 36px;
+    padding: 0 10px;
+    border-bottom: 1px solid $bdGray;
+    h5{
+        float: left;
+        line-height: 36px;
+    }
+}
+.#{$popClass}-bd,
+.#{$popClass}-ft{
+    padding: 10px;
+}
+.#{$popClass}-ft{
+    text-align: center;
+    .#{$btnClass}{
+        margin: 0 5px;
+    }
 }

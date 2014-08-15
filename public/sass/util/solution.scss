@@ -1,0 +1,41 @@
+// browser compatibility issues solution
+// author liw
+// =========================================
+
+@import '../lib/all';
+
+// clear
+.clearfix{
+    @extend %clear;
+}
+
+
+
+// block element vertical and horizontal align
+.sl-vam{
+    display: table;
+    border-collapse: collapse;
+    @if $lte7{
+        *position: relative;
+        *overflow: hidden;
+    }
+}
+.sl-vam-outer{
+    display: table-cell;
+    vertical-align: middle;
+    @if $lte7{
+        *display: block;
+        *position: absolute;
+        *top: 50%;
+        *left: 50%;
+    }
+}
+.sl-vam-inner{
+    text-align: center;
+    margin: 0 auto;
+    @if $lte7{
+        *position: relative;
+        *top: -50%;
+        *left: -50%;
+    }
+}
